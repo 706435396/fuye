@@ -10,6 +10,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data');
@@ -27,6 +28,15 @@ const blogColumns = JSON.parse(fs.readFileSync(path.join(DATA, 'blog-columns.jso
 const S = site.site;
 const BASE = S.url.replace(/\/$/, '');
 const i18n = (obj, lang) => (obj && obj[lang === 'zh' ? 'zh' : 'en']) || '';
+
+// 静态资源内容指纹：内容变更 → 文件名变更 → 绕过 CF immutable 强缓存
+function assetHash(rel) {
+  try {
+    return crypto.createHash('md5').update(fs.readFileSync(path.join(ASSETS, rel))).digest('hex').slice(0, 8);
+  } catch (e) { return 'dev'; }
+}
+const CSS_HASH = assetHash('css/style.css');
+const JS_HASH = assetHash('js/main.js');
 
 /* ---------- 工具函数 ---------- */
 
@@ -285,7 +295,7 @@ function layout({ lang, title, description, keywords, canonicalHref, prefix, bod
 <meta property="og:site_name" content="${esc(name)}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
-<link rel="stylesheet" href="${prefix}assets/css/style.css">
+<link rel="stylesheet" href="${prefix}assets/css/style.css?v=${CSS_HASH}">
 ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
 </head>
 <body>
@@ -367,7 +377,7 @@ ${body}
 </footer>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-<script src="${prefix}assets/js/main.js" data-lang="${lang}" data-prefix="${prefix}"></script>
+<script src="${prefix}assets/js/main.js?v=${JS_HASH}" data-lang="${lang}" data-prefix="${prefix}"></script>
 </body>
 </html>`;
 }

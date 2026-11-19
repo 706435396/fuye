@@ -7,8 +7,9 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+# 静态资源带内容指纹(?v=hash)，保留长缓存；裸路径则短缓存+重验证，避免改版后锁死旧文件
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=3600, must-revalidate
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
