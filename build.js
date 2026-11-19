@@ -70,9 +70,10 @@ function esc(str) {
   }[c]));
 }
 
-// 轻量内联格式：**加粗** 与 `代码`
+// 轻量内联格式：**加粗**、`代码`、[文字](链接)
 function inline(text) {
   return esc(text)
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, (m, label, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/`(.+?)`/g, '<code>$1</code>');
 }

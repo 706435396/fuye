@@ -328,6 +328,8 @@ button, input { font-family: inherit; }
 .article-content li { margin-bottom: 9px; }
 .article-content li::marker { color: var(--primary); }
 .article-content strong { color: var(--text); font-weight: 750; }
+.article-content a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.article-content a:hover { opacity: .8; }
 .article-content code { background: var(--bg-soft); padding: 2px 7px; border-radius: 6px; font-size: .9em; color: var(--accent); }
 .article-content blockquote {
   margin: 24px 0; padding: 16px 22px; border-left: 4px solid var(--primary);
