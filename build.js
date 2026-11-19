@@ -255,11 +255,11 @@ function layout({ lang, title, description, keywords, canonicalHref, prefix, bod
   const pageTitle = title ? `${title} | ${name}` : `${name} - ${tagline}`;
   const canonical = absUrlLang(canonicalHref, lang);
   const altLang = lang === 'zh' ? 'en' : 'zh';
-  // 顶栏彩色导航（方案C）：首页/靠谱赚钱/最新避雷/投稿（数据来自 site.nav）
+  // 顶栏彩色导航（方案C）：首页/靠谱赚钱/投稿（数据来自 site.nav）
   const topNav = [
     { href: '/', zh: '首页', en: 'Home', cls: 'c-blue' },
     ...site.nav.map(n => ({ href: n.href, zh: n.label, en: n.labelEn,
-      cls: n.href === '/scams.html' ? 'c-red' : n.href === '/platforms.html' ? 'c-green' : n.href === '/blog.html' ? 'c-purple' : 'c-orange' }))
+      cls: n.href === '/platforms.html' ? 'c-green' : n.href === '/scams.html' ? 'c-red' : n.href === '/blog.html' ? 'c-purple' : 'c-orange' }))
   ];
   const navHtml = topNav.map(n =>
     `<a href="${link(n.href, lang, prefix)}" class="top-link ${n.cls}${canonicalHref === n.href ? ' active' : ''}">${lang === 'en' ? n.en : n.zh}</a>`

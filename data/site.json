@@ -23,7 +23,6 @@
     ]
   },
   "nav": [
-    { "label": "最新避雷", "labelEn": "Scam Alerts", "href": "/scams.html" },
     { "label": "靠谱赚钱", "labelEn": "Legit Earnings", "href": "/platforms.html" },
     { "label": "投稿", "labelEn": "Submit", "href": "/submit.html" }
   ]
