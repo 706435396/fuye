@@ -1,0 +1,2215 @@
+[
+  {
+    "id": 11,
+    "slug": "neovo-audio-evaluation",
+    "category": "side-hustles",
+    "tags": [
+      "AI众包",
+      "语音评测",
+      "美金任务",
+      "听音频",
+      "网易有灵"
+    ],
+    "tagsEn": [
+      "AI Crowdsourcing",
+      "Voice Evaluation",
+      "USD Tasks",
+      "Audio Listening",
+      "NetEase Youling"
+    ],
+    "date": "2026-11-17",
+    "readTime": 6,
+    "featured": true,
+    "emoji": "🎧",
+    "title": "听中文音频，轻松赚美金",
+    "titleEn": "Listen to Chinese Audio and Earn US Dollars Easily",
+    "excerpt": "听录音赚取美金的项目，零门槛、人人可做，只要有一部手机就可以开始赚美金。",
+    "excerptEn": "A project that earns US dollars by listening to audio. Zero barrier to entry — anyone with a phone can start.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "今天给大家分享的项目是：听录音赚取美金的项目，可以说这是一个零门槛，人人可做的项目，只要你有一部手机就可以开始赚美金。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-01.jpg",
+          "caption": "原文配图：公众号二维码（微信搜一搜\"灵境小窝\"获取渠道）"
+        },
+        {
+          "type": "p",
+          "text": "注：文中免费送上渠道。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-02.jpg",
+          "caption": "收款记录：Neovo 已收款项 +$0.35、+$24.00"
+        },
+        {
+          "type": "h2",
+          "text": "项目原理很简单："
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-03.jpg",
+          "caption": "加入 Neovo 页面（立即加入 / 常见问题 / 登录）"
+        },
+        {
+          "type": "p",
+          "text": "人工智能研发公司，为了优化机器人的语言能力，发布了大量的文本至语音转化评估任务，就是让你听一段录音，然后让你评价一下计算机生成的录音的质量和自然程度。"
+        },
+        {
+          "type": "p",
+          "text": "一条两美分，一个语音从一秒到十九秒都有，听完语音之后呢，会让你在最差，较差，一般，较好，非常好里面任选一个。我感觉我平均大概 10 秒能做一条，一分钟做六个，一个小时就做三百六十个，一条两美分，一个小时可以 7.2 美金，大概 50 人民币一个小时。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-04.jpg",
+          "caption": "Neovo 账号注册页面（用户名、邮箱、密码）"
+        },
+        {
+          "type": "h2",
+          "text": "如何做任务？"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-05.jpg",
+          "caption": "ProA Challenge 任务说明：语言测试与写作测试"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "获取渠道，在此公众号聊天框发送关键词\"Neovo\"，后台即会自动回复渠道地址。",
+            "账号注册，将渠道复制粘贴到浏览器中打开（打开以后是全英文的页面，可以用手机或电脑自带的翻译功能把网页翻译成中文）。"
+          ]
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-06.jpg",
+          "caption": "ProA 挑战界面：A new challenge awaits you（$0.02 USD）"
+        },
+        {
+          "type": "p",
+          "text": "平台示例：加入 Neovo，为更智能的 AI 世界做出贡献。收款记录显示已收款项 +$0.35、+$24.00。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Today I want to share a project: earning US dollars by listening to audio. It is a zero-barrier project that anyone can do — all you need is a phone to get started."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-01.jpg",
+          "caption": "Original image: WeChat QR code (search \"Lingjing Xiaowo\" for the channel)"
+        },
+        {
+          "type": "p",
+          "text": "Note: the channel is shared for free in this article."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-02.jpg",
+          "caption": "Payment records: Neovo received +$0.35 and +$24.00"
+        },
+        {
+          "type": "h2",
+          "text": "The principle is simple:"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-03.jpg",
+          "caption": "Join Neovo page (Join now / FAQ / Login)"
+        },
+        {
+          "type": "p",
+          "text": "AI research companies, in order to improve robots' language abilities, have released a large number of text-to-speech conversion evaluation tasks. You listen to a recording and then rate the quality and naturalness of the computer-generated audio."
+        },
+        {
+          "type": "p",
+          "text": "Each clip pays two cents, and each audio ranges from one to nineteen seconds. After listening, you choose from worst, poor, average, good, or very good. I can do about one clip in 10 seconds, six per minute, 360 per hour. At two cents each, that is 7.2 USD per hour, roughly 50 RMB."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-04.jpg",
+          "caption": "Neovo account registration page (username, email, password)"
+        },
+        {
+          "type": "h2",
+          "text": "How to do the task?"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-05.jpg",
+          "caption": "ProA Challenge task description: language and writing tests"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Get the channel: send the keyword \"Neovo\" in this official account chat box, and the backend will automatically reply with the channel address.",
+            "Register an account: copy and paste the channel into a browser to open it (the page is entirely in English; you can use your phone or computer's built-in translation to convert it to Chinese)."
+          ]
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src01-06.jpg",
+          "caption": "ProA challenge interface: a new challenge awaits you ($0.02 USD)"
+        },
+        {
+          "type": "p",
+          "text": "Platform example: Join Neovo and contribute to a smarter AI world. Payment records show received items of +$0.35 and +$24.00."
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "slug": "netease-youling-crowdsourcing",
+    "category": "side-hustles",
+    "tags": [
+      "众包答题",
+      "AI数据",
+      "手机兼职",
+      "美金任务",
+      "网易有灵"
+    ],
+    "tagsEn": [
+      "Crowdsourced Surveys",
+      "AI Data",
+      "Mobile Part-time",
+      "USD Tasks",
+      "NetEase Youling"
+    ],
+    "date": "2026-11-16",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "📱",
+    "title": "手机答题，轻松日入100+，提现秒到！！！",
+    "titleEn": "Answer Questions on Your Phone: Earn 100+ a Day, Instant Withdrawal!",
+    "excerpt": "用手机居家日入 100+ 的答题项目，网易旗下平台，提现秒到账。",
+    "excerptEn": "A phone-based answering project to earn 100+ a day at home, on a NetEase platform with instant withdrawals.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "说到用手机居家日入 100+，很多人都会觉得是假的，不是割韭菜就是骗子。我起初也是这样认为的，我以前觉得手机只能赚点奶茶钱，一天十块二十的就挺不错了，毕竟能用手机做的，门槛没那么高，做的人也多，收益自然就不会很高。但当我真正接触了用手机就可以日入100+的项目的时候，我才认识到以前是我见识短浅了，原来真有这样项目的存在。"
+        },
+        {
+          "type": "p",
+          "text": "这个项目时薪有 20-50，因为是答题获取收益，所以你答的越快正确率越高收益也会高一些，最重要的是提现秒到账。当然这种高收益项目还是有一点门槛的，就是要求你学习和理解能力要有，能看懂他们的规则，这个相信大部分人都是符合的。"
+        },
+        {
+          "type": "p",
+          "text": "这个项目能保持高收益的原因还有一个，就是知道这个项目的人比较少。我们都知道现在就业环境不是很好，大家都在想办法生活，只要有一个人发现了商机，其他人就一拥而上，随后可想而知的就是大家为了抢占商机都开始卷，慢慢的商机的收益就会被大家卷的低了，这个项目目前知道的人还是比较少的。"
+        },
+        {
+          "type": "p",
+          "text": "如果大家对这个感兴趣可以在评论区置顶获取渠道！我这篇文章设置了收费，请大家谅解，我设置收费的原因有两点：第一，知道的人多了项目的收益就卷低了，收费也是为了设置一个门槛。第二，创作不易，给大家整理和总结问题和经验也花了不少时间，大家放心，给大家分享的项目真实有效！下面我来具体和大家分享一下项目渠道和我的一些经验。"
+        },
+        {
+          "type": "h2",
+          "text": "一、平台是否安全，有保障？"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src02-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "这个大家放心，这个平台是网易旗下的平台，是为网易人工智能发展服务的。"
+        },
+        {
+          "type": "h2",
+          "text": "二、如何获取平台？"
+        },
+        {
+          "type": "p",
+          "text": "直接从手机应用商店搜索\"网易有灵众包\"，或直接在\"灵境小窝\"公众号输入\"有灵\"获取。"
+        },
+        {
+          "type": "h2",
+          "text": "三、如何登录？"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src02-02.jpg",
+          "caption": "提现到账记录：银行卡 +¥434.37"
+        },
+        {
+          "type": "p",
+          "text": "一开始直接用手机号注册一个账号就可以了，这里不用设置密码，直接手机号验证码登录。"
+        },
+        {
+          "type": "h2",
+          "text": "四、登录后一定要做的？"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "首先在\"我\"页面把账号和安全的信息填写好，包括实名认证和收款信息。实名认证是因为国家收税要求，收款目前支持支付宝和银行卡，提现是秒到账的。一个重要的点，实名认证和绑定的支付宝的实名认证和银行卡要是同一个人，否则提现会出问题的。",
+            "在\"培训\"页面把相关培训都看一遍，把考核都考了，因为任务有要求，有的要求正确率和勋章要求，这些我们都可以通过刷培训里的题目达到要求。",
+            "前期做题一定要保证正确率，后面正确率上来了再求速度。因为收益和正确率相关联，正确率越高收益也越高，反之正确率低可能会被限制答题。"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "五、其他问题？"
+        },
+        {
+          "type": "p",
+          "text": "有其他平台问题可以在\"培训\"页面的平台常见问题解答里找答案。如果这里也找不到，可以在\"我\"页面\"联系我们\"那里给平台发邮件，一般在工作日都会给你解决的，如果没回复可以多发两次。如果有其他问题可以公众号给我发消息，我看到了也会回复大家的。最后感谢大家的支持！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "When it comes to earning 100+ a day at home with a phone, many people think it is fake — either a scam or a trick. I used to think the same. I figured a phone could only earn pocket money, ten or twenty yuan a day was already good, because phone-based tasks have low barriers and lots of competition, so earnings are naturally not high. But when I actually came across a project that earns 100+ a day on a phone, I realized I was short-sighted — such projects really exist."
+        },
+        {
+          "type": "p",
+          "text": "This project pays an hourly rate of 20-50. Because you earn by answering questions, the faster you answer and the higher your accuracy, the more you earn — and most importantly, withdrawals are instant. Of course this high-earning project has a small threshold: you need learning and comprehension ability to understand their rules, which most people meet."
+        },
+        {
+          "type": "p",
+          "text": "Another reason this project maintains high earnings is that few people know about it. The job market is not good, everyone is looking for ways to make a living. Once one person finds a business opportunity, others flock in, and then everyone competes for it, gradually driving down the returns. Few people know about this project for now."
+        },
+        {
+          "type": "p",
+          "text": "If you are interested, you can get the channel from the pinned comment! I set a price for this article, please understand. There are two reasons: first, once more people know about it, the earnings get diluted, so the price is a threshold. Second, creating is not easy — it took me a lot of time to organize and summarize the questions and experience. Rest assured, the project I share is real and effective. Let me share the channel and my experience in detail."
+        },
+        {
+          "type": "h2",
+          "text": "1. Is the platform safe and guaranteed?"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src02-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "Rest assured, this platform is owned by NetEase and serves NetEase's AI development."
+        },
+        {
+          "type": "h2",
+          "text": "2. How to get the platform?"
+        },
+        {
+          "type": "p",
+          "text": "Search \"NetEase Youling Crowdsourcing\" directly in your phone's app store, or enter \"Youling\" in the \"Lingjing Xiaowo\" official account to get it."
+        },
+        {
+          "type": "h2",
+          "text": "3. How to log in?"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src02-02.jpg",
+          "caption": "Withdrawal record: bank card +CNY 434.37"
+        },
+        {
+          "type": "p",
+          "text": "Just register an account with your phone number. No password is needed — log in directly with a phone verification code."
+        },
+        {
+          "type": "h2",
+          "text": "4. What must you do after logging in?"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "First, fill in your account and security information on the \"Me\" page, including real-name verification and payment information. Real-name verification is due to national tax requirements. Payments currently support Alipay and bank cards, and withdrawals are instant. An important point: the real-name verification and the Alipay and bank card you bind must be the same person, otherwise withdrawals will have problems.",
+            "On the \"Training\" page, go through all the training and take the assessments, because tasks have requirements — some require accuracy and medal levels, which we can meet by brushing up on the training questions.",
+            "In the early stage, make sure to guarantee accuracy, then pursue speed once accuracy is up. Because earnings are linked to accuracy, higher accuracy means higher earnings; conversely, low accuracy may restrict your answering."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "5. Other questions?"
+        },
+        {
+          "type": "p",
+          "text": "For other platform questions, you can find answers in the FAQ on the \"Training\" page. If you still cannot find the answer, you can email the platform via \"Contact Us\" on the \"Me\" page; they usually resolve it on working days. If there is no reply, send a few more times. If you have other questions, you can message me on the official account and I will reply when I see them. Thanks for your support!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "slug": "tencent-souhuobang-tasks",
+    "category": "side-hustles",
+    "tags": [
+      "看视频写评论",
+      "众包任务",
+      "元宝提现",
+      "腾讯搜活帮",
+      "手机兼职"
+    ],
+    "tagsEn": [
+      "Video & Comment Tasks",
+      "Crowdsourcing",
+      "Yuanbao Withdrawal",
+      "Tencent Souhuo",
+      "Mobile Part-time"
+    ],
+    "date": "2026-11-15",
+    "readTime": 6,
+    "featured": false,
+    "emoji": "🎬",
+    "title": "看视频写评论，轻松时薪20+，提现秒到！",
+    "titleEn": "Watch Videos and Write Comments: Earn 20+ an Hour, Instant Withdrawal!",
+    "excerpt": "普通人可做、不需要任何专业技能的副业，腾讯旗下众包平台，提现秒到。",
+    "excerptEn": "A side hustle anyone can do with no professional skills, on a Tencent crowdsourcing platform with instant withdrawals.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "今天给大家分享一个普通人可做，不需要任何专业技能的副业。文章开始前，再次明确一下这个副业适合的人群：普通人、宝妈、普通的学生、普通的上班族。普通人虽说没有一技之长，但我们可以用双手去创造财富。接下来我会从项目原理、如何做项目、项目注意事项和项目渠道三个方面来给大家具体分享！"
+        },
+        {
+          "type": "h2",
+          "text": "一、项目原理？"
+        },
+        {
+          "type": "p",
+          "text": "首先，这是一个众包平台，是科技公司为了研发人工智能发布任务的平台。科技公司为了研发智能机器人，会需要大量的数据去训练机器人，而训练的数据都是百万级甚至亿万级的数据。庞大的数据，让科技公司不得不选择这种众包的形式去减少研发成本，由此大量的任务就被发布在众包平台上被我们做。"
+        },
+        {
+          "type": "h2",
+          "text": "二、如何做项目？"
+        },
+        {
+          "type": "p",
+          "text": "登录以后在\"任务\"页面我们可以看到有很多的任务。目前任务分为三类：一个是看视频写评论的，一个是审核视频内容和评论是否符合规范的，还有一个是文生图的任务。这三个任务，前两个相对比较简单，一个正确的提包有 0.3 的收益，平均一分钟就能做完一个题包。在做题前需要做一个简单的测试，通过了就可以参加答题。第三个相对难一些，当然收益也会高一些，同上也是需要做测试。因为前两个任务比较简单，所以做的人很多，经常会没题，没题了大家可以多刷新几遍就可以出来了。"
+        },
+        {
+          "type": "p",
+          "text": "第三个任务通过测试了任务应该是挺多的，因为测试有点难度，最近我也没去做，如果有感兴趣的小伙伴可以去试一下。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src03-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "h2",
+          "text": "三、注意事项？"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "收益是通过元宝发放的，100 元宝＝1 元，元宝是可以自动提现的，就是满 100 元宝，平台会自动给我们提现到微信的，所以有了收益以后绑定微信很重要。",
+            "我们可以关注平台的公众号，因为有任务上新时会通过公众号提醒我们的。",
+            "平台很靠谱，是腾讯家的，所以大家可以放心的做任务。"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "四、项目渠道？"
+        },
+        {
+          "type": "p",
+          "text": "公众号内输入\"搜活帮\"获取。"
+        },
+        {
+          "type": "p",
+          "text": "最后再啰嗦几句：无论任何项目，自己先操作，有了收益再总结经验，日积月累项目收益就多了。之前公众号分享的\"大赚一笔\"和\"小赚一笔\"项目，加上今天的，这些项目都是 0 投入，自己操作一下就可以赚到钱。熟悉了之后，多平台一起操作，将会是一笔非常不错的副业收入。各位加油！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Today I want to share a side hustle that anyone can do, requiring no professional skills. Before we start, let me clarify who this suits: ordinary people, stay-at-home moms, ordinary students, and ordinary office workers. Ordinary people may not have a special skill, but we can create wealth with our own hands. Next I will share this from three aspects: the project principle, how to do it, and precautions and channels!"
+        },
+        {
+          "type": "h2",
+          "text": "1. What is the project principle?"
+        },
+        {
+          "type": "p",
+          "text": "First, this is a crowdsourcing platform where tech companies post tasks to develop AI. To develop intelligent robots, tech companies need massive amounts of data to train them — millions or even hundreds of millions of records. Such huge data forces tech companies to choose crowdsourcing to reduce R&D costs, so a large number of tasks are posted on the crowdsourcing platform for us to do."
+        },
+        {
+          "type": "h2",
+          "text": "2. How to do the project?"
+        },
+        {
+          "type": "p",
+          "text": "After logging in, on the \"Tasks\" page we can see many tasks. Currently tasks fall into three categories: watching videos and writing comments, reviewing whether video content and comments comply with rules, and text-to-image tasks. The first two are relatively simple, each correct package earns 0.3, and you can finish one package in about a minute. Before doing the tasks you need to take a simple test, and once you pass you can participate. The third is relatively harder, but of course pays more, and also requires a test. Because the first two are simple, many people do them, and tasks often run out — just refresh a few times and they will appear."
+        },
+        {
+          "type": "p",
+          "text": "Once you pass the test for the third task, there should be plenty of tasks, because the test is a bit difficult. I have not done it recently, so if you are interested, you can give it a try."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src03-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "h2",
+          "text": "3. Precautions?"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Earnings are paid in Yuanbao; 100 Yuanbao = 1 yuan. Yuanbao can be withdrawn automatically — once you reach 100 Yuanbao, the platform automatically withdraws it to WeChat, so binding WeChat after earning is very important.",
+            "You can follow the platform's official account, because when new tasks are posted, the account will notify us.",
+            "The platform is reliable, it belongs to Tencent, so you can do tasks with confidence."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Project channel?"
+        },
+        {
+          "type": "p",
+          "text": "Enter \"Souhuo Bang\" in the official account to get it."
+        },
+        {
+          "type": "p",
+          "text": "A few last words: for any project, operate it yourself first, gain earnings, then summarize the experience, and over time the earnings add up. The \"Big Earn\" and \"Small Earn\" projects shared previously in the account, plus today's, are all zero-investment — just operate them yourself and you can earn money. Once familiar, operating multiple platforms together will be a very good side income. Keep going!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "slug": "paid-survey-sites-global",
+    "category": "side-hustles",
+    "tags": [
+      "美金问卷",
+      "Swagbucks",
+      "ySense",
+      "YouGov",
+      "海外副业"
+    ],
+    "tagsEn": [
+      "USD Surveys",
+      "Swagbucks",
+      "ySense",
+      "YouGov",
+      "Overseas Side Hustles"
+    ],
+    "date": "2026-11-14",
+    "readTime": 8,
+    "featured": false,
+    "emoji": "🌍",
+    "title": "最新问卷合集——美金问卷，一份5-10元！",
+    "titleEn": "Latest Survey Collection — USD Surveys, 5-10 RMB Each!",
+    "excerpt": "为数不多在国内可以做的国外问卷平台，赚的都是实打实的美金，平均一个问卷 5-10 元。",
+    "excerptEn": "A few foreign survey platforms you can do from home in China, earning real US dollars, 5-10 RMB per survey on average.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "国内的问卷想必大家都答过吧，每天收益实在有点低！那么今天给大家分享几个为数不多在国内可以做的国外的问卷平台，赚的都是实打实的美金，平均一个问卷就有 5-10 元的收益。最后送上一些我做十年问卷的心得！"
+        },
+        {
+          "type": "h2",
+          "text": "一、Swagbucks"
+        },
+        {
+          "type": "p",
+          "text": "Swagbucks 是最大和最可靠的付费调查网站之一，到目前为止，他们已经向世界各地的会员支付了超过 6 亿美元的奖励。调查大约需要 10 分钟完成，每次调查可以获得的金额为 50-150SB 点（100 SB = 1 美元或 0.77 英镑），这些 SB 可以兑换成美金或礼品卡。如果遇到好的调查问卷机会，每次调查可赚取高达 50 美元的奖励。这个平台不仅可以答问卷，还可以通过玩游戏、接受报价、搜索网页、进行网上购物和观看视频来获取 Swagbucks 积分。平台提现有最低提现门槛，需要达到十美金才可提现。获取请在此公众号对话框中输入\"美金问卷\"。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src04-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "h2",
+          "text": "二、ySense"
+        },
+        {
+          "type": "p",
+          "text": "一个老牌的国外问卷平台，问卷比较多，平台比较稳定，不仅可以答问卷，还可以做小任务获得美金。这些任务有多种形式，比如调查问卷、小任务（Offers）、看视频、玩游戏、购物返现等等。ySense 的提现支持 PayPal、Payoneer、Skrill 和很多商家的 Gift Card（如 Amazon、Walmart、Target 等等）。平台有最低提现门槛，需要十美金才可提现。获取请在此公众号对话框中输入\"美金问卷\"。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src04-02.jpg",
+          "caption": "问卷平台宣传图：Save Money, Make Money"
+        },
+        {
+          "type": "h2",
+          "text": "三、Yougov"
+        },
+        {
+          "type": "p",
+          "text": "它有大量的调查，当有新的调查时，你会收到一封电子邮件的邀请。调查可能需要 30 分钟，但是不是每天都有，基本上每两周收到一两份，所以可能需要几个月的时间才能达到提现的门槛。提现门槛视奖励而定，可以获得 PayPal 现金、亚航大积分、礼品卡、慈善捐款等多种奖励。平台有最低提现门槛，需要 50 元才可提现。获取请在此公众号对话框中输入\"美金问卷\"。"
+        },
+        {
+          "type": "h2",
+          "text": "问卷心得"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src04-03.jpg",
+          "caption": "海外问卷平台一览（平台 Logo 墙）"
+        },
+        {
+          "type": "p",
+          "text": "无论是国内还是国外的问卷各有各的优点：国内问卷虽然价低，但稳定、好提现、通过率高；国外的虽然价高，但不好提现，需要有一个派安盈或者贝宝账户，提现步骤比较繁琐。在这里给大家分享一下我答问卷的一些心得。"
+        },
+        {
+          "type": "p",
+          "text": "首先，到了一个新平台一定要把一些基本信息填完整，平台都是根据你的初始信息去给你匹配问卷的，信息越完整，推荐的问卷可能越多。其次，答问卷要细心，不要答太快，有些是陷阱题，选错了问卷就直接作废了，白白浪费了时间。最后，我们答问卷都要有耐心，要坚持，每天都去看看有没有适合自己的题目，收益是积累出来的。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "I am sure you have all answered domestic surveys, right? The daily earnings are really a bit low! So today I want to share a few foreign survey platforms that you can do from home in China, earning real US dollars, with an average of 5-10 RMB per survey. At the end I will share some tips from my ten years of doing surveys!"
+        },
+        {
+          "type": "h2",
+          "text": "1. Swagbucks"
+        },
+        {
+          "type": "p",
+          "text": "Swagbucks is one of the largest and most reliable paid survey sites. To date, they have paid out over 600 million dollars in rewards to members around the world. A survey takes about 10 minutes, and each survey earns 50-150 SB points (100 SB = 1 USD or 0.77 GBP), which can be redeemed for US dollars or gift cards. If you get a good survey opportunity, you can earn up to 50 USD per survey. This platform not only offers surveys, but also lets you earn Swagbucks points by playing games, accepting offers, searching the web, shopping online, and watching videos. The platform has a minimum withdrawal threshold of ten US dollars. To get it, enter \"USD Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src04-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "h2",
+          "text": "2. ySense"
+        },
+        {
+          "type": "p",
+          "text": "An established foreign survey platform with many surveys and a stable platform. You can not only answer surveys but also do small tasks to earn US dollars. These tasks come in various forms, such as surveys, small tasks (Offers), watching videos, playing games, and cashback shopping. ySense withdrawals support PayPal, Payoneer, Skrill, and many merchant Gift Cards (such as Amazon, Walmart, Target, etc.). The platform has a minimum withdrawal threshold of ten US dollars. To get it, enter \"USD Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src04-02.jpg",
+          "caption": "Survey platform promo: Save Money, Make Money"
+        },
+        {
+          "type": "h2",
+          "text": "3. YouGov"
+        },
+        {
+          "type": "p",
+          "text": "It has a large number of surveys, and when a new survey is available, you will receive an email invitation. A survey may take 30 minutes, but they are not posted every day — basically one or two every two weeks, so it may take several months to reach the withdrawal threshold. The withdrawal threshold varies by reward, and you can get PayPal cash, AirAsia Big Points, gift cards, charitable donations, and other rewards. The platform has a minimum withdrawal threshold of 50 RMB. To get it, enter \"USD Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "h2",
+          "text": "Survey tips"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src04-03.jpg",
+          "caption": "Overview of overseas survey platforms (logos)"
+        },
+        {
+          "type": "p",
+          "text": "Domestic and foreign surveys each have their own advantages: domestic surveys are low-priced but stable, easy to withdraw, and have a high approval rate; foreign ones pay more but are harder to withdraw, requiring a Payoneer or PayPal account, and the withdrawal steps are more complicated. Here I want to share some tips I have for answering surveys."
+        },
+        {
+          "type": "p",
+          "text": "First, when you join a new platform, make sure to fill in all the basic information — platforms match surveys based on your initial information, so the more complete the information, the more surveys may be recommended. Second, answer surveys carefully and do not answer too fast; some are trap questions, and if you choose wrong the survey is voided, wasting your time. Finally, we must be patient and persistent — check every day for questions that suit you, and earnings accumulate over time."
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "slug": "chinese-survey-platforms",
+    "category": "side-hustles",
+    "tags": [
+      "国内问卷",
+      "爱调研",
+      "一调网",
+      "收奖网",
+      "投吧"
+    ],
+    "tagsEn": [
+      "Domestic Surveys",
+      "AiDiaoyan",
+      "Yidiaowang",
+      "Shoujiangwang",
+      "Touba"
+    ],
+    "date": "2026-11-13",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "📋",
+    "title": "问卷项目，稳定月收益1000+",
+    "titleEn": "Survey Project: Stable Monthly Income of 1000+",
+    "excerpt": "总结了目前最稳定、收益还不错的几个问卷平台，积少成多也是不错的一笔收入。",
+    "excerptEn": "A summary of the most stable and decent-paying survey platforms — small amounts add up to a nice income.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "问卷大家都知道，是企业为了调研市场而发布的一些问题，从而了解用户的喜好，及时调整发展方向。企业为了鼓励用户答题，通常会给一些答题奖励，不过通常奖励都比较少，而且问卷量比较少，一个问卷还不够一瓶饮料的钱。虽然一个问卷的收益少，但积少成多也是不错的一笔收入。今天小编给大家总结了目前最稳定、收益还不错的几个问卷平台。"
+        },
+        {
+          "type": "p",
+          "text": "问卷的收益有两种方式：第一种，自己答问卷，劳动最光荣；第二种，一劳永逸，可以让你长期躺着赚钱，留个悬念，后面给大家揭晓。结尾免费送上问卷攻略。"
+        },
+        {
+          "type": "h2",
+          "text": "一、爱调研"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src05-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "据我所知，现在有很多调研平台都陆续关闭了，因为现在调研赚不到大钱了，只有一些老牌平台还在坚持。爱调研一个老牌平台，很稳定，问卷量和积分收益可以说是中等，不是很高，也不是很低。这个入口可以在此公众号对话框中输入关键词\"问卷\"获取。"
+        },
+        {
+          "type": "h2",
+          "text": "二、一调网"
+        },
+        {
+          "type": "p",
+          "text": "问卷可以说是很多，每天可以在这个上面刷问卷，一天赚个饭钱没问题。每个问卷 1-10 元不等。平台比较稳定，已经运营很多年了，一个老牌的问卷平台。这个平台很适合我开头说的躺赚，因为这个平台很稳定，不会突然就关闭。它还有一个邀请机制，就是你邀请新人，你会获得积分，而且以后你可以永久获得它的百分之十的积分，这样你邀请的人多了，你每天都会有收益。获取请在此公众号对话框中输入\"问卷\"。"
+        },
+        {
+          "type": "h2",
+          "text": "三、收奖网"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src05-02.jpg",
+          "caption": "问卷收益明细（微信零花钱）"
+        },
+        {
+          "type": "p",
+          "text": "一个老牌的问卷平台，它的问卷数量很多，几乎每天都有，很适合摸鱼或等公交的时候做一做。不说多，每天赚个饮料钱还是没问题的。这个平台也可以通过邀请人的方式去获得永久收益。获取请在此公众号对话框中输入\"问卷\"。"
+        },
+        {
+          "type": "h2",
+          "text": "四、投吧"
+        },
+        {
+          "type": "p",
+          "text": "目前平台也很稳定，题目比较多，可以综合前面几个平台，通过邀请的方法去达到一个长期的收入。获取请在此公众号对话框中输入\"问卷\"。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src05-03.jpg",
+          "caption": "问卷收益记录"
+        },
+        {
+          "type": "h2",
+          "text": "五、问卷攻略"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "抓住赚钱时机：每天登录平台看一下，看到问卷先做奖励金额大的，再做奖励金额小的。",
+            "判断问卷主题：根据问卷名选答案，侧重于它问卷名的方向去答，要不然很容易被筛选掉；前后作答要一致，不能前后回答矛盾；答问卷时长要符合要求，有的会说不能少于多长时间或者不能超过多长时间。",
+            "避免陷阱题：有时候问卷为了监测你有没有认真做，会给你插几个让你必须选什么的选项，这个时候我们要看清楚要求去选择，选择错了就会是无效问卷。"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "以上就是今天的分享了。一个平台做收益有限，多个平台一起做，积少成多，每天赚个零花钱没问题，这个利用的都是空闲时间，不用白不用。如果你想用碎片化时间赚更多可以看我分享的其他项目，所有项目都是小编实测，拒绝虚假！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "As we all know, surveys are questions posted by companies to research the market, understand user preferences, and adjust their development direction in time. To encourage users to answer, companies usually give some rewards, but the rewards are usually small and the number of surveys is limited — one survey is not even enough for a drink. Although the earnings per survey are small, they add up to a nice income. Today I have summarized a few of the most stable and decent-paying survey platforms."
+        },
+        {
+          "type": "p",
+          "text": "There are two ways to earn from surveys: first, answer surveys yourself — working is honorable; second, a one-time effort that lets you earn passively for a long time — I will leave you in suspense and reveal it later. The survey guide is free at the end."
+        },
+        {
+          "type": "h2",
+          "text": "1. AiDiaoyan"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src05-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "As far as I know, many survey platforms have closed one after another, because surveys no longer make big money, and only some established platforms persist. AiDiaoyan is an established platform, very stable, with medium survey volume and point earnings — not high, not low. You can get the entry by entering the keyword \"Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "h2",
+          "text": "2. Yidiaowang"
+        },
+        {
+          "type": "p",
+          "text": "There are a lot of surveys. You can brush through surveys every day and earn a meal's money. Each survey ranges from 1-10 RMB. The platform is stable and has been operating for many years — an established survey platform. This platform suits the passive earning I mentioned at the start, because it is stable and will not suddenly close. It also has an invitation mechanism: when you invite newcomers, you get points, and thereafter you permanently get 10% of their points. So if you invite more people, you will earn every day. To get it, enter \"Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "h2",
+          "text": "3. Shoujiangwang"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src05-02.jpg",
+          "caption": "Survey earnings details (WeChat pocket money)"
+        },
+        {
+          "type": "p",
+          "text": "An established survey platform with a large number of surveys, almost every day, great for doing during a break at work or waiting for the bus. Not to overstate it, earning a drink's money each day is no problem. This platform also lets you earn permanent income by inviting others. To get it, enter \"Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "h2",
+          "text": "4. Touba"
+        },
+        {
+          "type": "p",
+          "text": "The platform is currently stable with many questions. You can combine the previous platforms and use the invitation method to achieve a long-term income. To get it, enter \"Survey\" in this official account's dialog box."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src05-03.jpg",
+          "caption": "Survey earnings record"
+        },
+        {
+          "type": "h2",
+          "text": "5. Survey guide"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Seize the money-making timing: log in to the platform every day; when you see surveys, do the high-reward ones first, then the low-reward ones.",
+            "Judge the survey topic: choose answers based on the survey name and focus on the direction of the survey name, otherwise you are easily screened out; keep your answers consistent and not contradictory; meet the time requirement — some say it cannot be shorter or longer than a certain time.",
+            "Avoid trap questions: sometimes surveys insert options that force you to choose a specific answer to monitor whether you are answering seriously. Read the requirements carefully and choose accordingly; a wrong choice makes the survey invalid."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That is all for today. One platform has limited earnings; doing several together adds up, and earning pocket money every day is no problem — this uses only spare time, so why not? If you want to earn more with fragmented time, check out my other projects — all are personally tested by me, no false claims!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "slug": "product-testing-crowdsourcing",
+    "category": "side-hustles",
+    "tags": [
+      "产品测试",
+      "众包",
+      "用户体验",
+      "积分兑换"
+    ],
+    "tagsEn": [
+      "Product Testing",
+      "Crowdsourcing",
+      "User Experience",
+      "Points Redemption"
+    ],
+    "date": "2026-11-12",
+    "readTime": 6,
+    "featured": false,
+    "emoji": "🧪",
+    "title": "全网任务最多的测试平台，一个测试收益8元多！！！",
+    "titleEn": "The Platform with the Most Testing Tasks: Earn 8+ RMB per Test!",
+    "excerpt": "做一个测试竟然能有 8 元的收益，任务多收益还高，原理就是认真做一些公司为了了解用户需求的测试。",
+    "excerptEn": "A single test can earn 8 RMB. The principle: carefully do tests that companies use to understand user needs.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "做一个测试竟然能有 8 元的收益，这也太爽了吧！做梦都想不到，任务多收益还高！那么究竟是怎么做的呢？接下来小周和大家分享一下项目的原理：原理就是我们通过认真做一些公司为了了解用户的需求做产品设计一个测试，审核通过以后我们就可以获得收益。"
+        },
+        {
+          "type": "p",
+          "text": "接下来我来给大家具体的分享一下怎么做的，文末结尾送上平台和视频指导哦，视频指导能让大家少走弯路，让大家更快的去了解和熟悉这个平台，以免错过收益。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src06-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "首先来给大家看一下我做过的测试，基本上都是 1 元以上的收益，测试也很简单。根据收益的高低，做测试的时间也会有长有短，时间越长的收益也就越高，总得来说收益还是可以的。"
+        },
+        {
+          "type": "p",
+          "text": "然后我们来到主页这里看一下，这里有很多测试我们都可以做。主页这里的测试主要是一些积分测试，这里积分也可以积攒去兑换收益，一个积分可以兑换 0.05 的收益。也有直接是 1 元以上的测试，这样的测试会直接通知我们的，不用自己领取，我们看到了及时做就可以了。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src06-02.jpg",
+          "caption": "测试平台任务列表截图"
+        },
+        {
+          "type": "p",
+          "text": "在这里无论是积分测试还是收益测试，它们的通过率都挺高的，几乎是只要你做了，就会有收益。"
+        },
+        {
+          "type": "p",
+          "text": "最后给大家送上平台和视频指导，输入\"卷叔\"获取哦。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "A single test can actually earn 8 RMB — how amazing! I never dreamed of it: lots of tasks and high earnings! So how exactly does it work? Let me share the principle: we carefully do tests that companies design to understand user needs, and once approved, we earn."
+        },
+        {
+          "type": "p",
+          "text": "Next let me share how to do it in detail. At the end of the article I will give you the platform and video guide. The video guide helps you avoid detours and get familiar with the platform faster, so you do not miss out on earnings."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src06-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "First, let me show you the tests I have done — basically all earned over 1 RMB, and the tests are simple. Depending on the reward, the time to complete varies; longer tests pay more. Overall the earnings are decent."
+        },
+        {
+          "type": "p",
+          "text": "Then we come to the homepage, where there are many tests we can do. The tests on the homepage are mainly points tests, where points can be accumulated and redeemed for earnings — one point can be redeemed for 0.05. There are also tests that pay over 1 RMB directly; such tests notify us directly, no need to claim them ourselves — just do them in time when you see them."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src06-02.jpg",
+          "caption": "Testing platform task list screenshot"
+        },
+        {
+          "type": "p",
+          "text": "Here, whether points tests or earnings tests, the approval rate is quite high — basically as long as you do it, you will earn."
+        },
+        {
+          "type": "p",
+          "text": "Finally, the platform and video guide: enter \"Juanshu\" to get it."
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "slug": "survey-approval-tips",
+    "category": "side-hustles",
+    "tags": [
+      "问卷技巧",
+      "通过率",
+      "陷阱题",
+      "甄别题"
+    ],
+    "tagsEn": [
+      "Survey Tips",
+      "Approval Rate",
+      "Trap Questions",
+      "Screening Questions"
+    ],
+    "date": "2026-11-11",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "🎯",
+    "title": "狠狠拿捏！做问卷月收入再也没有低于1000+！",
+    "titleEn": "Nailed It: Never Earned Less Than 1000+ a Month from Surveys!",
+    "excerpt": "全网最全答问卷攻略，让你答问卷答到手机没电，通过率嘎嘎高，答一个过一个！",
+    "excerptEn": "The most complete survey guide on the web — answer until your phone dies, with a high approval rate.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "哈喽大家好，欢迎来到灵境小窝！今天给大家分享一个全网最全答问卷攻略，让你答问卷答到手机没电，通过率嘎嘎高答一个过一个！全网独一份，建议收藏！"
+        },
+        {
+          "type": "p",
+          "text": "问卷除了优质平台的问卷，大部分都是有技巧的，只有掌握了技巧才能在问卷中收获满满。如果你不想掌握技巧就想在做问卷中月收益 1000+，建议去小编分享的优质平台。下面开始全网最强答问卷分享，希望配合这些问卷平台能帮助大家月入 1000+！"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "h2",
+          "text": "要想问卷答的多，个人资料不能少！"
+        },
+        {
+          "type": "p",
+          "text": "完善个人资料不仅能获取相应的奖励，还会优先进入问卷投放目标人群库，这样收到问卷的机会就会大很多。相反，收到问卷的几率就会小得多。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-02.jpg",
+          "caption": "问卷收益明细"
+        },
+        {
+          "type": "h2",
+          "text": "慎用公共网络/设备"
+        },
+        {
+          "type": "p",
+          "text": "大部分调查为了确保样本全面和有效，如果同一 IP 下已有其他用户参与调查将不再推送给你。所以大家有条件的话能不用公共网络/设备就不用，用自己的网络和手机答最安全。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-03.jpg",
+          "caption": "网络配图：卷王表情包"
+        },
+        {
+          "type": "h2",
+          "text": "刷新用的好，调查少不了"
+        },
+        {
+          "type": "p",
+          "text": "及时刷新调查列表，在调查刚刚投放时，迅速抢占调查参与，先机先人一步，就是这么卷～"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-04.jpg",
+          "caption": "网络配图：柴犬戴眼镜"
+        },
+        {
+          "type": "h2",
+          "text": "答题质量要保证，这些问题要避免！"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "一避时间异常：时间过长或过短都会被筛选，认真答题时间最符合。一般问卷开始会有问卷所需时间时长，我们答问卷时看一下从什么时候开始的，答完符不符合所需时间，答快了可以等一下时间再提交。",
+            "二避陷阱题：阅题要仔细，让咱选 A 咱不选 B。有很多问卷里有陷阱题，就是让你必须选择那个选项，我们就按照要求选就可以了，一般陷阱题出现在比较长的问卷里。",
+            "三避开放题：题目要看清，问啥咱答啥，字数不能少，真实填写错不了。开放题大家一定不要乱写，因为既然有开放题，他们回收的时候会一个一个看的，乱写被筛选了就得不偿失了，如果不会写可以用 AI 写，总之不能乱写。",
+            "四避甄别和配额满：前中后信息填一致，甄别远离我，随时刷新，配额远离我。问卷前后填写的信息要一致，符合逻辑，例如：你前面选最近三个月没有喝过碳酸饮料，后面你选择了你最近经常喝可乐。",
+            "五避乱答题：多选勿全选，咱也不少选，符合自己最正确。答题逻辑填，前后信息一致不能忘。有些多选题虽然没有限制，但也不能全部选完。有些问卷开头有标题，看标题和什么有关，猜测一下问卷是调研什么的，有依据的去选择。"
+          ]
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-05.jpg",
+          "caption": "原文配图：注意、敲黑板、划重点"
+        },
+        {
+          "type": "h2",
+          "text": "要让问卷找上门，这些资料不能少"
+        },
+        {
+          "type": "p",
+          "text": "一有车，二有房，三有老人，四有孩子，五有工资不低一万块，六有咱家住一二线。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Hello everyone, welcome to Lingjing Xiaowo! Today I want to share the most complete survey guide on the web — answer surveys until your phone runs out of battery, with a high approval rate, one approved after another! Unique on the web, worth bookmarking!"
+        },
+        {
+          "type": "p",
+          "text": "Apart from surveys on quality platforms, most surveys require techniques; only by mastering the techniques can you reap rewards. If you want to earn 1000+ a month from surveys without mastering techniques, I suggest you go to the quality platforms I shared. Let us start the strongest survey sharing on the web, hoping to help everyone earn 1000+ a month with these survey platforms!"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "h2",
+          "text": "To answer more surveys, complete your profile!"
+        },
+        {
+          "type": "p",
+          "text": "Completing your profile not only earns corresponding rewards, but also gives you priority entry into the survey target audience pool, so you will get many more surveys. Otherwise, the chance of receiving surveys will be much smaller."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-02.jpg",
+          "caption": "Survey earnings details"
+        },
+        {
+          "type": "h2",
+          "text": "Use public networks/devices with caution"
+        },
+        {
+          "type": "p",
+          "text": "To ensure samples are comprehensive and valid, most surveys will not push to you if another user under the same IP has already participated. So if possible, avoid public networks/devices — using your own network and phone is safest."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-03.jpg",
+          "caption": "Memo image: \"roll king\" meme"
+        },
+        {
+          "type": "h2",
+          "text": "Refresh well, and surveys will follow"
+        },
+        {
+          "type": "p",
+          "text": "Refresh the survey list in time; when a survey is just posted, quickly seize the opportunity to participate — first come, first served, that is how competitive it is."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-04.jpg",
+          "caption": "Memo image: dog with glasses"
+        },
+        {
+          "type": "h2",
+          "text": "Ensure answer quality, avoid these problems!"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Avoid abnormal timing: too long or too short will be filtered; answering seriously fits best. Generally the survey states the required time at the start. Check when you started and whether you meet the required time when finishing; if too fast, wait a bit before submitting.",
+            "Avoid trap questions: read carefully — if they tell you to choose A, do not choose B. Many surveys have trap questions that force you to choose a specific option; just follow the requirement. Trap questions usually appear in longer surveys.",
+            "Avoid open questions: read the question carefully, answer what is asked, do not write too little, and fill in truthfully. Do not write randomly for open questions, because they will be read one by one when collected; being filtered for random writing is not worth it. If you cannot write, you can use AI — just do not write randomly.",
+            "Avoid screening and full quotas: keep information consistent from beginning to end, stay away from screening, refresh often, stay away from full quotas. Keep your answers consistent and logical, e.g., you said you had not drunk carbonated drinks in the last three months, but later you chose that you often drink cola.",
+            "Avoid random answering: for multiple choice, do not select all or too few — choose what fits you. Fill in logically, keep information consistent. Some multiple-choice questions have no limit, but do not select all. Some surveys have a title at the start; see what it is about, guess what the survey is researching, and choose with a basis."
+          ]
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src07-05.jpg",
+          "caption": "Original image: \"Note, listen up, key point\" meme"
+        },
+        {
+          "type": "h2",
+          "text": "To get surveys to come to you, these details matter"
+        },
+        {
+          "type": "p",
+          "text": "First, own a car; second, own a house; third, have elderly people; fourth, have children; fifth, a salary of no less than 10,000; sixth, live in a first- or second-tier city."
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "slug": "chat-to-earn-waku-risks",
+    "category": "scam-alerts",
+    "tags": [
+      "聊天赚钱",
+      "蛙趣",
+      "社交平台",
+      "打字赚钱"
+    ],
+    "tagsEn": [
+      "Chat for Money",
+      "Waqu",
+      "Social Platforms",
+      "Typing for Money"
+    ],
+    "date": "2026-11-10",
+    "readTime": 8,
+    "featured": false,
+    "emoji": "💬",
+    "title": "最新蓝海项目 0成本 只要会打字 小白也能日入三位数",
+    "titleEn": "Latest Blue Ocean Project: Zero Cost, Just Know How to Type, Beginners Can Earn Three Figures a Day",
+    "excerpt": "只要你会打字，会聊天，小白随随便便一天收入100+。别人回复你一句，你就有 0.15 的收益。",
+    "excerptEn": "If you can type and chat, a beginner can earn 100+ a day. Every reply from someone else earns you 0.15.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "哈喽大家好，今天给大家小编最近实测的一个项目，只要你会打字，会聊天，小白随随便便一天收入 100+。我将会从项目介绍、项目收益来源、项目注意事项以及项目渠道四个方面给大家分享，其中一定要认真看注意事项，和收益息息相关。"
+        },
+        {
+          "type": "h2",
+          "text": "一、项目介绍"
+        },
+        {
+          "type": "p",
+          "text": "项目很简单，通过聊天软件，只要别人回复你，你就有收益，让你体验吐字如金的感觉。别人回复一句，你就有 0.15 的收益。一小时轻轻松松几十块，关键 0 成本，纯收益。看到这里大家肯定会有质疑，认为是什么样的项目赚钱这么简单，这个最后给大家揭秘，我可以给大家说这是一个正规项目。"
+        },
+        {
+          "type": "h2",
+          "text": "二、项目收益来源"
+        },
+        {
+          "type": "p",
+          "text": "首先，聊天收益，就是如项目介绍说的一样，回复别人，一句 0.15 元。其次，你学会这个项目以后，你可以把项目打包出售给别人，一份卖几块甚至几十都可以，因为这个项目是真正的可以赚到钱。"
+        },
+        {
+          "type": "h2",
+          "text": "三、注意事项"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src08-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "性别一定要选女生，头像和名字也都选女生，怎么好看怎么来。因为这是一个社交平台，你的头像和昵称选好了才会有更多人来和你聊天。",
+            "年龄不要写 21，要写二一，要不然会违规。因为平台有一些违禁词，如果一旦检测到账号就会被封禁，里面的收益也会提不出来，大家一定不要违规！",
+            "一定不要关注对方，要不然就没收益。我们的收益主要是靠聊天，因为这个平台的机制是和别人聊天只要没相互关注，都会按句收费的。",
+            "一定不要聊骚，聊带颜色的，会封号。我们聊天就正常聊，不要聊一些违规话题。",
+            "不要诱导要礼物，不然容易被举报。正常聊天即可，不要索要礼物，一不小心就被别人举报。",
+            "不要加 V，平台上鱼龙混杂。"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "四、项目渠道"
+        },
+        {
+          "type": "p",
+          "text": "直接在手机应用商城搜索\"蛙趣\"下载。"
+        },
+        {
+          "type": "h2",
+          "text": "五、总结"
+        },
+        {
+          "type": "p",
+          "text": "总的来说这个项目还是能赚到钱，有的人可能接受不了这种赚钱方式，但项目全程是没有违规操作的，我们也是为平台提供活跃度。这个项目和陪玩很相似，陪玩是陪打游戏，而这个是陪聊天，但我们一定不要做违法的事，就正常聊天。这个项目小编也是从其他人那里买来的，大家不做的话，看看也好。如果大家有在这种类似社交平台聊天的，一定要记得不要被骗了。如果你觉得这个项目不适合自己，也可以去看看小编其他项目，都是小编实测真实有效的！今天的分享就到这里。如果你觉得这个项目不错，请在下方点赞支持小编。你的支持是我创作的最大动力。我的公众号专注于分享网络赚钱和被动收入，如果你不想错过任何一个赚钱项目，一定不要忘记关注我的公众号。我们下期再见，拜拜！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Hello everyone, today I want to share a project I recently tested myself — if you can type and chat, a beginner can easily earn 100+ a day. I will share it from four aspects: project introduction, income sources, precautions, and channels. Be sure to read the precautions carefully, as they are closely related to your earnings."
+        },
+        {
+          "type": "h2",
+          "text": "1. Project introduction"
+        },
+        {
+          "type": "p",
+          "text": "The project is simple: through a chat app, as long as someone replies to you, you earn — experience the feeling of every word being gold. Each reply earns you 0.15. You can easily make dozens of yuan an hour, and the key is zero cost, pure profit. Seeing this, you may doubt what kind of project could be this easy to make money — I will reveal it at the end, and I can tell you it is a legitimate project."
+        },
+        {
+          "type": "h2",
+          "text": "2. Income sources"
+        },
+        {
+          "type": "p",
+          "text": "First, chat income — as described in the introduction, replying to others earns 0.15 per message. Second, once you master this project, you can package and sell it to others for a few yuan or even dozens, because this project can really make money."
+        },
+        {
+          "type": "h2",
+          "text": "3. Precautions"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src08-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Choose female gender, and use a female avatar and name — the more attractive the better. Because this is a social platform, a good avatar and nickname will attract more people to chat with you.",
+            "Do not write the age as 21, write it as \"two one\", otherwise it violates rules. The platform has some banned words; once detected, the account will be banned and the earnings cannot be withdrawn. Be sure not to violate rules!",
+            "Never follow the other party, or you will earn nothing. Our income mainly comes from chatting, because the platform charges per message as long as you have not followed each other.",
+            "Never engage in flirty or explicit chat — you will be banned. Just chat normally, do not discuss prohibited topics.",
+            "Do not ask for gifts, or you may be reported. Just chat normally; do not request gifts, or you may be reported.",
+            "Do not add WeChat — the platform is a mixed bag."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Project channel"
+        },
+        {
+          "type": "p",
+          "text": "Search \"Waqu\" in your phone's app store to download."
+        },
+        {
+          "type": "h2",
+          "text": "5. Conclusion"
+        },
+        {
+          "type": "p",
+          "text": "Overall this project can still earn money. Some people may not accept this way of earning, but there is no violation throughout — we are also providing activity for the platform. This project is similar to accompanying gaming; gaming companionship is playing games together, while this is chatting companionship, but we must never do anything illegal — just chat normally. I bought this project from someone else, so even if you do not do it, it is worth a look. If you chat on similar social platforms, remember not to be scammed. If this project is not for you, you can check out my other projects — all are personally tested and truly effective. That is all for today. If you like this project, please like it to support me. Your support is my greatest motivation. My official account focuses on sharing online money-making and passive income. If you do not want to miss any money-making project, do not forget to follow my account. See you next time, bye!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "slug": "alipay-sesame-seeds",
+    "category": "scam-alerts",
+    "tags": [
+      "支付宝",
+      "芝麻粒",
+      "信用修复"
+    ],
+    "tagsEn": [
+      "Alipay",
+      "Zhima Points",
+      "Credit Repair"
+    ],
+    "date": "2026-11-09",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "🌰",
+    "title": "用支付宝也能挣钱？我打赌你不知道！",
+    "titleEn": "You Can Make Money with Alipay? I Bet You Didn't Know!",
+    "excerpt": "支付宝芝麻粒项目，零门槛、收益快，除了不是暴利项目，其他真的挑不出毛病了！",
+    "excerptEn": "The Alipay Zhima Points project: zero threshold, fast returns — except it is not a get-rich-quick scheme, there is really nothing to fault.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "有人用支付宝存钱，有人用支付宝借钱，但用支付宝还能挣钱大家知道嘛？我说的这个挣钱不是支付宝的理财，而是零门槛的一个项目，目前知道这个项目的人还是比较少的，现在入场还来得急！今天给大家分享的项目是：支付宝芝麻粒项目。原因很简单：零门槛、收益快，除了不是暴利项目，其他真的挑不出毛病了！"
+        },
+        {
+          "type": "h2",
+          "text": "项目原理很简单："
+        },
+        {
+          "type": "p",
+          "text": "在当前就业形势不是很好的情况下，有很多人支付宝发生了逾期行为，导致了他们的信用分下降。当信用分降至一定分数时，支付宝的很多功能将会被限制使用，如果长期逾期，甚至有被加入黑名单的风险，这是很危险的。"
+        },
+        {
+          "type": "p",
+          "text": "然后支付宝有一个可以修复逾期的功能，前提是用 30 个芝麻粒去修复逾期记录。但他们逾期的人由于信用很差，获得芝麻粒就很困难，于是就产生了芝麻粒助力这个项目。"
+        },
+        {
+          "type": "p",
+          "text": "这个项目很简单，就是他们发起芝麻粒助力，我们把自己的芝麻粒助力一下就可以。大家不用担心助力对自己的信用会不会有影响，这个完全是不会的，具体的大家可以参考芝麻粒的助力规则。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src09-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "我们一个月对一个人只能助力一次，助力一次最高 5 个芝麻粒，芝麻粒目前价格在 1.4 元一粒左右，所以说一次就可以收益 7 元。我们多给几个人助力就有几十甚至上百的收益。"
+        },
+        {
+          "type": "p",
+          "text": "我们不用担心芝麻粒用完了，如果在没有逾期情况，一天通过做一些小任务就可以轻轻松松几十甚至几百个芝麻粒。"
+        },
+        {
+          "type": "p",
+          "text": "很多人都会说，我有芝麻粒，可是哪里有人要呢？其实这个不用担心，要的人还是很多的，你可以去某鱼搜索一下芝麻粒，你就会看到有很多人想要芝麻粒，可以说市场潜力还是很大的。在某鱼我们还可以获得免费鱼币，通过鱼币我们还可以去推广我的芝麻粒，可以说都是免费的流量推广，让更多人看到我们的芝麻粒。"
+        },
+        {
+          "type": "p",
+          "text": "我为什么要推荐大家去做呢？首先，这个项目很简单，无任何门槛，没有任何复杂的操作，普通人看过一遍就会操作。其次，不用任何投资，自己做点小任务就可以获得芝麻粒。最后，目前这个项目知道的人比较少，市场潜力还是很大的。"
+        },
+        {
+          "type": "p",
+          "text": "以上就是今天的分享，大家感兴趣的话可以去实操一下，窝窝创作不易，如果能得到你的点赞和在看，窝窝会非常开心的，最后感谢大家的支持！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Some people save money with Alipay, some borrow money with Alipay, but did you know you can also make money with Alipay? I do not mean Alipay's wealth management products, but a zero-threshold project. Few people know about it for now, so it is not too late to get in! Today's project is: the Alipay Zhima Points project. The reason is simple: zero threshold, fast returns — except it is not a get-rich-quick scheme, there is really nothing to fault!"
+        },
+        {
+          "type": "h2",
+          "text": "The principle is simple:"
+        },
+        {
+          "type": "p",
+          "text": "With the current employment situation not being great, many people have defaulted on Alipay, causing their credit score to drop. When the credit score falls below a certain level, many Alipay functions will be restricted; if they default for a long time, there is even a risk of being blacklisted, which is very dangerous."
+        },
+        {
+          "type": "p",
+          "text": "Alipay has a feature to repair overdue records, but it requires 30 Zhima Points to repair an overdue record. Since people who have defaulted have poor credit, it is difficult for them to get Zhima Points, so the Zhima Points assistance project came into being."
+        },
+        {
+          "type": "p",
+          "text": "The project is simple: they initiate a Zhima Points assistance request, and we just help them with our own points. Do not worry about whether helping affects your own credit — it absolutely does not. For details, refer to the Zhima Points assistance rules."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src09-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "We can only help the same person once a month, and each assistance is up to 5 Zhima Points. The current price of a Zhima Point is about 1.4 RMB, so one assistance earns 7 RMB. Help a few more people and you can earn dozens or even hundreds."
+        },
+        {
+          "type": "p",
+          "text": "Do not worry about running out of Zhima Points. If you have no defaults, you can easily get dozens or even hundreds of Zhima Points a day by doing small tasks."
+        },
+        {
+          "type": "p",
+          "text": "Many people say, I have Zhima Points, but who wants them? Actually there is no need to worry — many people want them. Search \"Zhima Points\" on Xianyu and you will see many people looking for them; the market potential is huge. On Xianyu you can also get free fish coins, and use them to promote your Zhima Points — all free traffic promotion, letting more people see them."
+        },
+        {
+          "type": "p",
+          "text": "Why do I recommend doing this? First, the project is very simple, with no threshold and no complicated operations — anyone can do it after one look. Second, no investment is needed; just do some small tasks to get Zhima Points. Finally, few people know about it now, so the market potential is huge."
+        },
+        {
+          "type": "p",
+          "text": "That is all for today. If you are interested, you can try it out. I work hard to create, so if you like and share this, I would be very happy. Thanks for your support!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "slug": "wechat-video-monetization",
+    "category": "content-monetization",
+    "tags": [
+      "视频号",
+      "创作分成",
+      "内容搬运",
+      "二创",
+      "中老年市场"
+    ],
+    "tagsEn": [
+      "WeChat Channels",
+      "Creator Revenue Share",
+      "Content Reposting",
+      "Derivative Content",
+      "Senior Market"
+    ],
+    "date": "2026-11-08",
+    "readTime": 8,
+    "featured": false,
+    "emoji": "🎥",
+    "title": "腾讯搬砖项目，单号月入5000+",
+    "titleEn": "Tencent Video Reposting Project: 5000+ a Month per Account",
+    "excerpt": "微信视频号变现计划，只要发布的作品有浏览量就有收益，小编实测两个月单号收益可达 5000+。",
+    "excerptEn": "The WeChat Channels monetization plan: as long as your works get views, you earn. I tested it for two months and earned 5000+ per account.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "哈喽大家好，欢迎来到灵境小窝！今天给大家分享一个搬砖项目，项目稳定、靠谱，收益还不错，小编实测两个月单号收益可达 5000+。下面来和大家具体分享一下我是如何做到月入 5000+ 的。"
+        },
+        {
+          "type": "p",
+          "text": "项目就是最近很火的微信视频号变现计划，只要发布的作品有浏览量就有收益。整个项目的操作原理跟中视频计划差不多，但是它比中视频计划要更简单一些。大家可能不知道呀，之前的抖音跟头条的中视频计划真的是养活了非常多的创业公司。那这次的视频号变现计划一出来，意味着他们的春天又来了。当然只要我们肯下场去做，其实每个人都有很大的机会。"
+        },
+        {
+          "type": "h2",
+          "text": "收益原理"
+        },
+        {
+          "type": "p",
+          "text": "首先，我们来了解一下这个视频号变现计划的收益原理。中视频计划是官方平台直接给创作者分钱。视频号不一样，如果你参加的视频号的视频变现计划，平台就会自动在你视频的评论区，大概在第三条到第四条的位置，智能地挂载小广告。每个粉丝看到的广告都是不固定的，如果你喜欢玩游戏，那么大概率你在评论区看到的游戏广告会比较多。所以，给你分成给你发工资的其实是这些广告商。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src10-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "不过决定你能拿多少创作分成，还是得看你的视频的流量。播放量越多，那你的评论区曝光就会越高，自然拿到的分成就会越多。"
+        },
+        {
+          "type": "p",
+          "text": "给大家说一下参与视频号变现计划的方法：找到创作者中心，选择视频变现任务，然后申请加入就可加入了。前提是你的账号需要满足两个条件：一个是满足粉丝 100 人，一个是作品原创，才能顺利加入视频变现任务。"
+        },
+        {
+          "type": "h2",
+          "text": "发什么内容流量大"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src10-02.jpg",
+          "caption": "项目收益明细（提现记录）"
+        },
+        {
+          "type": "p",
+          "text": "接下来我给大家拆解一下账号发什么样的内容流量会比较大，比较容易拿到平台的创作分成。其实，视频号上大部分都是中老年群体，他们喜欢看一些养生的视频、猎奇的视频。最简单的方向就是去做搬运，去别的平台搬运别人做过的这些赛道，然后去做一个二次剪辑。"
+        },
+        {
+          "type": "p",
+          "text": "推荐几个比较容易上手的领域，比如民间故事、民间亲闻趣事、婆媳矛盾，还有养生类的视频。这些都是经过其他平台验证的有热度有流量的领域。甚至你还可以去搬运那些国外的视频。为了防止别人比你先搬运，最好是自己做一个二创剪辑，自己动手去修改这个视频。"
+        },
+        {
+          "type": "p",
+          "text": "还有一种就是真人出镜拍摄，可以自己去拍一些段子，去讲养生知识，或者拍别人火过的一些口播的视频，都是可以去参与这个视频变现分成的。在我看来，视频号的变现计划一定会是我们这些普通创作者的机会。"
+        },
+        {
+          "type": "p",
+          "text": "今天的分享就到这里。如果你觉得这个项目不错，请在下方点赞支持小编。你的支持是我创作的最大动力。我的公众号专注于分享网络赚钱和被动收入，如果你不想错过任何一个赚钱项目，一定不要忘记关注我的公众号。我们下期再见，拜拜！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Hello everyone, welcome to Lingjing Xiaowo! Today I want to share a reposting project, stable, reliable, with decent earnings — I tested it for two months and earned 5000+ per account. Let me share in detail how I achieved 5000+ a month."
+        },
+        {
+          "type": "p",
+          "text": "The project is the recently popular WeChat Channels monetization plan — as long as your published works get views, you earn. The whole operation is similar to the mid-video plan, but simpler. You may not know that the previous Douyin and Toutiao mid-video plans really supported a large number of startups. Now that the Channels monetization plan is out, it means their spring is here again. Of course, as long as we are willing to get started, everyone has a big opportunity."
+        },
+        {
+          "type": "h2",
+          "text": "Income principle"
+        },
+        {
+          "type": "p",
+          "text": "First, let us understand the income principle of this Channels monetization plan. The mid-video plan is where the official platform directly pays creators. Channels is different: if you join the video monetization plan, the platform will automatically place smart little ads in the comment section of your video, roughly at the third or fourth position. The ads each fan sees are not fixed — if you like games, you will likely see more game ads in the comments. So the ones paying you and giving you commissions are actually these advertisers."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src10-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "However, how much creator revenue share you can get depends on your video traffic. The more views, the higher your comment section exposure, and the more revenue share you naturally get."
+        },
+        {
+          "type": "p",
+          "text": "Here is how to join the Channels monetization plan: find the Creator Center, select the Video Monetization Task, and apply to join. The prerequisite is that your account must meet two conditions: at least 100 followers, and original works, to successfully join the video monetization task."
+        },
+        {
+          "type": "h2",
+          "text": "What content gets high traffic"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src10-02.jpg",
+          "caption": "Project earnings details (withdrawal records)"
+        },
+        {
+          "type": "p",
+          "text": "Next let me break down what kind of content gets high traffic and makes it easier to get the platform's creator revenue share. Actually, most users on Channels are middle-aged and elderly; they like watching health videos and novelty videos. The simplest direction is reposting — take popular tracks from other platforms and do a secondary edit."
+        },
+        {
+          "type": "p",
+          "text": "I recommend a few easy-to-start fields, such as folk stories, folk anecdotes, mother-in-law and daughter-in-law conflicts, and health videos. These are fields validated by other platforms as popular and high-traffic. You can even repost foreign videos. To prevent others from reposting before you, it is best to do your own derivative edit — modify the video yourself."
+        },
+        {
+          "type": "p",
+          "text": "Another option is real-person filming — shoot some skits yourself, talk about health knowledge, or film talking-head videos that others made popular; all can participate in this video monetization revenue share. In my view, the Channels monetization plan will definitely be an opportunity for us ordinary creators."
+        },
+        {
+          "type": "p",
+          "text": "That is all for today. If you like this project, please like it to support me. Your support is my greatest motivation. My official account focuses on sharing online money-making and passive income. If you do not want to miss any money-making project, do not forget to follow my account. See you next time, bye!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "slug": "amap-review-tasks",
+    "category": "side-hustles",
+    "tags": [
+      "高德地图",
+      "评论任务",
+      "达人卡",
+      "平台规则"
+    ],
+    "tagsEn": [
+      "Amap",
+      "Comment Tasks",
+      "Influencer Card",
+      "Platform Rules"
+    ],
+    "date": "2026-11-07",
+    "readTime": 6,
+    "featured": false,
+    "emoji": "🗺️",
+    "title": "评论小项目，一条评论3元左右！",
+    "titleEn": "Small Comment Project: About 3 RMB per Comment!",
+    "excerpt": "高德地图新出来一个评论活动，只需要去复制粘贴评论就有收益，一条评论3元左右。",
+    "excerptEn": "Amap has launched a new comment event — just copy and paste comments to earn, about 3 RMB per comment.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "哈喽大家好，欢迎来到灵境小窝！今天给大家分享非常简单的小项目，只要你有手机会复制粘贴就可以做，而且收益还不低。项目也是最近刚出来的，是高德地图新出来一个评论活动，只需要去复制粘贴评论就有收益。废话不多说，接下来我将从项目介绍、项目操作、总结三个方面来给大家分享。"
+        },
+        {
+          "type": "h2",
+          "text": "一、项目介绍"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src11-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "首先，项目其实就是高德地图最近推出的一个活动。我们要做的就是给这个入驻的商家写一个大于 50 字，并且配上三张图的一个优质评论。高德他就会给我们十张的达人卡，十张达人卡相当于 3 元左右。"
+        },
+        {
+          "type": "p",
+          "text": "而且评论也不需要我们自己写。大众点评下面它会有很多优质的评论，我们直接去把它复制下来，然后粘贴到我们高德评论区上面。因为它们不是同一个平台，所以它不会检测评论的原创度。"
+        },
+        {
+          "type": "h2",
+          "text": "二、项目操作"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src11-02.jpg",
+          "caption": "评论任务示例截图"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "打开高德地图，找到入驻的商家店铺。",
+            "去大众点评找一条大于 50 字、配上三张图的优质评论，复制下来。",
+            "把复制好的评论粘贴到高德地图该商家的评论区发布。",
+            "发布成功后，高德会给十张达人卡，十张达人卡相当于 3 元左右。"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "权益兑换示例：达人卡可兑换支付宝话费立减券、美食券等权益（如 118 达人卡兑支付宝 29.9 元话费立减券，148 达人卡兑满 50.01 减 50 美食券）。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src11-03.jpg",
+          "caption": "权益兑换卡示例（29.9 / 50 元档）"
+        },
+        {
+          "type": "h2",
+          "text": "三、总结"
+        },
+        {
+          "type": "p",
+          "text": "项目很简单，只要你有手机会复制粘贴就可以做，一条评论 3 元左右。感兴趣的小伙伴可以去试一下。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Hello everyone, welcome to Lingjing Xiaowo! Today I want to share a very simple small project — as long as you have a phone and can copy and paste, you can do it, and the earnings are not low. The project is also newly released: a comment event from Amap, where you just copy and paste comments to earn. Without further ado, I will share it from three aspects: project introduction, operation, and summary."
+        },
+        {
+          "type": "h2",
+          "text": "1. Project introduction"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src11-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "First, the project is actually a recent event launched by Amap. What we need to do is write a quality comment of more than 50 characters with three images for a registered merchant. Amap will then give us ten influencer cards, and ten influencer cards are worth about 3 RMB."
+        },
+        {
+          "type": "p",
+          "text": "And the comments do not need to be written by ourselves. Dianping has many quality comments below; we can just copy them and paste them into the Amap comment section. Because they are not the same platform, it will not check the originality of the comment."
+        },
+        {
+          "type": "h2",
+          "text": "2. Project operation"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src11-02.jpg",
+          "caption": "Comment task example screenshot"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Open Amap and find a registered merchant store.",
+            "Go to Dianping and find a quality comment of more than 50 characters with three images, and copy it.",
+            "Paste the copied comment into the merchant's comment section on Amap and publish it.",
+            "After publishing, Amap will give you ten influencer cards, and ten influencer cards are worth about 3 RMB."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Benefits redemption example: influencer cards can be redeemed for Alipay phone bill coupons, food coupons and other benefits (e.g., 118 influencer cards for a 29.9 RMB Alipay phone bill coupon, 148 influencer cards for a 50 off 50.01 food coupon)."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src11-03.jpg",
+          "caption": "Rewards redemption card example"
+        },
+        {
+          "type": "h2",
+          "text": "3. Summary"
+        },
+        {
+          "type": "p",
+          "text": "The project is very simple — as long as you have a phone and can copy and paste, you can do it, about 3 RMB per comment. Interested friends can give it a try."
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "slug": "paid-to-watch-ads",
+    "category": "side-hustles",
+    "tags": [
+      "看广告赚钱",
+      "金币",
+      "提现"
+    ],
+    "tagsEn": [
+      "Watch Ads for Money",
+      "Coins",
+      "Withdrawal"
+    ],
+    "date": "2026-11-06",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "📺",
+    "title": "看广告项目，一个广告0.1-1元，简单一天50+",
+    "titleEn": "Watch Ads Project: 0.1-1 RMB per Ad, Easily 50+ a Day",
+    "excerpt": "只要你有手机就可以做的、持续收益、提现秒到账的项目，平均每个广告 0.1-1 元。",
+    "excerptEn": "A project you can do with just a phone, with continuous earnings and instant withdrawals — 0.1-1 RMB per ad on average.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "哈喽大家好，欢迎来到灵境小窝。今天给大家分享一个只要你有手机就可以做的，而且是持续收益，提现秒到账的项目。同时为了感谢大家那么久的支持，这期项目小编提供全程指导，有兴趣的可以在文章最后获取渠道和全程指导。废话不多说，我们来看一下具体怎么操作？"
+        },
+        {
+          "type": "h2",
+          "text": "一、项目原理"
+        },
+        {
+          "type": "p",
+          "text": "商家为了增加商品和店铺的曝光量，会向广告商投放广告，每一个广告被用户看到就会产生收益。广告我们经常都能看到，无论什么软件多多少少都会有一些，因为软件的人流量多了以后广告也是软件一个非常丰厚的收益。但当我们在其他软件看到广告时，我们并没有任何收益，因为我们看的广告都是在为软件挣钱。"
+        },
+        {
+          "type": "p",
+          "text": "今天我们这个项目就是广告商开发的，让用户主动看广告，然后分给用户收益，收益没有软件克扣也是非常的丰厚，平均每个在 0.1-1 元。"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src12-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "其实看广告也是要有技巧的，有经验的看广告一个收益有 0.5 元，小白看一个才几分钱，这差距十倍都不止了，不过大家不用担心小编最后给大家提供指导。"
+        },
+        {
+          "type": "h2",
+          "text": "二、项目收益"
+        },
+        {
+          "type": "p",
+          "text": "项目门槛很低，只要你有手机有网络就可以。如果有多个闲置手机，还可以放大操作，日入 100+ 都不是问题。一个手机正常刷广告的话，一天能赚个买菜钱，前提是你得有经验指导，要不然一开始一个广告是几毛，后面慢慢就变几分了。我们要的是长期收益，细水长流，而不是只有一天的收益，长期一个月随随便便几百，虽然不是很多，但总比没有好。"
+        },
+        {
+          "type": "h2",
+          "text": "三、项目经验"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "打开平台以后在首页有很多类似的看广告的平台，大家可以多下两个，所有平台里的余额都是互通的。看广告过程中如果获得的金币低于 400 金额，可以换一个平台继续做任务，这样可以避免一直在一个平台里做任务金币越来越少的情况。",
+            "每天做任务之前一定要用多个关键词，分别在快手 app、抖音 app、浏览器上面进行搜索，搜索的关键词种类和个数越多，重复出现的广告就会减少，出现的广告类型就会多，金币就会多，大家一定要注意。",
+            "在每个平台里面做任务的时候，遇到广告能点的尽量都点下看下，这样增加账号权重，金额就会多。一定不要一直点红包看广告，如果一直这样，金币会越来越少的。",
+            "项目是满 0.3 元提现，满一元提现，5 元 10 元、100 元提现不受次数限制，随时可提现。"
+          ]
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src12-02.jpg",
+          "caption": "看广告项目收益明细"
+        },
+        {
+          "type": "h2",
+          "text": "四、注意事项"
+        },
+        {
+          "type": "p",
+          "text": "大家一定要注意，我们来平台只是看广告的，不要信广告里的任何内容，特别是要收费的，都不可信。重要的事情说三遍！请勿相信广告内容，谨防诈骗。请勿相信广告内容，谨防诈骗。请勿相信广告内容，谨防诈骗。能看到这篇文章的都是支持小编的，小编不想任何粉丝被诈骗，一定要牢记！"
+        },
+        {
+          "type": "h2",
+          "text": "五、项目渠道和全程指导"
+        },
+        {
+          "type": "p",
+          "text": "请在此公众号对话框内输入\"广告\"获取。今天的分享就到这里。如果你觉得小编的分享对你有用，请在下方点赞支持小编。你的支持是我创作的最大动力。我的公众号专注于分享网络赚钱和学习资料，如果你不想错过任何一个赚钱项目，一定不要忘记关注我的公众号。我们下期再见，拜拜！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Hello everyone, welcome to Lingjing Xiaowo. Today I want to share a project you can do as long as you have a phone, with continuous earnings and instant withdrawals. To thank you for your long support, this project comes with full guidance from me. If you are interested, you can get the channel and full guidance at the end of the article. Without further ado, let us see how to do it."
+        },
+        {
+          "type": "h2",
+          "text": "1. Project principle"
+        },
+        {
+          "type": "p",
+          "text": "To increase the exposure of goods and stores, merchants place ads with advertisers, and every ad viewed by a user generates revenue. We see ads all the time — every app has some, because once an app has a lot of traffic, ads become a very rich source of income for the app. But when we see ads in other apps, we get nothing, because the ads we watch are earning money for the app."
+        },
+        {
+          "type": "p",
+          "text": "Today's project is developed by advertisers: users actively watch ads and then share the revenue with the user. With no app taking a cut, the earnings are very generous, averaging 0.1-1 RMB per ad."
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src12-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "Actually watching ads requires skills too: experienced users earn 0.5 RMB per ad, while beginners only get a few cents — a gap of more than ten times. But do not worry, I will provide guidance at the end."
+        },
+        {
+          "type": "h2",
+          "text": "2. Project earnings"
+        },
+        {
+          "type": "p",
+          "text": "The threshold is very low — all you need is a phone and a network. If you have several spare phones, you can scale up; earning 100+ a day is no problem. With one phone normally browsing ads, you can earn grocery money a day, provided you have experienced guidance — otherwise an ad pays a few cents at first and gradually drops to a fraction of a cent. We want long-term earnings, a steady stream, not just one day. Over a month you can easily earn a few hundred — not much, but better than nothing."
+        },
+        {
+          "type": "h2",
+          "text": "3. Project experience"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "After opening the platform, you will see many similar ad-watching platforms on the homepage. You can download a couple more; the balances across all platforms are shared. If during watching the coins you get are below 400, switch to another platform to continue tasks, to avoid fewer and fewer coins from staying on one platform too long.",
+            "Before doing tasks every day, be sure to search with multiple keywords on the Kuaishou app, Douyin app, and browser. The more types and numbers of keywords you search, the fewer repeated ads appear, the more ad types appear, and the more coins you get — pay attention to this.",
+            "When doing tasks in each platform, click on ads whenever possible to increase your account weight and earn more. Never keep tapping the red packet to watch ads — if you do, coins will get fewer and fewer.",
+            "Withdrawals start at 0.3 RMB, 1 RMB, 5 RMB, 10 RMB, and 100 RMB with no limit on the number of withdrawals — withdraw anytime."
+          ]
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src12-02.jpg",
+          "caption": "Watch-ads project earnings details"
+        },
+        {
+          "type": "h2",
+          "text": "4. Precautions"
+        },
+        {
+          "type": "p",
+          "text": "Everyone must pay attention: we come to the platform only to watch ads. Do not believe anything in the ads, especially anything that charges a fee — all are untrustworthy. Three times for emphasis! Do not believe ad content, beware of scams. Do not believe ad content, beware of scams. Do not believe ad content, beware of scams. Everyone reading this supports me; I do not want any fan to be scammed — remember this well!"
+        },
+        {
+          "type": "h2",
+          "text": "5. Project channel and full guidance"
+        },
+        {
+          "type": "p",
+          "text": "Enter \"Ads\" in this official account's dialog box to get it. That is all for today. If you find my sharing useful, please like it to support me. Your support is my greatest motivation. My official account focuses on sharing online money-making and study materials. If you do not want to miss any project, do not forget to follow my account. See you next time, bye!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "slug": "short-sentence-writing",
+    "category": "content-monetization",
+    "tags": [
+      "短句创作",
+      "写作兼职",
+      "励志句子"
+    ],
+    "tagsEn": [
+      "Short Sentence Writing",
+      "Writing Jobs",
+      "Motivational Quotes"
+    ],
+    "date": "2026-11-05",
+    "readTime": 6,
+    "featured": false,
+    "emoji": "✍️",
+    "title": "短句创作，一句0.3元，数量无限制，每天可做",
+    "titleEn": "Short Sentence Writing: 0.3 RMB Each, Unlimited Quantity, Do It Every Day",
+    "excerpt": "写几句励志的句子，要独一无二，发布句子就有奖励，一句 0.3 元左右，数量无限制，每天可做。",
+    "excerptEn": "Write a few motivational sentences, make them unique — publishing sentences earns rewards, about 0.3 RMB each, unlimited quantity, doable every day.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "今天给大家分享一个\"短句创作\"的小项目：写几句励志的句子，要独一无二，发布句子就有奖励，一句 0.3 元左右，数量无限制，每天可做。"
+        },
+        {
+          "type": "h2",
+          "text": "收益方式"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src13-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "从平台的收益记录可以看到，收益主要有几种：发布句子奖励、句子被用户点赞奖励、分享图片被新用户浏览奖励。单条收益大概在 0.2-0.32 元之间，例如：发布句子奖励 0.27、0.32、0.30；句子被用户点赞奖励 0.20、0.29；分享图片被新用户浏览奖励 0.27。"
+        },
+        {
+          "type": "h2",
+          "text": "写作示例"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src13-02.jpg",
+          "caption": "短句创作收益明细（发布/点赞/浏览奖励）"
+        },
+        {
+          "type": "p",
+          "text": "任务要求：写几句励志的句子，要独一无二。参考示例："
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src13-03.jpg",
+          "caption": "励志短句创作示例（每日一句正能量）"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "勇往直前，成就非凡，你的人生将因你的坚持而闪耀。",
+            "梦想之翼，展翅高飞，让勇气与决心引领你飞向成功的彼岸。",
+            "坚定信念，铸就辉煌，用毅力和智慧书写属于你的传奇故事。",
+            "砥砺前行，共创辉煌，与他人一同奋斗，共同创造美好的未来。",
+            "勇攀高峰，超越自我，挑战极限，成就卓越的人生。",
+            "心怀梦想，砥砺前行，让坚定的信念成为你前行的动力。"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "渠道获取：微信搜一搜\"灵境小窝\"。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Today I want to share a small \"short sentence writing\" project: write a few motivational sentences, make them unique. Publishing sentences earns rewards — about 0.3 RMB each, unlimited quantity, doable every day."
+        },
+        {
+          "type": "h2",
+          "text": "Income methods"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src13-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "From the platform's earning records, there are several types of income: rewards for publishing sentences, rewards when your sentences are liked by users, and rewards when shared images are viewed by new users. Each item earns about 0.2-0.32 RMB, e.g., publishing sentence rewards of 0.27, 0.32, 0.30; sentence liked rewards of 0.20, 0.29; shared image viewed by new user reward of 0.27."
+        },
+        {
+          "type": "h2",
+          "text": "Writing examples"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src13-02.jpg",
+          "caption": "Short-sentence writing earnings details"
+        },
+        {
+          "type": "p",
+          "text": "Task requirement: write a few motivational sentences, make them unique. Reference examples:"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src13-03.jpg",
+          "caption": "Motivational sentence examples"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "March forward courageously and achieve the extraordinary; your life will shine because of your perseverance.",
+            "Wings of dreams, spread your wings and soar; let courage and determination guide you to the shore of success.",
+            "Firm conviction forges brilliance; write your own legendary story with perseverance and wisdom.",
+            "Press forward and create glory together; strive with others and create a better future together.",
+            "Climb the peak, surpass yourself, challenge your limits, and achieve an extraordinary life.",
+            "Keep your dreams in mind and press forward; let firm conviction become the driving force of your journey."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "To get the channel: search \"Lingjing Xiaowo\" on WeChat."
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "slug": "zuoyebang-question-dedup",
+    "category": "side-hustles",
+    "tags": [
+      "作业帮",
+      "题目判重",
+      "大学生兼职"
+    ],
+    "tagsEn": [
+      "Zuoyebang",
+      "Question Deduplication",
+      "Student Jobs"
+    ],
+    "date": "2026-11-04",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "📚",
+    "title": "大学生项目，月收益上千，任务每天更新，大平台，有保障！",
+    "titleEn": "A Project for College Students: Earn Thousands a Month, Tasks Updated Daily, Big Platform, Guaranteed!",
+    "excerpt": "大学生在家也可以兼职的平台，熟练以后时薪 18-20 左右，认真做一个月也有上千的收益。",
+    "excerptEn": "A part-time platform college students can do from home — 18-20 RMB per hour once skilled, thousands a month if you work seriously.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "哈喽大家好，欢迎来到灵境小窝！最近有大学生粉丝来问小编有没有大学生暑假可以在家做的项目，既然粉丝有需求，小编也是立即行动给大家分享项目，谁叫咱是一个宠粉小编呢！今天小编给大家分享一个大学生在家也可以兼职的平台，而且收益也不低，熟练以后，时薪有 18-20 左右，认真做一个月也有上千的收益，最重要的还是大平台，正规有保障！"
+        },
+        {
+          "type": "p",
+          "text": "平台主要面向的人群是学生和老师，但也有普通任务，就是无需专业知识背景，但此类任务比较少，如果感兴趣的也可以去关注一下。下面我将从项目介绍、项目要求、如何做项目、注意事项和项目渠道五个方面来给大家介绍。"
+        },
+        {
+          "type": "h2",
+          "text": "一、项目介绍"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src14-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "首先，平台我猜大家几乎或多或少都使用过，在初高中时，我们遇到不会的题目都有可能用它搜答案，它就是我们耳详能熟的作业辅导平台\"作业帮\"。作业帮是目前国内学习辅导行业的一大巨头，每天的使用量也是一个庞大的数字，所以作业帮每天有很大的业务量需要处理，所以平台的任务量是很大的，不要担心没有任务，几乎全年不断更新。"
+        },
+        {
+          "type": "h2",
+          "text": "二、项目要求"
+        },
+        {
+          "type": "p",
+          "text": "首先，平台任务几乎都是在电脑上完成的，所以你需要有一台电脑。其次，注册平台时你需要进行实名认证和学生认证或教师认证，大平台大家可以放心认证。进行实名认证是因为后面的提现要求，进行学生认证或教师认证是根据你选择的身份进行对应认证。"
+        },
+        {
+          "type": "h2",
+          "text": "三、如何做项目"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src14-02.jpg",
+          "caption": "题目判重任务列表"
+        },
+        {
+          "type": "p",
+          "text": "首先，注册和认证以后我们就可以来到平台，找到任务领取页面。目前平台主要的任务是题目判重，其实很简单，题目一般是小、初、高题目，主要是判断两个题目是相同还是不相同。一题两分钱，做题很快，熟练了以后平均 2-5 秒一题，时薪也有 18-20 左右，这个收益当做兼职的话是非常可观了。"
+        },
+        {
+          "type": "p",
+          "text": "做题目前大家要通过一个平台的培训和测试，这也是为了让大家更熟悉平台的任务要求。培训和测试很简单，一共 20 题测试题，满分 100 分，90 分以上可以通过测试，小编测试 90 分，也是轻松通过，相信大家一定也会通过的。"
+        },
+        {
+          "type": "h2",
+          "text": "四、注意事项"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src14-03.jpg",
+          "caption": "作业帮平台操作界面"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "正确填写提现信息，因为当你收益达到 10 以后，平台每月底会自动提现到银行卡。",
+            "认真答题，平台对正确率也是有要求的，如果你正常认真答题，都能够达到要求，除非你不想做，乱答题，这种平台会取消答题权限。目前平台规则是：当你正确率≤80％警告，≤70％封禁 2 天，≤60％取消做题权限。",
+            "平台每天上题有固定的时间，目前是每天上午 6:00-7:00 上 10w 题，下午 19:00-20:00 上 40w 题。时间如果有变动平台会有通知，因为平台人也挺多的，所以大家一定要准时准点去做题，过了时间段，可能要等下一批题目了。",
+            "建议大家加入官方的微信群，因为有什么做题上的问题会在群里分享并解决，群在平台会有提示让你加入的。"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "五、项目渠道"
+        },
+        {
+          "type": "p",
+          "text": "在此公众号对话框内输入\"百川众包\"获取。今天的分享就到这里。如果你觉得小编的分享对你有用，请在下方点赞支持小编。你的支持是我创作的最大动力。我们下期再见，拜拜！"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Hello everyone, welcome to Lingjing Xiaowo! Recently some college student fans asked me whether there is a project they can do from home during the summer break. Since fans asked, I acted immediately to share a project — that is what a fan-pampering editor does! Today I want to share a platform where college students can work part-time from home, and the earnings are not low — 18-20 RMB per hour once skilled, and a thousand-plus a month if you work seriously. Most important, it is a big platform, legitimate and guaranteed!"
+        },
+        {
+          "type": "p",
+          "text": "The platform mainly targets students and teachers, but there are also ordinary tasks that require no professional background, though there are fewer of these — if interested, you can also check them out. Next I will introduce it from five aspects: project introduction, requirements, how to do it, precautions, and channel."
+        },
+        {
+          "type": "h2",
+          "text": "1. Project introduction"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src14-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "First, I guess almost everyone has used this platform more or less — in junior and senior high school, when we encountered a problem we could not solve, we might use it to search for answers. It is the familiar tutoring platform \"Zuoyebang\". Zuoyebang is currently a giant in China's learning tutoring industry, with a huge daily usage, so it has a large amount of business to process every day, and the platform has a large volume of tasks. Do not worry about no tasks — they are updated almost year-round."
+        },
+        {
+          "type": "h2",
+          "text": "2. Project requirements"
+        },
+        {
+          "type": "p",
+          "text": "First, the platform tasks are almost all done on a computer, so you need a computer. Second, when registering you need real-name verification and student or teacher verification — it is a big platform, so you can verify with confidence. Real-name verification is for later withdrawal requirements; student or teacher verification is based on the identity you choose."
+        },
+        {
+          "type": "h2",
+          "text": "3. How to do the project"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src14-02.jpg",
+          "caption": "Question deduplication task list"
+        },
+        {
+          "type": "p",
+          "text": "First, after registration and verification, we can come to the platform and find the task claim page. The platform's main task currently is question deduplication — quite simple. The questions are generally primary, junior, and senior high school questions, and you mainly judge whether two questions are the same or different. Two cents per question, and you can do them fast — once skilled, about 2-5 seconds each, 18-20 RMB per hour, which is very decent as a part-time job."
+        },
+        {
+          "type": "p",
+          "text": "Before doing the questions, everyone needs to pass a platform training and test, to make you more familiar with the task requirements. The training and test are simple — 20 test questions, 100 points total, and 90 points or above passes. I scored 90 and passed easily, and I believe you will pass too."
+        },
+        {
+          "type": "h2",
+          "text": "4. Precautions"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src14-03.jpg",
+          "caption": "Zuoyebang platform interface"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Fill in withdrawal information correctly, because once your earnings reach 10, the platform automatically withdraws to your bank card at the end of each month.",
+            "Answer seriously — the platform has accuracy requirements. If you answer normally and seriously, you can meet them; unless you do not want to do it and answer randomly, in which case the platform will cancel your answering permission. Current platform rules: accuracy ≤80% warning, ≤70% ban for 2 days, ≤60% cancel answering permission.",
+            "The platform posts questions at fixed times every day, currently 6:00-7:00 AM with 100k questions, and 19:00-20:00 with 400k questions. If the time changes, the platform will notify you. Because there are many people on the platform, you must do the questions exactly on time; if you miss the window, you may have to wait for the next batch.",
+            "It is recommended to join the official WeChat group, because any questions about doing the tasks will be shared and solved in the group — the platform will prompt you to join."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "5. Project channel"
+        },
+        {
+          "type": "p",
+          "text": "Enter \"Baichuan Crowdsourcing\" in this official account's dialog box to get it. That is all for today. If you find my sharing useful, please like it to support me. Your support is my greatest motivation. See you next time, bye!"
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "slug": "data-entry-jobs-scams",
+    "category": "scam-alerts",
+    "tags": [
+      "录入兼职",
+      "打字赚钱"
+    ],
+    "tagsEn": [
+      "Data Entry",
+      "Typing for Money"
+    ],
+    "date": "2026-11-03",
+    "readTime": 7,
+    "featured": false,
+    "emoji": "🛡️",
+    "title": "录入日赚5-200+，手机电脑均可",
+    "titleEn": "Data Entry: Earn 5-200+ a Day, Phone or Computer Both Work",
+    "excerpt": "最近在抖音和快手上宣传非常火的项目——线上录入项目，声称每天打字就能日赚 100 到 500 元。",
+    "excerptEn": "A project heavily promoted on Douyin and Kuaishou lately — online data entry, claiming you can earn 100 to 500 RMB a day by typing.",
+    "content": {
+      "zh": [
+        {
+          "type": "p",
+          "text": "今天给大家分享一个最近在抖音和快手上宣传非常火的项目——线上录入项目。这个项目声称只需每天打字就能日赚 100 到 500 元，但真实情况如何呢？让我们一起来看下。"
+        },
+        {
+          "type": "h2",
+          "text": "一、日赚 100 到 500 是真假？"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src15-01.jpg",
+          "caption": "原文配图：公众号二维码"
+        },
+        {
+          "type": "p",
+          "text": "项目能赚钱不假，但没有主播宣传的日赚 500 那么多。经过小编的亲测，我发现单号收益实际上在 5-200 元之间，因为任务数量是有限的。一旦一个账号完成了当天任务，就需要更换账号继续。"
+        },
+        {
+          "type": "h2",
+          "text": "二、录入项目为什么会爆火？"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src15-02.jpg",
+          "caption": "录入平台注册界面"
+        },
+        {
+          "type": "p",
+          "text": "这个项目之所以突然爆火，原因在于\"打字赚钱\"在过去一直被视为诈骗项目。但现在，这个项目真的出现了，而且是完全免费的，无需支付任何押金。你只需打字，就能赚钱。由于需求量大，这个项目迅速走红。"
+        },
+        {
+          "type": "h2",
+          "text": "三、如何操作？"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src15-03.jpg",
+          "caption": "录入训练项目列表"
+        },
+        {
+          "type": "p",
+          "text": "平台登录成功后，进入赚钱模式。操作流程分为四步：训练（熟悉规则、获得技能）、赚钱（所见所录、累积金结）、提现（五元提现、快速到账）、福利（更多福利、快来体验）。"
+        },
+        {
+          "type": "p",
+          "text": "先去训练中心获得技能：通过训练规则图例掌握录入技巧，通过小测验达成技能成就，开启赚钱的第一步。训练项目包括：自然场景录入（奖励进行中，点击开始训练）、公式录入训练、日文录入训练、作业批改训练、对话分类等。"
+        }
+      ],
+      "en": [
+        {
+          "type": "p",
+          "text": "Today I want to share a project that has been heavily promoted on Douyin and Kuaishou lately — online data entry. This project claims you can earn 100 to 500 RMB a day just by typing, but what is the real situation? Let us take a look."
+        },
+        {
+          "type": "h2",
+          "text": "1. Is earning 100 to 500 a day real?"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src15-01.jpg",
+          "caption": "Original image: WeChat official account QR code"
+        },
+        {
+          "type": "p",
+          "text": "It is true that the project can make money, but not as much as the 500 a day the hosts claim. After my personal testing, I found that the actual earnings per account are between 5-200 RMB, because the number of tasks is limited. Once an account completes the day's tasks, you need to switch accounts to continue."
+        },
+        {
+          "type": "h2",
+          "text": "2. Why did the data entry project suddenly become popular?"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src15-02.jpg",
+          "caption": "Data-entry platform signup interface"
+        },
+        {
+          "type": "p",
+          "text": "The reason this project suddenly became popular is that \"typing to make money\" used to be regarded as a scam. But now this project has really appeared, and it is completely free with no deposit required. You just type, and you earn. Due to high demand, the project quickly went viral."
+        },
+        {
+          "type": "h2",
+          "text": "3. How to operate?"
+        },
+        {
+          "type": "img",
+          "src": "assets/images/src15-03.jpg",
+          "caption": "Data-entry training project list"
+        },
+        {
+          "type": "p",
+          "text": "After a successful platform login, enter the earning mode. The process has four steps: Training (familiarize with rules, gain skills), Earn (what you see is what you record, accumulate earnings), Withdraw (withdraw from five yuan, fast arrival), Benefits (more benefits, come and experience)."
+        },
+        {
+          "type": "p",
+          "text": "First go to the training center to gain skills: master entry techniques through rule diagrams, achieve skill accomplishments through quizzes, and take the first step toward earning. Training items include: natural scene entry (rewards in progress, click to start training), formula entry training, Japanese entry training, homework grading training, dialogue classification, etc."
+        }
+      ]
+    }
+  }
+]

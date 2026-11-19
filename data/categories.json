@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "side-hustles",
+    "name": "副业项目",
+    "nameEn": "Side Hustles",
+    "description": "适合普通人上手的各种网上副业项目盘点与实操指南。",
+    "descriptionEn": "A curated list of practical online side hustles anyone can start.",
+    "icon": "💼",
+    "color": "#6366f1"
+  },
+  {
+    "slug": "affiliate-marketing",
+    "name": "联盟营销",
+    "nameEn": "Affiliate Marketing",
+    "description": "通过推荐产品赚取佣金的被动收入玩法。",
+    "descriptionEn": "Earn passive commissions by recommending products you trust.",
+    "icon": "🤝",
+    "color": "#8b5cf6"
+  },
+  {
+    "slug": "freelancing",
+    "name": "自由职业",
+    "nameEn": "Freelancing",
+    "description": "用技能换金钱，接单平台与定价策略全解析。",
+    "descriptionEn": "Turn your skills into income with the best freelance platforms.",
+    "icon": "🧑‍💻",
+    "color": "#0ea5e9"
+  },
+  {
+    "slug": "content-monetization",
+    "name": "内容变现",
+    "nameEn": "Content Monetization",
+    "description": "博客、短视频、自媒体从流量到收入的路径。",
+    "descriptionEn": "Turn blogs, videos and social media traffic into revenue.",
+    "icon": "✍️",
+    "color": "#ec4899"
+  },
+  {
+    "slug": "ecommerce",
+    "name": "电商创业",
+    "nameEn": "E-commerce",
+    "description": "无货源、跨境电商与数字产品的低成本起步方法。",
+    "descriptionEn": "Low-cost ways to start dropshipping and digital product stores.",
+    "icon": "🛒",
+    "color": "#f59e0b"
+  },
+  {
+    "slug": "passive-income",
+    "name": "被动收入",
+    "nameEn": "Passive Income",
+    "description": "一次搭建，持续产生收益的睡后收入管道。",
+    "descriptionEn": "Build income streams that keep earning while you sleep.",
+    "icon": "🌱",
+    "color": "#10b981"
+  },
+  {
+    "slug": "tool-reviews",
+    "name": "工具测评",
+    "nameEn": "Tool Reviews",
+    "description": "提升副业效率的 AI 工具、建站工具与平台测评。",
+    "descriptionEn": "Reviews of AI, website and platform tools for side hustlers.",
+    "icon": "🛠️",
+    "color": "#14b8a6"
+  },
+  {
+    "slug": "scam-alerts",
+    "name": "避坑指南",
+    "nameEn": "Scam Alerts",
+    "description": "识别网上赚钱骗局，守住你的时间与本金。",
+    "descriptionEn": "Spot online money-making scams before they cost you.",
+    "icon": "🛡️",
+    "color": "#ef4444"
+  }
+]

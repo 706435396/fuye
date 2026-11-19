@@ -1,0 +1,31 @@
+{
+  "site": {
+    "name": "副业掘金",
+    "nameEn": "Side Hustle Hub",
+    "tagline": "让每个普通人都能找到靠谱的网上副业",
+    "taglineEn": "Practical side hustles for ordinary people",
+    "description": "副业掘金专注分享真实可行的网上副业项目、赚钱教程、工具测评与避坑指南，帮助普通人利用碎片时间增加额外收入。",
+    "descriptionEn": "Side Hustle Hub shares real, actionable online side hustles, money-making tutorials, tool reviews and scam alerts to help ordinary people earn extra income.",
+    "url": "https://fuyemoney.pages.dev",
+    "author": "副业掘金编辑部",
+    "authorEn": "Side Hustle Hub Team",
+    "email": "hello@example.com",
+    "keywords": ["网上副业", "副业赚钱", "兼职", "被动收入", "联盟营销", "自由职业", "网上赚钱", "副业项目"],
+    "keywordsEn": ["side hustle", "make money online", "affiliate marketing", "freelancing", "passive income", "work from home"],
+    "themeColor": "#6366f1",
+    "gaId": "",
+    "footerLinks": [
+      { "label": "关于我们", "labelEn": "About", "href": "/about.html" },
+      { "label": "免责声明", "labelEn": "Disclaimer", "href": "/disclaimer.html" },
+      { "label": "联系我们", "labelEn": "Contact", "href": "mailto:hello@example.com" }
+    ]
+  },
+  "nav": [
+    { "label": "首页", "labelEn": "Home", "href": "/" },
+    { "label": "副业项目", "labelEn": "Side Hustles", "href": "/category/side-hustles.html" },
+    { "label": "联盟营销", "labelEn": "Affiliate", "href": "/category/affiliate-marketing.html" },
+    { "label": "自由职业", "labelEn": "Freelancing", "href": "/category/freelancing.html" },
+    { "label": "被动收入", "labelEn": "Passive Income", "href": "/category/passive-income.html" },
+    { "label": "避坑指南", "labelEn": "Scam Alerts", "href": "/category/scam-alerts.html" }
+  ]
+}

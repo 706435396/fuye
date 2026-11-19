@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Pages
+
+# 方案A（推荐）：Cloudflare Pages 直接连接 GitHub 仓库，无需此文件。
+# 方案B（备用）：若需用 Actions 部署，在仓库 Settings > Secrets 添加：
+#   CLOUDFLARE_API_TOKEN  CLOUDFLARE_ACCOUNT_ID
+# 然后启用本 workflow（把 .github/workflows/deploy.yml.disabled 重命名为 deploy.yml）。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=fuyemoney-blog --branch=main

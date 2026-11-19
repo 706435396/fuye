@@ -1,0 +1,15 @@
+{
+  "name": "fuyemoney-blog",
+  "version": "1.0.0",
+  "description": "副业掘金 - GitHub + Cloudflare Pages 双语副业赚钱博客",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx --yes serve dist -l 3000",
+    "preview": "npx --yes serve dist -l 3000"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["blog", "side-hustle", "cloudflare-pages", "static-site", "bilingual"]
+}
