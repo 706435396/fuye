@@ -725,3 +725,31 @@ html[data-theme="dark"] .header-search button { background: #4b5568; }
   .header-search { display: none; }
   .site-header { top: 40px; }
 }
+
+/* 门户内容页主区（分类/平台/专栏/投稿/静态页套C模板） */
+.portal-content { padding: 20px 22px 28px; }
+.portal-content .page-header { margin-top: 0; padding-top: 4px; }
+.portal-content .page-hero { padding: 6px 0 18px; text-align: left; }
+.portal-content .page-hero .page-icon { font-size: 2.4rem; }
+.portal-content .page-hero h1 { font-size: 1.6rem; }
+.portal-content .page-hero p { margin-left: 0; }
+.portal-content .breadcrumb { margin-bottom: 14px; }
+.portal-content .nav-cat-grid, .portal-content .scam-grid, .portal-content .home-cat-grid { grid-template-columns: 1fr; }
+.portal-content .notice-box { margin: 16px 0; }
+.portal-content .filter-bar { margin: 16px 0; }
+.portal-content .static-page { max-width: none; }
+.portal-content .not-found { text-align: center; padding: 40px 10px; }
+
+/* 门户内容页主区（分类/平台/专栏/投稿/静态页套C模板） */
+.portal-content { padding: 20px 22px 28px; }
+.portal-content .page-header { margin-top: 0; padding-top: 4px; }
+.portal-content .page-hero { padding: 6px 0 18px; text-align: left; }
+.portal-content .page-hero .page-icon { font-size: 2.4rem; }
+.portal-content .page-hero h1 { font-size: 1.6rem; }
+.portal-content .page-hero p { margin-left: 0; }
+.portal-content .breadcrumb { margin-bottom: 14px; }
+.portal-content .nav-cat-grid, .portal-content .scam-grid, .portal-content .home-cat-grid { grid-template-columns: 1fr; }
+.portal-content .notice-box { margin: 16px 0; }
+.portal-content .filter-bar { margin: 16px 0; }
+.portal-content .static-page { max-width: none; }
+.portal-content .not-found { text-align: center; padding: 40px 10px; }

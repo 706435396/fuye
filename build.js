@@ -372,60 +372,78 @@ ${body}
 </html>`;
 }
 
-/* ---------- 页面生成 ---------- */
+/* ---------- 方案C 门户通用组件（除文章页外共用） ---------- */
 
-// 首页
-function buildHome(lang) {
-  const prefix = lang === 'en' ? '../' : '';
+// 右侧栏：站内搜索 / 最近发表 / 标签云 / 归档
+function portalSide(lang, prefix) {
   const L = (zh, en) => lang === 'en' ? en : zh;
-
-  // 1) 最新避雷（置顶）：取 3 个骗局
-  const scamCards = scams.scams.slice(0, 3).map(s => `
-    <a href="${link(`/scam/${s.id}.html`, lang, prefix)}" class="alert-card" style="--scam-color:${s.color}">
-      <div class="alert-icon">${s.icon}</div>
-      <div class="alert-body">
-        <span class="alert-meta">${L('避雷', 'ALERT')} · ${esc(s.date)}</span>
-        <h3>${esc(L(s.title, s.titleEn))}</h3>
-        <p>${esc(L(s.summary, s.summaryEn))}</p>
-      </div>
-      <span class="alert-arrow">→</span>
-    </a>`).join('');
-
-  // 2) 分类导航区（核心）：6 大平台分类
-  const catCards = platforms.categories.map(c => `
-    <a href="${link(`/platform/${c.id}.html`, lang, prefix)}" class="home-cat-card" style="--cat-color:${c.color}">
-      <div class="hcc-icon">${c.icon}</div>
-      <h3>${esc(L(c.name, c.nameEn))}</h3>
-      <p>${esc(L(c.desc, c.descEn))}</p>
-      <span class="hcc-count">${c.platforms.length} ${L('个平台', 'platforms')} →</span>
-    </a>`).join('');
-
-  // 3) 副业经验博客（4 专栏）
-  const colCards = blogColumns.columns.map(c => {
-    const first = c.slugs.map(sl => posts.find(p => p.slug === sl)).find(Boolean);
-    const n = c.slugs.length;
-    return `<a href="${link(`/column/${c.id}.html`, lang, prefix)}" class="home-col-card" style="--cat-color:${c.color}">
-      <div class="hcol-icon">${c.icon}</div>
-      <div class="hcol-text"><h3>${esc(L(c.name, c.nameEn))}</h3><p>${esc(L(c.desc, c.descEn))}</p></div>
-      <span class="hcol-count">${n} ${L('篇', 'posts')} →</span>
-    </a>`;
+  const all = sortedPosts();
+  const rankNoCls = ['n1','n2','n3','n4','n5','n6','n7'];
+  const recentRows = all.slice(0, 7).map((p, i) =>
+    `<li><span class="rank-no ${rankNoCls[i]}">${String(i + 1).padStart(2, '0')}</span><p><a href="${link(`/post/${p.slug}.html`, lang, prefix)}">${esc(L(p.title, p.titleEn))}</a></p></li>`
+  ).join('');
+  const tagColors = ['a1','a2','a3','a4','a5','a6'];
+  const tagCount = {};
+  all.forEach(p => (lang === 'en' ? (p.tagsEn || p.tags) : p.tags).forEach(tg => { tagCount[tg] = (tagCount[tg] || 0) + 1; }));
+  const tagCloud = Object.keys(tagCount).sort((a, b) => tagCount[b] - tagCount[a]).slice(0, 16).map((tg, i) =>
+    `<a class="${tagColors[i % tagColors.length]}" href="${link('/blog.html', lang, prefix)}">${esc(tg)}</a>`
+  ).join('');
+  const archiveMap = {};
+  all.forEach(p => { const ym = p.date.slice(0, 7); archiveMap[ym] = (archiveMap[ym] || 0) + 1; });
+  const archiveRows = Object.keys(archiveMap).sort((a, b) => b.localeCompare(a)).map(ym => {
+    const [y, m] = ym.split('-');
+    return `<a href="${link('/blog.html', lang, prefix)}">${y}年${Number(m)}月 <span>${archiveMap[ym]}</span></a>`;
   }).join('');
+  return `<aside class="portal-side">
+    <div class="ps-box">
+      <h4><span class="ps-bar"></span>${L('站内搜索', 'Site search')}</h4>
+      <div class="ps-inner"><div class="ps-search"><span>${esc(lang === 'en' ? S.nameEn : S.name)}</span><input id="sideSearchInput" placeholder="${L('更多项目搜索', 'Search projects')}"><button id="sideSearchBtn">${lang === 'en' ? 'Go' : '搜索'}</button></div></div>
+    </div>
+    <div class="ps-box">
+      <h4><span class="ps-bar" style="background:#e5484d"></span>${L('最近发表', 'Recent posts')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
+      <div class="ps-inner ps-pad-sm"><ul class="ps-rank">${recentRows}</ul></div>
+    </div>
+    <div class="ps-box">
+      <h4><span class="ps-bar" style="background:#1fb474"></span>${L('标签列表', 'Tag cloud')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
+      <div class="ps-inner"><div class="ps-tags">${tagCloud}</div></div>
+    </div>
+    <div class="ps-box">
+      <h4><span class="ps-bar" style="background:#f08c00"></span>${L('文章归档', 'Archives')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
+      <div class="ps-inner"><div class="ps-arch">${archiveRows}</div></div>
+    </div>
+  </aside>`;
+}
 
-  // 最新文章（补充）
-  const latest = sortedPosts().slice(0, 6).map(p => postCard(p, lang, prefix)).join('');
+// 深色横幅
+function portalBanner(inner) {
+  return `<section class="portal-banner"><div class="container"><h1>${inner}</h1></div></section>`;
+}
 
-  // ===== 方案C：门户资讯流数据 =====
-  const allSorted = sortedPosts();
+// 站点级红Tab（最新文章/平台导航/副业博客/投稿）
+function siteTabs(lang, prefix, current, firstHref) {
+  const L = (zh, en) => lang === 'en' ? en : zh;
+  const defs = [
+    { key: 'home', zh: '最新文章', en: 'Latest', href: '/' },
+    { key: 'platforms', zh: '平台导航', en: 'Platforms', href: '/platforms.html' },
+    { key: 'blog', zh: '副业博客', en: 'Blog', href: '/blog.html' },
+    { key: 'submit', zh: '投稿平台', en: 'Submit', href: '/submit.html' }
+  ];
+  return `<nav class="portal-tabs">${defs.map(d =>
+    `<a href="${(d.key === 'home' && firstHref) ? firstHref : link(d.href, lang, prefix)}" class="${d.key === current ? 'on' : ''}">${L(d.zh, d.en)}</a>`
+  ).join('')}</nav>`;
+}
+
+// 紧凑文章行列表（缩略图 + 标签 + 标题 + 摘要 + 元信息）
+function portalRowsHtml(list, lang, prefix, opts) {
+  opts = opts || {};
+  const L = (zh, en) => lang === 'en' ? en : zh;
   const catName = slug => { const c = categories.find(x => x.slug === slug); return c ? L(c.name, c.nameEn) : ''; };
-  const fmtShort = d => { const [, m, dd] = d.split('-'); return `${m}-${dd}`; };
-
-  // 紧凑文章列表（缩略图 + 标签 + 标题 + 摘要 + 元信息）
-  const portalRows = allSorted.slice(0, 8).map((p, i) => {
+  return list.map((p, i) => {
     const isScam = p.category === 'scam-alerts' || /骗局|避雷|套路|别信/.test(p.title);
-    const badge = i === 0 ? `<span class="pr-tag r">${L('置顶', 'TOP')}</span>`
+    const badge = (opts.firstTop && i === 0) ? `<span class="pr-tag r">${L('置顶', 'TOP')}</span>`
       : isScam ? `<span class="pr-tag r" style="background:#111">${L('避雷', 'ALERT')}</span>`
-      : p.featured ? `<span class="pr-tag o">${L('推荐', 'PICKS')}</span>` : '';
-    return `<article class="portal-row">
+      : (p.featured || opts.allFeatured) ? `<span class="pr-tag o">${L('推荐', 'PICKS')}</span>` : '';
+    return `<article class="portal-row" data-post-cat="${p.category}">
       <a href="${link(`/post/${p.slug}.html`, lang, prefix)}" class="pr-thumb"><img loading="lazy" src="${prefix}${coverOf(p)}" alt="${esc(L(p.title, p.titleEn))}"></a>
       <div class="pr-body">
         <div class="pr-title">${badge}<h3><a href="${link(`/post/${p.slug}.html`, lang, prefix)}">${esc(L(p.title, p.titleEn))}</a></h3></div>
@@ -434,148 +452,35 @@ function buildHome(lang) {
       </div>
     </article>`;
   }).join('');
+}
 
-  // 最近发表（编号 01-07）
-  const rankNoCls = ['n1','n2','n3','n4','n5','n6','n7'];
-  const recentRows = allSorted.slice(0, 7).map((p, i) =>
-    `<li><span class="rank-no ${rankNoCls[i]}">${String(i + 1).padStart(2, '0')}</span><p><a href="${link(`/post/${p.slug}.html`, lang, prefix)}">${esc(L(p.title, p.titleEn))}</a></p></li>`
-  ).join('');
-
-  // 标签云（从所有文章聚合，取前 16 个）
-  const tagColors = ['a1','a2','a3','a4','a5','a6'];
-  const tagCount = {};
-  allSorted.forEach(p => (lang === 'en' ? (p.tagsEn || p.tags) : p.tags).forEach(tg => { tagCount[tg] = (tagCount[tg] || 0) + 1; }));
-  const tagCloud = Object.keys(tagCount).sort((a, b) => tagCount[b] - tagCount[a]).slice(0, 16).map((tg, i) =>
-    `<a class="${tagColors[i % tagColors.length]}" href="${link('/blog.html', lang, prefix)}">${esc(tg)}</a>`
-  ).join('');
-
-  // 文章归档
-  const archiveMap = {};
-  allSorted.forEach(p => { const ym = p.date.slice(0, 7); archiveMap[ym] = (archiveMap[ym] || 0) + 1; });
-  const archiveRows = Object.keys(archiveMap).sort((a, b) => b.localeCompare(a)).map(ym => {
-    const [y, m] = ym.split('-');
-    return `<a href="${link('/blog.html', lang, prefix)}">${y}年${Number(m)}月 <span>${archiveMap[ym]}</span></a>`;
-  }).join('');
-
-  // Red Tab
-  const portalTabs = [
-    { zh: '最新文章', en: 'Latest', href: '#portal-list', on: true },
-    { zh: '避雷置顶', en: 'Scam alerts', href: link('/scams.html', lang, prefix) },
-    { zh: '平台导航', en: 'Platforms', href: link('/platforms.html', lang, prefix) },
-    { zh: '投稿平台', en: 'Submit', href: link('/submit.html', lang, prefix) }
-  ].map(t => `<a href="${t.href}" class="${t.on ? 'on' : ''}">${L(t.zh, t.en)}</a>`).join('');
-
-  const body = `
-<!-- ===== 方案C 门户资讯流 ===== -->
-<section class="portal-banner">
-  <div class="container"><h1>${L('副业掘金', 'Side Hustle Hub')} · <em>${L('每日避雷', 'Daily Scam Alerts')}</em>${L('与项目简报', ' & Project Brief')}</h1></div>
-</section>
+// 门户框架：横幅 + 红Tab + 两栏（左侧内容 + 右侧栏）
+function portalShell({ banner, tabs, main, lang, prefix, mainClass, mainId }) {
+  const cls = `portal-main${mainClass ? ' ' + mainClass : ''}`;
+  const id = mainId ? ` id="${mainId}"` : '';
+  return `${portalBanner(banner)}
 <div class="container">
-  <nav class="portal-tabs">${portalTabs}</nav>
+  ${tabs}
   <div class="portal-layout">
-    <div class="portal-main" id="portal-list">
-      ${portalRows}
-    </div>
-    <aside class="portal-side">
-      <div class="ps-box">
-        <h4><span class="ps-bar"></span>${L('站内搜索', 'Site search')}</h4>
-        <div class="ps-inner"><div class="ps-search"><span>${esc(lang === 'en' ? S.nameEn : S.name)}</span><input id="sideSearchInput" placeholder="${L('更多项目搜索', 'Search projects')}"><button id="sideSearchBtn">${lang === 'en' ? 'Go' : '搜索'}</button></div></div>
-      </div>
-      <div class="ps-box">
-        <h4><span class="ps-bar" style="background:#e5484d"></span>${L('最近发表', 'Recent posts')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
-        <div class="ps-inner ps-pad-sm"><ul class="ps-rank">${recentRows}</ul></div>
-      </div>
-      <div class="ps-box">
-        <h4><span class="ps-bar" style="background:#1fb474"></span>${L('标签列表', 'Tag cloud')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
-        <div class="ps-inner"><div class="ps-tags">${tagCloud}</div></div>
-      </div>
-      <div class="ps-box">
-        <h4><span class="ps-bar" style="background:#f08c00"></span>${L('文章归档', 'Archives')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
-        <div class="ps-inner"><div class="ps-arch">${archiveRows}</div></div>
-      </div>
-    </aside>
+    <div class="${cls}"${id}>${main}</div>
+    ${portalSide(lang, prefix)}
   </div>
-</div>
+</div>`;
+}
 
-<section class="hero hero-home">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <div class="hero-badge">✨ ${L('诚实副业指南 · 不夸大收益', 'Honest side hustle guides · realistic expectations')}</div>
-      <h1>${L('找靠谱副业，', 'Find legit side hustles,')}<br><span class="gradient-text">${L('先看避坑，再谈赚钱', 'spot the scams first')}</span></h1>
-      <p>${L('平台导航 + 真实经验 + 骗局拆解。单价低、门槛高、提现卡审核——我们把坑写在前面，帮你把预期放在合理位置。', 'Platform directory, honest experience and scam breakdowns. Low rates, high thresholds, payout holds — we put the downsides first so your expectations stay realistic.')}</p>
-      <div class="hero-buttons">
-        <a href="${link('/platforms.html', lang, prefix)}" class="btn btn-primary">${L('浏览平台导航', 'Browse platforms')} →</a>
-        <a href="${link('/scams.html', lang, prefix)}" class="btn btn-ghost">${L('先看避雷', 'See scam alerts')}</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>${platforms.categories.reduce((a, c) => a + c.platforms.length, 0)}+</strong><span>${L('平台收录', 'platforms')}</span></div>
-        <div><strong>${posts.length}+</strong><span>${L('经验文章', 'guides')}</span></div>
-        <div><strong>${scams.scams.length}</strong><span>${L('骗局拆解', 'scam breakdowns')}</span></div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="floating-card fc1"><span>🛡️</span><div><small>${L('先避雷', 'Scam alerts')}</small><strong>${L('先垫付=骗局', 'Pay first = scam')}</strong></div></div>
-      <div class="floating-card fc2"><span>💰</span><div><small>${L('合理预期', 'Realistic')}</small><strong>${L('零花钱级', 'Pocket money')}</strong></div></div>
-      <div class="floating-card fc3"><span>📋</span><div><small>${L('平台信息', 'Platform data')}</small><strong>${L('提现门槛/坑点', 'Payout & risks')}</strong></div></div>
-      <div class="hero-main-icon">🧭</div>
-    </div>
-  </div>
-</section>
+/* ---------- 页面生成 ---------- */
 
-<!-- ① 最新避雷（置顶） -->
-<section class="section section-alert">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="section-label">TOP ALERT</span><h2>🚨 ${L('最新避雷', 'Latest Scam Alerts')}</h2></div>
-      <a href="${link('/scams.html', lang, prefix)}" class="section-link">${L('全部避雷', 'All alerts')} →</a>
-    </div>
-    <div class="alert-grid">${scamCards}</div>
-    <div class="notice-box notice-danger alert-rule">
-      <strong>🛑 ${L('一条铁律', 'Golden rule')}</strong>
-      <p>${L('凡是先让你垫付、交押金、交会费才能提现的，一律不要参与。', 'Never pay upfront — deposits, fees or "unlock" charges. Walk away.')}</p>
-    </div>
-  </div>
-</section>
+// 首页（方案C 门户资讯流）
+function buildHome(lang) {
+  const prefix = lang === 'en' ? '../' : '';
+  const L = (zh, en) => lang === 'en' ? en : zh;
 
-<!-- ② 分类导航区（核心） -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="section-label">DIRECTORY</span><h2>🧭 ${L('平台分类导航', 'Platform Directory')}</h2></div>
-      <a href="${link('/platforms.html', lang, prefix)}" class="section-link">${L('查看全部', 'View all')} →</a>
-    </div>
-    <div class="home-cat-grid">${catCards}</div>
-  </div>
-</section>
+  // 紧凑文章列表（缩略图 + 标签 + 标题 + 摘要 + 元信息），取前 12 篇
+  const portalRows = portalRowsHtml(sortedPosts().slice(0, 12), lang, prefix, { firstTop: true });
+  const tabs = siteTabs(lang, prefix, 'home', '#portal-list');
+  const banner = `${L('副业掘金', 'Side Hustle Hub')} · <em>${L('每日项目', 'Daily')}</em>${L('资讯简报', ' Project Brief')}`;
 
-<!-- ③ 副业经验博客（SEO 主力） -->
-<section class="section section-blog">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="section-label">BLOG</span><h2>📖 ${L('副业经验博客', 'Side Hustle Blog')}</h2></div>
-      <a href="${link('/blog.html', lang, prefix)}" class="section-link">${L('全部专栏', 'All columns')} →</a>
-    </div>
-    <div class="home-col-grid">${colCards}</div>
-    <div class="latest-wrap">
-      <h3 class="subhead">${L('最新文章', 'Latest articles')}</h3>
-      <div class="post-grid">${latest}</div>
-    </div>
-  </div>
-</section>
-
-<!-- ④ 投稿入口 -->
-<section class="section section-submit">
-  <div class="container">
-    <div class="submit-cta">
-      <div class="submit-icon">📝</div>
-      <div class="submit-text">
-        <h2>${L('发现靠谱平台？投稿给我们', 'Found a legit platform? Submit it')}</h2>
-        <p>${L('访客提交平台信息，我们人工核实后上架。请附类型、提现门槛、币种、结算方式与真实坑点。', 'Submit platforms for manual review. Include type, minimum withdrawal, currency, settlement and honest downsides.')}</p>
-      </div>
-      <a href="${link('/submit.html', lang, prefix)}" class="btn btn-primary">${L('投稿平台', 'Submit a platform')} →</a>
-    </div>
-  </div>
-</section>`;
+  const body = portalShell({ banner, tabs, main: portalRows, lang, prefix, mainId: 'portal-list' });
 
   // 页脚法务入口由 layout 统一处理
   const jsonLd = {
@@ -702,18 +607,18 @@ function buildCategory(cat, lang) {
   const catName = lang === 'en' ? cat.nameEn : cat.name;
   const catDesc = lang === 'en' ? cat.descriptionEn : cat.description;
 
-  const body = `
-<div class="container">
-  <nav class="breadcrumb"><a href="${link('/', lang, prefix)}">${t('home', lang)}</a> <span>/</span> <span>${esc(catName)}</span></nav>
+  const main = `<div class="portal-content">
   <header class="page-header" style="--cat-color:${cat.color}">
     <div class="page-icon">${cat.icon}</div>
     <h1>${esc(catName)}</h1>
     <p>${esc(catDesc)}</p>
     <span class="page-count">${list.length} ${lang === 'en' ? 'articles' : '篇文章'}</span>
   </header>
-  <div class="section-head"><div><h2>${t('postsIn', lang)} ${esc(catName)}</h2></div></div>
-  <div class="post-grid">${list.map(p => postCard(p, lang, prefix)).join('') || `<p>${t('noPosts', lang)}</p>`}</div>
+  ${portalRowsHtml(list, lang, prefix)}
 </div>`;
+  const body = portalShell({
+    banner: `${cat.icon} ${esc(catName)}`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
 
   return layout({
     lang, title: catName, description: catDesc,
@@ -728,15 +633,15 @@ function buildAll(lang) {
   const all = sortedPosts();
   const canonicalHref = '/all.html';
   const catFilter = categories.map(c => `<button class="filter-btn" data-cat="${c.slug}">${lang === 'en' ? c.nameEn : c.name}</button>`).join('');
-  const cards = all.map(p => `<div data-post-cat="${p.category}">${postCard(p, lang, prefix)}</div>`).join('');
 
-  const body = `
-<div class="container">
-  <nav class="breadcrumb"><a href="${link('/', lang, prefix)}">${t('home', lang)}</a> <span>/</span> <span>${t('allArticles', lang)}</span></nav>
+  const main = `<div class="portal-content">
   <header class="page-header"><div class="page-icon">📚</div><h1>${t('allArticles', lang)}</h1><p>${S.description && (lang === 'en' ? S.descriptionEn : S.description)}</p></header>
   <div class="filter-bar"><button class="filter-btn active" data-cat="all">${lang === 'en' ? 'All' : '全部'}</button>${catFilter}</div>
-  <div class="post-grid" id="allPostsGrid">${cards}</div>
+  <div id="allPostsGrid">${portalRowsHtml(all, lang, prefix)}</div>
 </div>`;
+  const body = portalShell({
+    banner: `📚 ${t('allArticles', lang)}`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
 
   return layout({
     lang, title: t('allArticles', lang), description: lang === 'en' ? S.descriptionEn : S.description,
@@ -752,14 +657,15 @@ function buildStaticPage(kind, lang) {
   const isAbout = kind === 'about';
   const title = isAbout ? t('aboutTitle', lang) : t('discTitle', lang);
   const paras = isAbout ? [t('aboutP1', lang), t('aboutP2', lang), t('aboutP3', lang)] : [t('discP1', lang), t('discP2', lang), t('discP3', lang)];
-  const body = `
-<div class="container">
-  <nav class="breadcrumb"><a href="${link('/', lang, prefix)}">${t('home', lang)}</a> <span>/</span> <span>${esc(title)}</span></nav>
+  const main = `<div class="portal-content">
   <article class="static-page">
     <header class="page-header"><div class="page-icon">${isAbout ? '👋' : '📋'}</div><h1>${esc(title)}</h1></header>
     <div class="article-content">${paras.map(p => `<p>${inline(p)}</p>`).join('')}</div>
   </article>
 </div>`;
+  const body = portalShell({
+    banner: `${isAbout ? '👋' : '📋'} ${esc(title)}`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
   return layout({
     lang, title, description: paras[0],
     keywords: (lang === 'en' ? S.keywordsEn : S.keywords).join(','),
@@ -786,10 +692,8 @@ function buildPlatformsIndex(lang) {
       <span class="nc-count">${count} ${lang === 'en' ? 'platforms' : '个平台'} →</span>
     </a>`;
   }).join('');
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Platform Directory' : '平台导航'}</span>`])}
-  <div class="page-hero">
+  const main = `<div class="portal-content">
+  <div class="page-hero page-hero-sm">
     <div class="page-icon">🧭</div>
     <h1>${lang === 'en' ? 'Legit Side Hustle Platform Directory' : '正规副业平台导航'}</h1>
     <p>${lang === 'en' ? 'Each platform is listed with its type, minimum withdrawal, currency, settlement method, pros and real downsides. Most are pocket-money channels — set realistic expectations.' : '每个平台都写清类型、最低提现、结算币种与方式、优点与真实坑点。多数属于零花钱渠道，请建立合理预期。'}</p>
@@ -800,6 +704,9 @@ function buildPlatformsIndex(lang) {
   </div>
   <div class="nav-cat-grid">${catHtml}</div>
 </div>`;
+  const body = portalShell({
+    banner: `🧭 ${lang === 'en' ? 'Platform Directory' : '平台导航'}`, tabs: siteTabs(lang, prefix, 'platforms'), main, lang, prefix
+  });
   return layout({
     lang, title: lang === 'en' ? 'Platform Directory' : '平台导航',
     description: lang === 'en' ? 'A vetted directory of side hustle platforms with withdrawal thresholds, settlement methods, pros and real downsides.' : '正规副业平台导航：分类整理问卷、接单、内容分成、分销等平台，写清提现门槛与真实坑点。',
@@ -830,9 +737,7 @@ function buildPlatformCategory(c, lang) {
     </article>`;
   }).join('');
   const title = lang === 'en' ? c.nameEn : c.name;
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<a href="${link('/platforms.html', lang, prefix)}">${lang === 'en' ? 'Platforms' : '平台导航'}</a>`, `<span>${esc(title)}</span>`])}
+  const main = `<div class="portal-content">
   <div class="page-hero page-hero-sm">
     <div class="page-icon">${c.icon}</div>
     <h1>${esc(title)}</h1>
@@ -840,6 +745,9 @@ function buildPlatformCategory(c, lang) {
   </div>
   <div class="platform-list">${listHtml}</div>
 </div>`;
+  const body = portalShell({
+    banner: `${c.icon} ${esc(title)}`, tabs: siteTabs(lang, prefix, 'platforms'), main, lang, prefix
+  });
   return layout({
     lang, title, description: lang === 'en' ? c.descEn : c.desc,
     keywords: (lang === 'en' ? c.nameEn : c.name) + ',副业平台,提现', canonicalHref: `/platform/${c.id}.html`, prefix, body
@@ -861,11 +769,8 @@ function buildScamsIndex(lang) {
       </div>
     </a>`;
   }).join('');
-  const relatedPosts = (posts.filter(p => p.category === 'scam-alerts') || []).slice(0, 4).map(p => postCard(p, lang, prefix)).join('');
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Scam Alerts' : '最新避雷'}</span>`])}
-  <div class="page-hero">
+  const main = `<div class="portal-content">
+  <div class="page-hero page-hero-sm">
     <div class="page-icon">🚨</div>
     <h1>${lang === 'en' ? 'Latest Scam Alerts' : '最新避雷'}</h1>
     <p>${lang === 'en' ? 'Pinned: recent high-frequency scams — Douyin idle-earnings, AI fake-order schemes, upfront deposits. Learn the pattern, spot the red flags.' : '置顶：近期高发骗局——抖音挂机、AI 代做刷单、垫付任务。拆解套路，记住识别特征。'}</p>
@@ -875,8 +780,10 @@ function buildScamsIndex(lang) {
     <p>${lang === 'en' ? 'Anyone asking you to pay first — deposits, fees, "unlock" charges — is a scam. No exceptions.' : '凡是先让你垫付、交押金、交会费、买"入场券"的，一律不要参与，没有例外。'}</p>
   </div>
   <div class="scam-grid">${items}</div>
-  ${relatedPosts ? `<section class="section"><div class="section-head"><div><span class="section-label">MORE</span><h2>📚 ${lang === 'en' ? 'Related guides' : '相关避坑文章'}</h2></div></div><div class="post-grid">${relatedPosts}</div></section>` : ''}
 </div>`;
+  const body = portalShell({
+    banner: `🚨 ${lang === 'en' ? 'Latest Scam Alerts' : '最新避雷'}`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
   return layout({
     lang, title: lang === 'en' ? 'Latest Scam Alerts' : '最新避雷',
     description: lang === 'en' ? 'Breakdowns of recent side hustle scams with red flags and warning signs.' : '近期高发副业骗局拆解：套路、识别特征与防范提示，先垫付交押金的一律标红避雷。',
@@ -889,9 +796,7 @@ function buildScam(s, lang) {
   const prefix = lang === 'en' ? '../../' : '../';
   const steps = (lang === 'en' ? s.steps : s.steps).map((st, i) => `<li><span class="step-n">${i + 1}</span><span>${esc(typeof st === 'string' ? st : (st[lang] || st.zh))}</span></li>`).join('');
   const flags = (lang === 'en' ? s.redFlagsEn : s.redFlags).map(x => `<li>${esc(x)}</li>`).join('');
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<a href="${link('/scams.html', lang, prefix)}">${lang === 'en' ? 'Scam Alerts' : '最新避雷'}</a>`, `<span>${esc(lang === 'en' ? s.titleEn : s.title)}</span>`])}
+  const main = `<div class="portal-content">
   <article class="static-page scam-detail" style="--scam-color:${s.color}">
     <header class="page-header"><div class="page-icon">${s.icon}</div><h1>${esc(lang === 'en' ? s.titleEn : s.title)}</h1><p class="page-sub">${esc(lang === 'en' ? s.summaryEn : s.summary)} · ${esc(s.date)}</p></header>
     <div class="article-content">
@@ -904,6 +809,9 @@ function buildScam(s, lang) {
     </div>
   </article>
 </div>`;
+  const body = portalShell({
+    banner: `🚨 ${esc(lang === 'en' ? s.titleEn : s.title)}`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
   return layout({
     lang, title: lang === 'en' ? s.titleEn : s.title, description: lang === 'en' ? s.summaryEn : s.summary,
     keywords: '骗局拆解,副业避雷,scam breakdown', canonicalHref: `/scam/${s.id}.html`, prefix, body
@@ -914,20 +822,20 @@ function buildScam(s, lang) {
 function buildBlogColumn(col, lang) {
   const prefix = lang === 'en' ? '../../' : '../';
   const colPosts = col.slugs.map(sl => posts.find(p => p.slug === sl)).filter(Boolean);
-  const cards = colPosts.map(p => postCard(p, lang, prefix)).join('');
   const title = lang === 'en' ? col.nameEn : col.name;
   const otherCols = blogColumns.columns.filter(c => c.id !== col.id).map(c => `<a href="${link(`/column/${c.id}.html`, lang, prefix)}">${lang === 'en' ? c.nameEn : c.name} →</a>`).join('');
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<a href="${link('/blog.html', lang, prefix)}">${lang === 'en' ? 'Blog' : '副业经验博客'}</a>`, `<span>${esc(title)}</span>`])}
+  const main = `<div class="portal-content">
   <div class="page-hero page-hero-sm" style="--cat-color:${col.color}">
     <div class="page-icon">${col.icon}</div>
     <h1>${esc(title)}</h1>
     <p>${esc(lang === 'en' ? col.descEn : col.desc)}</p>
   </div>
-  <div class="post-grid">${cards}</div>
+  ${portalRowsHtml(colPosts, lang, prefix)}
   <div class="panel" style="margin-top:28px"><h3>${lang === 'en' ? 'Other columns' : '其他专栏'}</h3><div class="column-links">${otherCols}</div></div>
 </div>`;
+  const body = portalShell({
+    banner: `${col.icon} ${esc(title)}`, tabs: siteTabs(lang, prefix, 'blog'), main, lang, prefix
+  });
   return layout({
     lang, title, description: lang === 'en' ? col.descEn : col.desc,
     keywords: (lang === 'en' ? col.nameEn : col.name) + ',副业经验', canonicalHref: `/column/${col.id}.html`, prefix, body
@@ -945,16 +853,17 @@ function buildBlogIndex(lang) {
       <span class="nc-count">${n} ${lang === 'en' ? 'articles' : '篇文章'} →</span>
     </a>`;
   }).join('');
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Blog' : '副业经验博客'}</span>`])}
-  <div class="page-hero">
+  const main = `<div class="portal-content">
+  <div class="page-hero page-hero-sm">
     <div class="page-icon">📖</div>
     <h1>${lang === 'en' ? 'Side Hustle Experience Blog' : '副业经验博客'}</h1>
     <p>${lang === 'en' ? 'Beginner guides, payout thresholds and risk control, honest income logs, and scam breakdowns — the SEO backbone of this site.' : '新手入门、提现门槛与风控、真实收入记录、骗局拆解——本站 SEO 主力栏目。'}</p>
   </div>
   <div class="nav-cat-grid">${colHtml}</div>
 </div>`;
+  const body = portalShell({
+    banner: `📖 ${lang === 'en' ? 'Blog' : '副业经验博客'}`, tabs: siteTabs(lang, prefix, 'blog'), main, lang, prefix
+  });
   return layout({
     lang, title: lang === 'en' ? 'Blog' : '副业经验博客',
     description: lang === 'en' ? 'Beginner guides, payout and risk control, real income logs and scam breakdowns.' : '副业经验博客：新手入门、提现风控、真实收入记录与骗局拆解。',
@@ -971,10 +880,11 @@ function buildSubmit(lang) {
     ? 'Platform name:\nType (survey / gig / affiliate / resale):\nMinimum withdrawal:\nCurrency & settlement:\nPros:\nDownsides / risks:\nOfficial URL:\nWhy you recommend it:'
     : '平台名称：\n类型（问卷/接单/分销/二手）：\n最低提现：\n结算币种与方式：\n优点：\n坑点与风险：\n官网地址：\n推荐理由：');
   const mailto = `mailto:${mail}?subject=${subject}&body=${bodyTpl}`;
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Submit a Platform' : '投稿平台'}</span>`])}
-  <div class="page-hero">
+  const body = portalShell({
+    banner: `📝 ${lang === 'en' ? 'Submit a Platform' : '投稿平台'}`, tabs: siteTabs(lang, prefix, 'submit'),
+    lang, prefix,
+    main: `<div class="portal-content">
+  <div class="page-hero page-hero-sm">
     <div class="page-icon">📝</div>
     <h1>${lang === 'en' ? 'Submit a Legit Platform' : '投稿靠谱平台'}</h1>
     <p>${lang === 'en' ? 'Found a platform worth sharing? Send it to us. We manually review every submission and only publish what we can verify.' : '发现值得分享的靠谱平台？欢迎投稿。我们人工审核每一份提交，只上架能核实的平台。'}</p>
@@ -994,7 +904,7 @@ function buildSubmit(lang) {
     <a href="${mailto}" class="btn btn-primary btn-lg">✉️ ${lang === 'en' ? 'Email your submission' : '邮件提交投稿'} →</a>
     <p class="muted">${lang === 'en' ? 'Or copy this address:' : '或复制邮箱地址：'} <code>${mail}</code></p>
   </div>
-</div>`;
+</div>` });
   return layout({
     lang, title: lang === 'en' ? 'Submit a Platform' : '投稿平台',
     description: lang === 'en' ? 'Submit a legit side hustle platform for manual review and publication.' : '投稿靠谱副业平台，人工审核后上架。',
@@ -1019,11 +929,12 @@ function buildPrivacy(lang) {
     ['4. 联系方式', '隐私相关问题请发邮件至 ' + S.email + '。']
   ];
   const content = paras.map(([h, p]) => `<h2>${esc(h)}</h2>${p ? `<p>${esc(p)}</p>` : ''}`).join('');
-  const body = `
-<div class="container">
-  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Privacy Policy' : '隐私政策'}</span>`])}
+  const main = `<div class="portal-content">
   <article class="static-page"><header class="page-header"><div class="page-icon">🔒</div><h1>${lang === 'en' ? 'Privacy Policy' : '隐私政策'}</h1></header><div class="article-content">${content}</div></article>
 </div>`;
+  const body = portalShell({
+    banner: `🔒 ${lang === 'en' ? 'Privacy Policy' : '隐私政策'}`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
   return layout({
     lang, title: lang === 'en' ? 'Privacy Policy' : '隐私政策',
     description: lang === 'en' ? 'How this site handles your information.' : '本站如何处理你的信息。',
@@ -1034,14 +945,18 @@ function buildPrivacy(lang) {
 // 404 页
 function build404(lang) {
   const prefix = lang === 'en' ? '../' : '';
-  const body = `
-<div class="container not-found">
-  <div class="nf-emoji">🧭</div>
-  <h1>404</h1>
-  <h2>${t('notFound', lang)}</h2>
-  <p>${t('notFoundDesc', lang)}</p>
-  <a href="${link('/', lang, prefix)}" class="btn btn-primary">${t('backHome', lang)} →</a>
+  const main = `<div class="portal-content">
+  <div class="not-found">
+    <div class="nf-emoji">🧭</div>
+    <h1>404</h1>
+    <h2>${t('notFound', lang)}</h2>
+    <p>${t('notFoundDesc', lang)}</p>
+    <a href="${link('/', lang, prefix)}" class="btn btn-primary">${t('backHome', lang)} →</a>
+  </div>
 </div>`;
+  const body = portalShell({
+    banner: `🧭 404`, tabs: siteTabs(lang, prefix), main, lang, prefix
+  });
   return layout({
     lang, title: '404', description: t('notFoundDesc', lang),
     keywords: '', canonicalHref: '/404.html', prefix, body, showSearch: false
