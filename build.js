@@ -20,9 +20,13 @@ const OUT = path.join(ROOT, 'dist');
 const site = JSON.parse(fs.readFileSync(path.join(DATA, 'site.json'), 'utf8'));
 const categories = JSON.parse(fs.readFileSync(path.join(DATA, 'categories.json'), 'utf8'));
 const posts = JSON.parse(fs.readFileSync(path.join(DATA, 'posts.json'), 'utf8'));
+const platforms = JSON.parse(fs.readFileSync(path.join(DATA, 'platforms.json'), 'utf8'));
+const scams = JSON.parse(fs.readFileSync(path.join(DATA, 'scams.json'), 'utf8'));
+const blogColumns = JSON.parse(fs.readFileSync(path.join(DATA, 'blog-columns.json'), 'utf8'));
 
 const S = site.site;
 const BASE = S.url.replace(/\/$/, '');
+const i18n = (obj, lang) => (obj && obj[lang === 'zh' ? 'zh' : 'en']) || '';
 
 /* ---------- 工具函数 ---------- */
 
@@ -242,8 +246,8 @@ function layout({ lang, title, description, keywords, canonicalHref, prefix, bod
     `<a href="${link(f.href, lang, prefix)}">${lang === 'en' ? f.labelEn : f.label}</a>`
   ).join('');
 
-  const catList = categories.slice(0, 5).map(c =>
-    `<a href="${link(`/category/${c.slug}.html`, lang, prefix)}">${lang === 'en' ? c.nameEn : c.name}</a>`
+  const catList = platforms.categories.slice(0, 6).map(c =>
+    `<a href="${link(`/platform/${c.id}.html`, lang, prefix)}">${esc(lang === 'en' ? c.nameEn : c.name)}</a>`
   ).join('');
 
   return `<!DOCTYPE html>
@@ -318,6 +322,8 @@ ${body}
       <h4>${t('about', lang)}</h4>
       <a href="${link('/about.html', lang, prefix)}">${t('about', lang)}</a>
       <a href="${link('/disclaimer.html', lang, prefix)}">${t('disclaimer', lang)}</a>
+      <a href="${link('/privacy.html', lang, prefix)}">${lang === 'en' ? 'Privacy Policy' : '隐私政策'}</a>
+      <a href="${link('/submit.html', lang, prefix)}">${lang === 'en' ? 'Submit a Platform' : '投稿平台'}</a>
       <a href="mailto:${S.email}">${lang === 'en' ? 'Contact' : '联系我们'}</a>
     </div>
     <div class="footer-col subscribe-col">
@@ -346,102 +352,125 @@ ${body}
 // 首页
 function buildHome(lang) {
   const prefix = lang === 'en' ? '../' : '';
-  const all = sortedPosts();
-  const featured = all.filter(p => p.featured).slice(0, 3);
-  const latest = all.slice(0, 6);
-  const popular = [...all].sort((a, b) => (b.id - a.id)).slice(0, 5);
+  const L = (zh, en) => lang === 'en' ? en : zh;
 
-  const featuredHtml = featured.map((p, i) => {
-    const cat = catBySlug(p.category);
-    const href = link(`/post/${p.slug}.html`, lang, prefix);
-    const title = lang === 'en' ? p.titleEn : p.title;
-    const excerpt = lang === 'en' ? p.excerptEn : p.excerpt;
-    return `<a href="${href}" class="hero-feature-card" style="--card-color:${cat.color}">
-      <div class="hfc-emoji">${p.emoji}</div>
-      <div class="hfc-content">
-        <span class="hfc-cat">${lang === 'en' ? cat.nameEn : cat.name}</span>
-        <h3>${esc(title)}</h3>
-        <p>${esc(excerpt)}</p>
-        <span class="hfc-more">${t('readMore', lang)} →</span>
+  // 1) 最新避雷（置顶）：取 3 个骗局
+  const scamCards = scams.scams.slice(0, 3).map(s => `
+    <a href="${link(`/scam/${s.id}.html`, lang, prefix)}" class="alert-card" style="--scam-color:${s.color}">
+      <div class="alert-icon">${s.icon}</div>
+      <div class="alert-body">
+        <span class="alert-meta">${L('避雷', 'ALERT')} · ${esc(s.date)}</span>
+        <h3>${esc(L(s.title, s.titleEn))}</h3>
+        <p>${esc(L(s.summary, s.summaryEn))}</p>
       </div>
+      <span class="alert-arrow">→</span>
+    </a>`).join('');
+
+  // 2) 分类导航区（核心）：6 大平台分类
+  const catCards = platforms.categories.map(c => `
+    <a href="${link(`/platform/${c.id}.html`, lang, prefix)}" class="home-cat-card" style="--cat-color:${c.color}">
+      <div class="hcc-icon">${c.icon}</div>
+      <h3>${esc(L(c.name, c.nameEn))}</h3>
+      <p>${esc(L(c.desc, c.descEn))}</p>
+      <span class="hcc-count">${c.platforms.length} ${L('个平台', 'platforms')} →</span>
+    </a>`).join('');
+
+  // 3) 副业经验博客（4 专栏）
+  const colCards = blogColumns.columns.map(c => {
+    const first = c.slugs.map(sl => posts.find(p => p.slug === sl)).find(Boolean);
+    const n = c.slugs.length;
+    return `<a href="${link(`/column/${c.id}.html`, lang, prefix)}" class="home-col-card" style="--cat-color:${c.color}">
+      <div class="hcol-icon">${c.icon}</div>
+      <div class="hcol-text"><h3>${esc(L(c.name, c.nameEn))}</h3><p>${esc(L(c.desc, c.descEn))}</p></div>
+      <span class="hcol-count">${n} ${L('篇', 'posts')} →</span>
     </a>`;
   }).join('');
 
-  const latestHtml = latest.map(p => postCard(p, lang, prefix)).join('');
-  const catHtml = categories.map(c => `<a href="${link(`/category/${c.slug}.html`, lang, prefix)}" class="cat-card" style="--cat-color:${c.color}">
-    <div class="cat-icon">${c.icon}</div>
-    <h3>${lang === 'en' ? c.nameEn : c.name}</h3>
-    <p>${lang === 'en' ? c.descriptionEn : c.description}</p>
-    <span class="cat-count">${postsByCat(c.slug, lang).length} ${lang === 'en' ? 'articles' : '篇文章'}</span>
-  </a>`).join('');
-
-  const popularHtml = popular.map((p, i) => {
-    const href = link(`/post/${p.slug}.html`, lang, prefix);
-    const title = lang === 'en' ? p.titleEn : p.title;
-    return `<li><span class="rank">${i + 1}</span><a href="${href}">${esc(title)}</a></li>`;
-  }).join('');
+  // 最新文章（补充）
+  const latest = sortedPosts().slice(0, 6).map(p => postCard(p, lang, prefix)).join('');
 
   const body = `
-<section class="hero">
+<section class="hero hero-home">
   <div class="container hero-grid">
     <div class="hero-text">
-      <div class="hero-badge">✨ ${lang === 'en' ? 'Updated daily · Free guides' : '每日更新 · 免费教程'}</div>
-      <h1>${lang === 'en' ? 'Build a Real Side Hustle,' : '找到属于你的副业，'}<br><span class="gradient-text">${lang === 'en' ? 'One Step at a Time' : '从第一步开始'}</span></h1>
-      <p>${lang === 'en' ? S.descriptionEn : S.description}</p>
+      <div class="hero-badge">✨ ${L('诚实副业指南 · 不夸大收益', 'Honest side hustle guides · realistic expectations')}</div>
+      <h1>${L('找靠谱副业，', 'Find legit side hustles,')}<br><span class="gradient-text">${L('先看避坑，再谈赚钱', 'spot the scams first')}</span></h1>
+      <p>${L('平台导航 + 真实经验 + 骗局拆解。单价低、门槛高、提现卡审核——我们把坑写在前面，帮你把预期放在合理位置。', 'Platform directory, honest experience and scam breakdowns. Low rates, high thresholds, payout holds — we put the downsides first so your expectations stay realistic.')}</p>
       <div class="hero-buttons">
-        <a href="${link('/category/side-hustles.html', lang, prefix)}" class="btn btn-primary">${lang === 'en' ? 'Explore Side Hustles' : '浏览副业项目'} →</a>
-        <a href="${link('/about.html', lang, prefix)}" class="btn btn-ghost">${t('about', lang)}</a>
+        <a href="${link('/platforms.html', lang, prefix)}" class="btn btn-primary">${L('浏览平台导航', 'Browse platforms')} →</a>
+        <a href="${link('/scams.html', lang, prefix)}" class="btn btn-ghost">${L('先看避雷', 'See scam alerts')}</a>
       </div>
       <div class="hero-stats">
-        <div><strong>${posts.length}+</strong><span>${lang === 'en' ? 'Practical guides' : '实用教程'}</span></div>
-        <div><strong>${categories.length}</strong><span>${t('categories', lang)}</span></div>
-        <div><strong>2</strong><span>${lang === 'en' ? 'Languages' : '中英双语'}</span></div>
+        <div><strong>${platforms.categories.reduce((a, c) => a + c.platforms.length, 0)}+</strong><span>${L('平台收录', 'platforms')}</span></div>
+        <div><strong>${posts.length}+</strong><span>${L('经验文章', 'guides')}</span></div>
+        <div><strong>${scams.scams.length}</strong><span>${L('骗局拆解', 'scam breakdowns')}</span></div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="floating-card fc1"><span>💵</span><div><small>${lang === 'en' ? 'Monthly side income' : '本月副业收入'}</small><strong>¥3,280</strong></div></div>
-      <div class="floating-card fc2"><span>📈</span><div><small>${lang === 'en' ? 'Traffic growth' : '流量增长'}</small><strong>+42%</strong></div></div>
-      <div class="floating-card fc3"><span>✅</span><div><small>${lang === 'en' ? 'Tasks completed' : '已完成任务'}</small><strong>28/30</strong></div></div>
-      <div class="hero-main-icon">🚀</div>
+      <div class="floating-card fc1"><span>🛡️</span><div><small>${L('先避雷', 'Scam alerts')}</small><strong>${L('先垫付=骗局', 'Pay first = scam')}</strong></div></div>
+      <div class="floating-card fc2"><span>💰</span><div><small>${L('合理预期', 'Realistic')}</small><strong>${L('零花钱级', 'Pocket money')}</strong></div></div>
+      <div class="floating-card fc3"><span>📋</span><div><small>${L('平台信息', 'Platform data')}</small><strong>${L('提现门槛/坑点', 'Payout & risks')}</strong></div></div>
+      <div class="hero-main-icon">🧭</div>
     </div>
   </div>
 </section>
 
-<section class="section container">
-  <div class="section-head">
-    <div><span class="section-label">FEATURED</span><h2>🔥 ${t('featured', lang)}</h2></div>
-    <a href="${link('/all.html', lang, prefix)}" class="section-link">${t('viewAll', lang)} →</a>
-  </div>
-  <div class="feature-grid">${featuredHtml}</div>
-</section>
-
-<section class="section container">
-  <div class="section-head">
-    <div><span class="section-label">LATEST</span><h2>📚 ${t('latest', lang)}</h2></div>
-    <a href="${link('/all.html', lang, prefix)}" class="section-link">${t('allPosts', lang)} →</a>
-  </div>
-  <div class="post-grid">${latestHtml}</div>
-</section>
-
-<section class="section container">
-  <div class="section-head"><div><span class="section-label">CATEGORIES</span><h2>🗂 ${t('categoriesTitle', lang)}</h2></div></div>
-  <div class="cat-grid">${catHtml}</div>
-</section>
-
-<section class="section container">
-  <div class="two-col">
-    <div class="panel">
-      <h3>🔥 ${t('popular', lang)}</h3>
-      <ol class="popular-list">${popularHtml}</ol>
+<!-- ① 最新避雷（置顶） -->
+<section class="section section-alert">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="section-label">TOP ALERT</span><h2>🚨 ${L('最新避雷', 'Latest Scam Alerts')}</h2></div>
+      <a href="${link('/scams.html', lang, prefix)}" class="section-link">${L('全部避雷', 'All alerts')} →</a>
     </div>
-    <div class="panel tip-panel">
-      <h3>🛡 ${t('tipsTitle', lang)}</h3>
-      <p>${t('tipsText', lang)}</p>
-      <a href="${link('/category/scam-alerts.html', lang, prefix)}" class="btn btn-primary">${lang === 'en' ? 'Learn More' : '查看避坑指南'} →</a>
+    <div class="alert-grid">${scamCards}</div>
+    <div class="notice-box notice-danger alert-rule">
+      <strong>🛑 ${L('一条铁律', 'Golden rule')}</strong>
+      <p>${L('凡是先让你垫付、交押金、交会费才能提现的，一律不要参与。', 'Never pay upfront — deposits, fees or "unlock" charges. Walk away.')}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ② 分类导航区（核心） -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="section-label">DIRECTORY</span><h2>🧭 ${L('平台分类导航', 'Platform Directory')}</h2></div>
+      <a href="${link('/platforms.html', lang, prefix)}" class="section-link">${L('查看全部', 'View all')} →</a>
+    </div>
+    <div class="home-cat-grid">${catCards}</div>
+  </div>
+</section>
+
+<!-- ③ 副业经验博客（SEO 主力） -->
+<section class="section section-blog">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="section-label">BLOG</span><h2>📖 ${L('副业经验博客', 'Side Hustle Blog')}</h2></div>
+      <a href="${link('/blog.html', lang, prefix)}" class="section-link">${L('全部专栏', 'All columns')} →</a>
+    </div>
+    <div class="home-col-grid">${colCards}</div>
+    <div class="latest-wrap">
+      <h3 class="subhead">${L('最新文章', 'Latest articles')}</h3>
+      <div class="post-grid">${latest}</div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 投稿入口 -->
+<section class="section section-submit">
+  <div class="container">
+    <div class="submit-cta">
+      <div class="submit-icon">📝</div>
+      <div class="submit-text">
+        <h2>${L('发现靠谱平台？投稿给我们', 'Found a legit platform? Submit it')}</h2>
+        <p>${L('访客提交平台信息，我们人工核实后上架。请附类型、提现门槛、币种、结算方式与真实坑点。', 'Submit platforms for manual review. Include type, minimum withdrawal, currency, settlement and honest downsides.')}</p>
+      </div>
+      <a href="${link('/submit.html', lang, prefix)}" class="btn btn-primary">${L('投稿平台', 'Submit a platform')} →</a>
     </div>
   </div>
 </section>`;
 
+  // 页脚法务入口由 layout 统一处理
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
@@ -631,6 +660,270 @@ function buildStaticPage(kind, lang) {
   });
 }
 
+/* ---------- 新增栏目页面 ---------- */
+
+// 通用：breadcrumb
+function crumb(lang, prefix, items) {
+  return `<nav class="breadcrumb"><a href="${link('/', lang, prefix)}">${t('home', lang)}</a> ${items.map(x => `<span>/</span>${x}`).join(' ')}</nav>`;
+}
+
+// 平台导航总览 /platforms.html
+function buildPlatformsIndex(lang) {
+  const prefix = lang === 'en' ? '../' : '';
+  const catHtml = platforms.categories.map(c => {
+    const count = c.platforms.length;
+    return `<a href="${link(`/platform/${c.id}.html`, lang, prefix)}" class="nav-cat-card" style="--cat-color:${c.color}">
+      <div class="nc-icon">${c.icon}</div>
+      <h3>${esc(lang === 'en' ? c.nameEn : c.name)}</h3>
+      <p>${esc(lang === 'en' ? c.descEn : c.desc)}</p>
+      <span class="nc-count">${count} ${lang === 'en' ? 'platforms' : '个平台'} →</span>
+    </a>`;
+  }).join('');
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Platform Directory' : '平台导航'}</span>`])}
+  <div class="page-hero">
+    <div class="page-icon">🧭</div>
+    <h1>${lang === 'en' ? 'Legit Side Hustle Platform Directory' : '正规副业平台导航'}</h1>
+    <p>${lang === 'en' ? 'Each platform is listed with its type, minimum withdrawal, currency, settlement method, pros and real downsides. Most are pocket-money channels — set realistic expectations.' : '每个平台都写清类型、最低提现、结算币种与方式、优点与真实坑点。多数属于零花钱渠道，请建立合理预期。'}</p>
+  </div>
+  <div class="notice-box notice-warn">
+    <strong>${lang === 'en' ? 'Read this first' : '先看这里'}</strong>
+    <p>${lang === 'en' ? 'We do not promise guaranteed income. Any platform asking for an upfront deposit, membership fee or "unlock" payment before withdrawal is a red flag.' : '本站不承诺收益。凡是要求先交押金、会员费、解冻费才能提现的，一律高度警惕。'}</p>
+  </div>
+  <div class="nav-cat-grid">${catHtml}</div>
+</div>`;
+  return layout({
+    lang, title: lang === 'en' ? 'Platform Directory' : '平台导航',
+    description: lang === 'en' ? 'A vetted directory of side hustle platforms with withdrawal thresholds, settlement methods, pros and real downsides.' : '正规副业平台导航：分类整理问卷、接单、内容分成、分销等平台，写清提现门槛与真实坑点。',
+    keywords: '副业平台,问卷平台,接单平台,平台提现,surveys,affiliate', canonicalHref: '/platforms.html', prefix, body
+  });
+}
+
+// 平台分类页 /platform/{id}.html
+function buildPlatformCategory(c, lang) {
+  const prefix = lang === 'en' ? '../../' : '../';
+  const listHtml = c.platforms.map(p => {
+    const pros = (lang === 'en' ? p.prosEn : p.pros).map(x => `<li class="pro">${esc(x)}</li>`).join('');
+    const cons = (lang === 'en' ? p.consEn : p.cons).map(x => `<li class="con">${esc(x)}</li>`).join('');
+    return `<article class="platform-card" style="--cat-color:${c.color}">
+      <div class="pc-head">
+        <div><h3>${esc(p.name)}</h3><span class="pc-type">${esc(lang === 'en' ? p.typeEn : p.type)}</span></div>
+        <span class="pc-level">${esc(lang === 'en' ? p.levelEn : p.level)}</span>
+      </div>
+      <div class="pc-specs">
+        <div><span>${lang === 'en' ? 'Min. withdrawal' : '最低提现'}</span><strong>${esc(lang === 'en' ? p.minWithdrawEn : p.minWithdraw)}</strong></div>
+        <div><span>${lang === 'en' ? 'Currency' : '结算币种'}</span><strong>${esc(lang === 'en' ? p.currencyEn : p.currency)}</strong></div>
+        <div><span>${lang === 'en' ? 'Settlement' : '结算方式'}</span><strong>${esc(lang === 'en' ? p.settleEn : p.settle)}</strong></div>
+      </div>
+      <div class="pc-pairs">
+        <div class="pc-col"><h4>✅ ${lang === 'en' ? 'Pros' : '优点'}</h4><ul>${pros}</ul></div>
+        <div class="pc-col pc-cons"><h4>⚠️ ${lang === 'en' ? 'Downsides' : '坑点'}</h4><ul>${cons}</ul></div>
+      </div>
+    </article>`;
+  }).join('');
+  const title = lang === 'en' ? c.nameEn : c.name;
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<a href="${link('/platforms.html', lang, prefix)}">${lang === 'en' ? 'Platforms' : '平台导航'}</a>`, `<span>${esc(title)}</span>`])}
+  <div class="page-hero page-hero-sm">
+    <div class="page-icon">${c.icon}</div>
+    <h1>${esc(title)}</h1>
+    <p>${esc(lang === 'en' ? c.descEn : c.desc)}</p>
+  </div>
+  <div class="platform-list">${listHtml}</div>
+</div>`;
+  return layout({
+    lang, title, description: lang === 'en' ? c.descEn : c.desc,
+    keywords: (lang === 'en' ? c.nameEn : c.name) + ',副业平台,提现', canonicalHref: `/platform/${c.id}.html`, prefix, body
+  });
+}
+
+// 骗局拆解列表 /scams.html
+function buildScamsIndex(lang) {
+  const prefix = lang === 'en' ? '../' : '';
+  const items = scams.scams.map(s => {
+    const href = link(`/scam/${s.id}.html`, lang, prefix);
+    return `<a href="${href}" class="scam-card" style="--scam-color:${s.color}">
+      <div class="sc-icon">${s.icon}</div>
+      <div class="sc-body">
+        <div class="sc-meta"><time>${esc(s.date)}</time><span class="sc-tag">${lang === 'en' ? 'Scam Alert' : '避雷'}</span></div>
+        <h3>${esc(lang === 'en' ? s.titleEn : s.title)}</h3>
+        <p>${esc(lang === 'en' ? s.summaryEn : s.summary)}</p>
+        <span class="sc-more">${lang === 'en' ? 'See how it works' : '查看套路拆解'} →</span>
+      </div>
+    </a>`;
+  }).join('');
+  const relatedPosts = (posts.filter(p => p.category === 'scam-alerts') || []).slice(0, 4).map(p => postCard(p, lang, prefix)).join('');
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Scam Alerts' : '最新避雷'}</span>`])}
+  <div class="page-hero">
+    <div class="page-icon">🚨</div>
+    <h1>${lang === 'en' ? 'Latest Scam Alerts' : '最新避雷'}</h1>
+    <p>${lang === 'en' ? 'Pinned: recent high-frequency scams — Douyin idle-earnings, AI fake-order schemes, upfront deposits. Learn the pattern, spot the red flags.' : '置顶：近期高发骗局——抖音挂机、AI 代做刷单、垫付任务。拆解套路，记住识别特征。'}</p>
+  </div>
+  <div class="notice-box notice-danger">
+    <strong>🛑 ${lang === 'en' ? 'Golden rule' : '一条铁律'}</strong>
+    <p>${lang === 'en' ? 'Anyone asking you to pay first — deposits, fees, "unlock" charges — is a scam. No exceptions.' : '凡是先让你垫付、交押金、交会费、买"入场券"的，一律不要参与，没有例外。'}</p>
+  </div>
+  <div class="scam-grid">${items}</div>
+  ${relatedPosts ? `<section class="section"><div class="section-head"><div><span class="section-label">MORE</span><h2>📚 ${lang === 'en' ? 'Related guides' : '相关避坑文章'}</h2></div></div><div class="post-grid">${relatedPosts}</div></section>` : ''}
+</div>`;
+  return layout({
+    lang, title: lang === 'en' ? 'Latest Scam Alerts' : '最新避雷',
+    description: lang === 'en' ? 'Breakdowns of recent side hustle scams with red flags and warning signs.' : '近期高发副业骗局拆解：套路、识别特征与防范提示，先垫付交押金的一律标红避雷。',
+    keywords: '副业骗局,避雷,刷单诈骗,挂机骗局,side hustle scam', canonicalHref: '/scams.html', prefix, body
+  });
+}
+
+// 骗局详情 /scam/{id}.html
+function buildScam(s, lang) {
+  const prefix = lang === 'en' ? '../../' : '../';
+  const steps = (lang === 'en' ? s.steps : s.steps).map((st, i) => `<li><span class="step-n">${i + 1}</span><span>${esc(typeof st === 'string' ? st : (st[lang] || st.zh))}</span></li>`).join('');
+  const flags = (lang === 'en' ? s.redFlagsEn : s.redFlags).map(x => `<li>${esc(x)}</li>`).join('');
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<a href="${link('/scams.html', lang, prefix)}">${lang === 'en' ? 'Scam Alerts' : '最新避雷'}</a>`, `<span>${esc(lang === 'en' ? s.titleEn : s.title)}</span>`])}
+  <article class="static-page scam-detail" style="--scam-color:${s.color}">
+    <header class="page-header"><div class="page-icon">${s.icon}</div><h1>${esc(lang === 'en' ? s.titleEn : s.title)}</h1><p class="page-sub">${esc(lang === 'en' ? s.summaryEn : s.summary)} · ${esc(s.date)}</p></header>
+    <div class="article-content">
+      <div class="notice-box notice-danger"><strong>🛑 ${lang === 'en' ? 'If you see this, walk away' : '遇到即远离'}</strong><p>${lang === 'en' ? s.verdictEn : s.verdict}</p></div>
+      <h2>${lang === 'en' ? 'How the scam works' : '套路拆解'}</h2>
+      <ol class="scam-steps">${steps}</ol>
+      <h2>${lang === 'en' ? 'Red flags (memorize these)' : '识别特征（记住这些）'}</h2>
+      <ul class="red-flags">${flags}</ul>
+      <div class="notice-box notice-warn"><strong>📷 ${lang === 'en' ? 'Screenshot clue' : '截图识别'}</strong><p>${lang === 'en' ? 'Fake earnings screenshots are usually too neat: identical round numbers, no transaction IDs, and the same image reused across accounts. Real platform records are messy and verifiable.' : '假收益截图往往过于整齐：清一色整数、无交易单号、多个账号复用同一张图。真实的平台记录细节杂乱且可核对。'}</p></div>
+    </div>
+  </article>
+</div>`;
+  return layout({
+    lang, title: lang === 'en' ? s.titleEn : s.title, description: lang === 'en' ? s.summaryEn : s.summary,
+    keywords: '骗局拆解,副业避雷,scam breakdown', canonicalHref: `/scam/${s.id}.html`, prefix, body
+  });
+}
+
+// 博客专栏页 /column/{id}.html
+function buildBlogColumn(col, lang) {
+  const prefix = lang === 'en' ? '../../' : '../';
+  const colPosts = col.slugs.map(sl => posts.find(p => p.slug === sl)).filter(Boolean);
+  const cards = colPosts.map(p => postCard(p, lang, prefix)).join('');
+  const title = lang === 'en' ? col.nameEn : col.name;
+  const otherCols = blogColumns.columns.filter(c => c.id !== col.id).map(c => `<a href="${link(`/column/${c.id}.html`, lang, prefix)}">${lang === 'en' ? c.nameEn : c.name} →</a>`).join('');
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<a href="${link('/blog.html', lang, prefix)}">${lang === 'en' ? 'Blog' : '副业经验博客'}</a>`, `<span>${esc(title)}</span>`])}
+  <div class="page-hero page-hero-sm" style="--cat-color:${col.color}">
+    <div class="page-icon">${col.icon}</div>
+    <h1>${esc(title)}</h1>
+    <p>${esc(lang === 'en' ? col.descEn : col.desc)}</p>
+  </div>
+  <div class="post-grid">${cards}</div>
+  <div class="panel" style="margin-top:28px"><h3>${lang === 'en' ? 'Other columns' : '其他专栏'}</h3><div class="column-links">${otherCols}</div></div>
+</div>`;
+  return layout({
+    lang, title, description: lang === 'en' ? col.descEn : col.desc,
+    keywords: (lang === 'en' ? col.nameEn : col.name) + ',副业经验', canonicalHref: `/column/${col.id}.html`, prefix, body
+  });
+}
+
+// 博客频道页 /blog.html
+function buildBlogIndex(lang) {
+  const prefix = lang === 'en' ? '../' : '';
+  const colHtml = blogColumns.columns.map(c => {
+    const n = c.slugs.length;
+    return `<a href="${link(`/column/${c.id}.html`, lang, prefix)}" class="nav-cat-card" style="--cat-color:${c.color}">
+      <div class="nc-icon">${c.icon}</div><h3>${esc(lang === 'en' ? c.nameEn : c.name)}</h3>
+      <p>${esc(lang === 'en' ? c.descEn : c.desc)}</p>
+      <span class="nc-count">${n} ${lang === 'en' ? 'articles' : '篇文章'} →</span>
+    </a>`;
+  }).join('');
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Blog' : '副业经验博客'}</span>`])}
+  <div class="page-hero">
+    <div class="page-icon">📖</div>
+    <h1>${lang === 'en' ? 'Side Hustle Experience Blog' : '副业经验博客'}</h1>
+    <p>${lang === 'en' ? 'Beginner guides, payout thresholds and risk control, honest income logs, and scam breakdowns — the SEO backbone of this site.' : '新手入门、提现门槛与风控、真实收入记录、骗局拆解——本站 SEO 主力栏目。'}</p>
+  </div>
+  <div class="nav-cat-grid">${colHtml}</div>
+</div>`;
+  return layout({
+    lang, title: lang === 'en' ? 'Blog' : '副业经验博客',
+    description: lang === 'en' ? 'Beginner guides, payout and risk control, real income logs and scam breakdowns.' : '副业经验博客：新手入门、提现风控、真实收入记录与骗局拆解。',
+    keywords: '副业经验,新手指南,收入记录,骗局拆解', canonicalHref: '/blog.html', prefix, body
+  });
+}
+
+// 投稿页 /submit.html（静态说明 + 邮箱提交）
+function buildSubmit(lang) {
+  const prefix = lang === 'en' ? '../' : '';
+  const mail = S.email;
+  const subject = encodeURIComponent(lang === 'en' ? 'Platform submission: ' : '平台投稿：');
+  const bodyTpl = encodeURIComponent(lang === 'en'
+    ? 'Platform name:\nType (survey / gig / affiliate / resale):\nMinimum withdrawal:\nCurrency & settlement:\nPros:\nDownsides / risks:\nOfficial URL:\nWhy you recommend it:'
+    : '平台名称：\n类型（问卷/接单/分销/二手）：\n最低提现：\n结算币种与方式：\n优点：\n坑点与风险：\n官网地址：\n推荐理由：');
+  const mailto = `mailto:${mail}?subject=${subject}&body=${bodyTpl}`;
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Submit a Platform' : '投稿平台'}</span>`])}
+  <div class="page-hero">
+    <div class="page-icon">📝</div>
+    <h1>${lang === 'en' ? 'Submit a Legit Platform' : '投稿靠谱平台'}</h1>
+    <p>${lang === 'en' ? 'Found a platform worth sharing? Send it to us. We manually review every submission and only publish what we can verify.' : '发现值得分享的靠谱平台？欢迎投稿。我们人工审核每一份提交，只上架能核实的平台。'}</p>
+  </div>
+  <div class="article-content static-page">
+    <h2>${lang === 'en' ? 'What to include' : '请提供这些信息'}</h2>
+    <ul>
+      <li>${lang === 'en' ? 'Platform name and official URL' : '平台名称与官网地址'}</li>
+      <li>${lang === 'en' ? 'Type: survey, crowdsourcing, writing, design, affiliate, resale, etc.' : '类型：问卷、众包、文案、设计、分销、二手等'}</li>
+      <li>${lang === 'en' ? 'Minimum withdrawal, currency and settlement method' : '最低提现、结算币种与结算方式'}</li>
+      <li>${lang === 'en' ? 'Pros AND honest downsides (fees, bans, slow payouts, low rates)' : '优点与真实坑点（抽成、封号、提现卡审核、单价低等）'}</li>
+      <li>${lang === 'en' ? 'Your first-hand experience — no copy-paste marketing text' : '你的实测视角——不要直接复制官方宣传文案'}</li>
+    </ul>
+    <h2>${lang === 'en' ? 'Review process' : '审核流程'}</h2>
+    <p>${lang === 'en' ? 'We verify the platform, check its payout terms and cross-check user feedback. Submissions with exaggerated income claims, referral pressure or upfront-fee requirements will be rejected.' : '我们会核实平台主体、提现规则与用户反馈。含夸大收益承诺、拉人头或要求先交钱的投稿一律不予上架。'}</p>
+    <div class="notice-box notice-warn"><strong>${lang === 'en' ? 'No guarantees' : '不承诺收录'}</strong><p>${lang === 'en' ? 'Submission does not guarantee publication. We edit content for clarity and compliance before publishing.' : '投稿不等于收录。上架前我们会做合规与可读性编辑。'}</p></div>
+    <a href="${mailto}" class="btn btn-primary btn-lg">✉️ ${lang === 'en' ? 'Email your submission' : '邮件提交投稿'} →</a>
+    <p class="muted">${lang === 'en' ? 'Or copy this address:' : '或复制邮箱地址：'} <code>${mail}</code></p>
+  </div>
+</div>`;
+  return layout({
+    lang, title: lang === 'en' ? 'Submit a Platform' : '投稿平台',
+    description: lang === 'en' ? 'Submit a legit side hustle platform for manual review and publication.' : '投稿靠谱副业平台，人工审核后上架。',
+    keywords: '副业投稿,提交平台,submit platform', canonicalHref: '/submit.html', prefix, body
+  });
+}
+
+// 隐私政策 /privacy.html
+function buildPrivacy(lang) {
+  const prefix = lang === 'en' ? '../' : '';
+  const paras = lang === 'en' ? [
+    ['Last updated: 2026-11-19', ''],
+    ['1. Information we collect', 'This is a static information site. We do not require registration and do not collect personal information such as your name, phone number or ID. If you email us, we only use that message to reply to you.'],
+    ['2. Cookies and local storage', 'We use browser local storage only to remember your light/dark theme preference. We do not use advertising or tracking cookies.'],
+    ['3. Third-party links', 'Outbound links to platforms are for reference. Those sites have their own privacy policies; we are not responsible for their data practices.'],
+    ['4. Contact', 'For privacy questions, email ' + S.email + '.']
+  ] : [
+    ['最后更新：2026-11-19', ''],
+    ['1. 我们收集的信息', '本站为静态信息站点，不要求注册，不收集姓名、电话、身份证等个人信息。你通过邮件联系我们时，我们仅用该信息回复你。'],
+    ['2. Cookie 与本地存储', '我们仅用浏览器本地存储记住你的深浅色主题偏好，不使用广告或追踪 Cookie。'],
+    ['3. 第三方链接', '站外平台链接仅供参考，这些网站有各自的隐私政策，我们对其数据处理不承担责任。'],
+    ['4. 联系方式', '隐私相关问题请发邮件至 ' + S.email + '。']
+  ];
+  const content = paras.map(([h, p]) => `<h2>${esc(h)}</h2>${p ? `<p>${esc(p)}</p>` : ''}`).join('');
+  const body = `
+<div class="container">
+  ${crumb(lang, prefix, [`<span>${lang === 'en' ? 'Privacy Policy' : '隐私政策'}</span>`])}
+  <article class="static-page"><header class="page-header"><div class="page-icon">🔒</div><h1>${lang === 'en' ? 'Privacy Policy' : '隐私政策'}</h1></header><div class="article-content">${content}</div></article>
+</div>`;
+  return layout({
+    lang, title: lang === 'en' ? 'Privacy Policy' : '隐私政策',
+    description: lang === 'en' ? 'How this site handles your information.' : '本站如何处理你的信息。',
+    keywords: '隐私政策,privacy policy', canonicalHref: '/privacy.html', prefix, body
+  });
+}
+
 // 404 页
 function build404(lang) {
   const prefix = lang === 'en' ? '../' : '';
@@ -664,8 +957,17 @@ function buildSitemap() {
   for (const lang of ['zh', 'en']) {
     add('/', lang, '1.0', 'daily');
     add('/all.html', lang, '0.8', 'daily');
+    add('/platforms.html', lang, '0.9', 'weekly');
+    add('/scams.html', lang, '0.9', 'daily');
+    add('/blog.html', lang, '0.8', 'weekly');
+    add('/submit.html', lang, '0.5', 'monthly');
     add('/about.html', lang, '0.5', 'monthly');
+    add('/disclaimer.html', lang, '0.5', 'monthly');
+    add('/privacy.html', lang, '0.5', 'monthly');
     for (const c of categories) add(`/category/${c.slug}.html`, lang, '0.7', 'weekly');
+    for (const c of platforms.categories) add(`/platform/${c.id}.html`, lang, '0.8', 'weekly');
+    for (const s of scams.scams) add(`/scam/${s.id}.html`, lang, '0.8', 'weekly');
+    for (const c of blogColumns.columns) add(`/column/${c.id}.html`, lang, '0.7', 'weekly');
     for (const p of posts) add(`/post/${p.slug}.html`, lang, '0.8', 'monthly');
   }
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -771,16 +1073,36 @@ function main() {
   // 中文页面（根目录）
   writeFile('index.html', buildHome('zh'));
   writeFile('all.html', buildAll('zh'));
+  writeFile('platforms.html', buildPlatformsIndex('zh'));
+  writeFile('scams.html', buildScamsIndex('zh'));
+  writeFile('blog.html', buildBlogIndex('zh'));
+  writeFile('submit.html', buildSubmit('zh'));
   writeFile('about.html', buildStaticPage('about', 'zh'));
   writeFile('disclaimer.html', buildStaticPage('disclaimer', 'zh'));
+  writeFile('privacy.html', buildPrivacy('zh'));
   writeFile('404.html', build404('zh'));
+
+  // 平台 / 骗局 / 专栏页（中文）
+  for (const c of platforms.categories) writeFile(`platform/${c.id}.html`, buildPlatformCategory(c, 'zh'));
+  for (const s of scams.scams) writeFile(`scam/${s.id}.html`, buildScam(s, 'zh'));
+  for (const c of blogColumns.columns) writeFile(`column/${c.id}.html`, buildBlogColumn(c, 'zh'));
 
   // 英文页面（/en/）
   writeFile('en/index.html', buildHome('en'));
   writeFile('en/all.html', buildAll('en'));
+  writeFile('en/platforms.html', buildPlatformsIndex('en'));
+  writeFile('en/scams.html', buildScamsIndex('en'));
+  writeFile('en/blog.html', buildBlogIndex('en'));
+  writeFile('en/submit.html', buildSubmit('en'));
   writeFile('en/about.html', buildStaticPage('about', 'en'));
   writeFile('en/disclaimer.html', buildStaticPage('disclaimer', 'en'));
+  writeFile('en/privacy.html', buildPrivacy('en'));
   writeFile('en/404.html', build404('en'));
+
+  // 平台 / 骗局 / 专栏页（英文）
+  for (const c of platforms.categories) writeFile(`en/platform/${c.id}.html`, buildPlatformCategory(c, 'en'));
+  for (const s of scams.scams) writeFile(`en/scam/${s.id}.html`, buildScam(s, 'en'));
+  for (const c of blogColumns.columns) writeFile(`en/column/${c.id}.html`, buildBlogColumn(c, 'en'));
 
   // 文章页
   for (const p of posts) {

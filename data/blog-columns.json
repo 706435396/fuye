@@ -1,0 +1,73 @@
+{
+  "note": "副业经验博客为独立栏目，是 SEO 主力。以下专栏通过 slug 列表归类已有文章，不改动文章本身。新增内容须遵守内容规范：收入表述客观、禁止夸大话术。",
+  "columns": [
+    {
+      "id": "beginner-guide",
+      "icon": "🌱",
+      "color": "#6366f1",
+      "name": "新手入门指南",
+      "nameEn": "Beginner Guides",
+      "desc": "第一次做副业该从哪里开始？基础概念、方向选择与避坑常识。",
+      "descEn": "Where to start your first side hustle: basics, choosing a direction and common-sense cautions.",
+      "slugs": [
+        "best-side-hustles-2026",
+        "affiliate-marketing-beginner-guide",
+        "ai-tools-side-hustle",
+        "freelancing-platforms-pricing",
+        "content-monetization-path",
+        "dropshipping-starter-guide",
+        "build-blog-github-cloudflare",
+        "side-hustle-time-management"
+      ]
+    },
+    {
+      "id": "payout-risk",
+      "icon": "💳",
+      "color": "#0ea5e9",
+      "name": "提现门槛 · 结算周期 · 风控坑",
+      "nameEn": "Payouts, Settlement & Risk Control",
+      "desc": "各平台的提现门槛、结算币种与周期、封号与审核风险——决定一个平台值不值得做的硬指标。",
+      "descEn": "Withdrawal thresholds, currencies, settlement cycles and account-ban risks — the hard metrics that decide if a platform is worth it.",
+      "slugs": [
+        "neovo-audio-evaluation",
+        "netease-youling-crowdsourcing",
+        "tencent-souhuobang-tasks",
+        "paid-survey-sites-global",
+        "chinese-survey-platforms",
+        "product-testing-crowdsourcing",
+        "amap-review-tasks",
+        "zuoyebang-question-dedup",
+        "paid-to-watch-ads"
+      ]
+    },
+    {
+      "id": "income-log",
+      "icon": "📊",
+      "color": "#10b981",
+      "name": "收入记录（真实不夸大）",
+      "nameEn": "Real Income Logs",
+      "desc": "记录真实、可核对的零花钱级收入：几块到几百，不渲染一夜发财的故事，把预期放在合理位置。",
+      "descEn": "Honest, verifiable pocket-money income logs — a few to a few hundred units, no get-rich stories.",
+      "slugs": [
+        "survey-approval-tips",
+        "short-sentence-writing",
+        "chat-to-earn-waku-risks",
+        "wechat-video-monetization"
+      ]
+    },
+    {
+      "id": "scam-breakdown",
+      "icon": "🛡️",
+      "color": "#ef4444",
+      "name": "骗局拆解",
+      "nameEn": "Scam Breakdowns",
+      "desc": "流量爆款栏目：拆解套路、给出识别特征。凡是先垫付、交押金、交会费的一律标红避雷。",
+      "descEn": "High-traffic section: deconstruct scams and list red flags. Any upfront deposit or fee gets a red warning.",
+      "slugs": [
+        "online-money-making-scams",
+        "alipay-sesame-seeds",
+        "data-entry-jobs-scams"
+      ]
+    }
+  ]
+}

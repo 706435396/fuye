@@ -1,0 +1,97 @@
+{
+  "note": "骗局栏目为流量爆款，也是保护读者的重点。识别原则：凡是先让你垫付、交押金、交会费、买账号/'入场券'的，一律高度警惕。以下为套路拆解，非操作教程。",
+  "scams": [
+    {
+      "id": "douyin-idle-earn",
+      "icon": "🎭",
+      "color": "#ef4444",
+      "date": "2026-10",
+      "title": "抖音挂机赚钱：手机放着就能赚钱？",
+      "titleEn": "Douyin Idle-Earning: Money While Your Phone Sits?",
+      "summary": "宣称'手机上挂个软件，躺着刷播放量就能日进百元'，实际多为引流套路。",
+      "summaryEn": "Claims of easy money from idle apps are usually a funnel to something else.",
+      "steps": [
+        { "zh": "用短视频/群聊晒出'挂机收益截图'，吸引加群或下载 App", "en": "Post fake earnings screenshots in videos or groups to pull people into chat groups or apps" },
+        { "zh": "先让你免费试玩小额，作出'真能提现'的假象", "en": "Let you try a small amount first to create the illusion of real withdrawals" },
+        { "zh": "随后以'会员费/软件授权/升级套餐'为由要求先交钱", "en": "Then ask for upfront payment framed as membership, license or upgrade fees" },
+        { "zh": "交钱后以'任务异常/账户冻结'为由拖延提现，再诱导继续充值", "en": "After payment, delay withdrawals citing account issues and push for more top-ups" },
+        { "zh": "拉黑跑路或换个马甲重来", "en": "Block you and reappear under a new identity" }
+      ],
+      "redFlags": [
+        "要求先交钱才能提现（会员费、授权费、解冻费）",
+        "收益截图金额整齐、话术夸张（夸大回报、轻松赚钱之类）",
+        "没有可核实的公司主体与合同，只靠私聊沟通",
+        "让你发展下线、拉人头升级"
+      ],
+      "redFlagsEn": [
+        "Upfront fees required before withdrawal (membership, license, unlock fees)",
+        "Neat, exaggerated earning screenshots and hype language",
+        "No verifiable company or contract — private chats only",
+        "Pressure to recruit downlines to level up"
+      ],
+      "verdict": "凡是承诺'零操作高收益'的挂机项目，基本可直接判定为骗局。正规平台不会有'交钱才能提现'这一环节。",
+      "verdictEn": "Any idle-earnings scheme promising high returns with no work is almost certainly a scam. Legit platforms never charge to withdraw."
+    },
+    {
+      "id": "ai-dropship-scam",
+      "icon": "🤖",
+      "color": "#f59e0b",
+      "date": "2026-09",
+      "title": "AI 代做 / 刷单：'AI 自动赚钱'的新包装",
+      "titleEn": "AI Auto-Earning & Fake Order Scams",
+      "summary": "把传统刷单换上'AI 代运营''智能接单'的外衣，本质是先垫付再拉黑。",
+      "summaryEn": "Old fake-order scams repackaged as AI automation — the core is upfront payment then disappearing.",
+      "steps": [
+        { "zh": "用'AI 全自动跑单''无人值守赚钱'等话术吸引关注", "en": "Lure with claims of fully automated AI earnings" },
+        { "zh": "展示伪造的后台数据，营造'稳定出单'假象", "en": "Show fabricated dashboards to imply steady orders" },
+        { "zh": "要求购买'AI 软件''脚本授权'或垫付刷单本金", "en": "Ask you to buy AI software, script licenses or advance order capital" },
+        { "zh": "前几单小额返还建立信任，诱导加大投入", "en": "Return small amounts on the first orders to build trust, then push bigger sums" },
+        { "zh": "大额投入后以'系统风控''流水不足'为由拒绝返还", "en": "Refund large sums with excuses like risk control or insufficient turnover" }
+      ],
+      "redFlags": [
+        "刷单本身违法违规，任何让你'刷单返佣'的直接拉黑",
+        "要求垫付本金、多次转账到不同账户",
+        "所谓 AI 软件无法试用、无正规公司信息",
+        "承诺'回本周期''保本收益'"
+      ],
+      "redFlagsEn": [
+        "Fake ordering is illegal — block anyone asking you to do it for commission",
+        "Upfront capital and transfers to different accounts",
+        "AI software with no trial and no company details",
+        "Promises of guaranteed returns or payback periods"
+      ],
+      "verdict": "刷单返佣在中国属于违法行为，参与资金被骗也难以维权。'AI'只是营销词，不改变骗局本质。",
+      "verdictEn": "Commission-based fake ordering is illegal; victims have little legal recourse. 'AI' is just a marketing label."
+    },
+    {
+      "id": "advance-fee-task",
+      "icon": "💸",
+      "color": "#dc2626",
+      "date": "2026-08",
+      "title": "垫付任务 / 交押金：最经典的副业骗局",
+      "titleEn": "Upfront Payment & Deposit Scams",
+      "summary": "以'任务保证金''入职押金''代办费'名义先收钱，是最普遍、最容易识别的一类骗局。",
+      "summaryEn": "The most common scam: collect a deposit, 'onboarding fee' or agency fee before any real work.",
+      "steps": [
+        { "zh": "在招聘平台/社群发布'高薪兼职，日结'岗位", "en": "Post high-paying part-time jobs with daily pay in job groups" },
+        { "zh": "面试极简，快速'录用'，制造机会稀缺感", "en": "Minimal interview, instant 'hiring', create urgency" },
+        { "zh": "以押金、培训费、材料费、账号购买费等名目要求先转账", "en": "Request transfers for deposits, training fees, materials or account purchases" },
+        { "zh": "收钱后敷衍派单或失联", "en": "Send token tasks or go silent after receiving money" }
+      ],
+      "redFlags": [
+        "任何'先交钱后上岗'的兼职——正规工作不收求职者钱",
+        "薪资明显高于市场、入职却零门槛",
+        "私人账户收款、拒绝签合同",
+        "催促“名额有限，先交先得”"
+      ],
+      "redFlagsEn": [
+        "Any job asking you to pay first — real employers don't charge candidates",
+        "Well-above-market pay with zero requirements",
+        "Payment to personal accounts and refusal to sign contracts",
+        "Urgency tactics: limited slots, pay first"
+      ],
+      "verdict": "记住一条铁律：让你先掏钱的'赚钱机会'，无论包装成什么，都不要参与。",
+      "verdictEn": "One iron rule: never pay money for a money-making opportunity, no matter how it's packaged."
+    }
+  ]
+}

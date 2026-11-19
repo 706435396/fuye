@@ -17,15 +17,15 @@
     "footerLinks": [
       { "label": "关于我们", "labelEn": "About", "href": "/about.html" },
       { "label": "免责声明", "labelEn": "Disclaimer", "href": "/disclaimer.html" },
+      { "label": "隐私政策", "labelEn": "Privacy", "href": "/privacy.html" },
+      { "label": "投稿平台", "labelEn": "Submit", "href": "/submit.html" },
       { "label": "联系我们", "labelEn": "Contact", "href": "mailto:hello@example.com" }
     ]
   },
   "nav": [
-    { "label": "首页", "labelEn": "Home", "href": "/" },
-    { "label": "副业项目", "labelEn": "Side Hustles", "href": "/category/side-hustles.html" },
-    { "label": "联盟营销", "labelEn": "Affiliate", "href": "/category/affiliate-marketing.html" },
-    { "label": "自由职业", "labelEn": "Freelancing", "href": "/category/freelancing.html" },
-    { "label": "被动收入", "labelEn": "Passive Income", "href": "/category/passive-income.html" },
-    { "label": "避坑指南", "labelEn": "Scam Alerts", "href": "/category/scam-alerts.html" }
+    { "label": "最新避雷", "labelEn": "Scam Alerts", "href": "/scams.html" },
+    { "label": "平台导航", "labelEn": "Platforms", "href": "/platforms.html" },
+    { "label": "副业博客", "labelEn": "Blog", "href": "/blog.html" },
+    { "label": "投稿", "labelEn": "Submit", "href": "/submit.html" }
   ]
 }
