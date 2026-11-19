@@ -16,7 +16,7 @@
   const T = I18N[LANG] || I18N.zh;
 
   /* ---------- 主题切换 ---------- */
-  const THEME_KEY = 'fuyemoney-theme';
+  const THEME_KEY = 'fuye-2zl-theme';
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     const btn = document.getElementById('themeToggle');
