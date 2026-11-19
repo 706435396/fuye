@@ -245,7 +245,7 @@ function layout({ lang, title, description, keywords, canonicalHref, prefix, bod
   const pageTitle = title ? `${title} | ${name}` : `${name} - ${tagline}`;
   const canonical = absUrlLang(canonicalHref, lang);
   const altLang = lang === 'zh' ? 'en' : 'zh';
-  // 顶栏彩色导航（方案C）：首页/平台导航/副业博客/最新避雷/投稿
+  // 顶栏彩色导航（方案C）：首页/靠谱赚钱/最新避雷/投稿（数据来自 site.nav）
   const topNav = [
     { href: '/', zh: '首页', en: 'Home', cls: 'c-blue' },
     ...site.nav.map(n => ({ href: n.href, zh: n.label, en: n.labelEn,
@@ -419,14 +419,13 @@ function portalBanner(inner) {
   return `<section class="portal-banner"><div class="container"><h1>${inner}</h1></div></section>`;
 }
 
-// 站点级红Tab（最新文章/平台导航/副业博客/投稿）
+// 站点级红Tab（最新文章/靠谱赚钱/投稿）
 // homePanels=true：生成带 data-tab 的切换按钮，配合首页四面板；否则为普通跳转链接
 function siteTabs(lang, prefix, current, firstHref, homePanels) {
   const L = (zh, en) => lang === 'en' ? en : zh;
   const defs = [
     { key: 'home', zh: '最新文章', en: 'Latest', href: '/' },
-    { key: 'platforms', zh: '平台导航', en: 'Platforms', href: '/platforms.html' },
-    { key: 'blog', zh: '副业博客', en: 'Blog', href: '/blog.html' },
+    { key: 'platforms', zh: '靠谱赚钱', en: 'Legit Earnings', href: '/platforms.html' },
     { key: 'submit', zh: '投稿平台', en: 'Submit', href: '/submit.html' }
   ];
   return `<nav class="portal-tabs"${homePanels ? ' id="homeTabs"' : ''}>${defs.map(d => {
@@ -552,7 +551,7 @@ function buildHome(lang) {
   const prefix = lang === 'en' ? '../' : '';
   const L = (zh, en) => lang === 'en' ? en : zh;
 
-  // 四个切换面板（与"最新文章"同款紧凑列表风格）
+  // 切换面板（与"最新文章"同款紧凑列表风格）：最新文章 / 靠谱赚钱 / 投稿平台
   const panels = `
   <div class="portal-panel is-active" data-panel="home">
     ${portalRowsHtml(sortedPosts().slice(0, 12), lang, prefix, { firstTop: true })}
@@ -560,11 +559,7 @@ function buildHome(lang) {
   </div>
   <div class="portal-panel" data-panel="platforms" hidden>
     ${portalPlatformRows(lang, prefix)}
-    <div class="panel-more"><a href="${link('/platforms.html', lang, prefix)}">${L('进入平台导航', 'Open platform directory')} →</a></div>
-  </div>
-  <div class="portal-panel" data-panel="blog" hidden>
-    ${portalBlogRows(lang, prefix)}
-    <div class="panel-more"><a href="${link('/blog.html', lang, prefix)}">${L('进入副业博客', 'Open blog')} →</a></div>
+    <div class="panel-more"><a href="${link('/platforms.html', lang, prefix)}">${L('进入靠谱赚钱', 'Explore legit earnings')} →</a></div>
   </div>
   <div class="portal-panel" data-panel="submit" hidden>
     ${portalSubmitRows(lang, prefix)}
@@ -772,7 +767,7 @@ function crumb(lang, prefix, items) {
   return `<nav class="breadcrumb"><a href="${link('/', lang, prefix)}">${t('home', lang)}</a> ${items.map(x => `<span>/</span>${x}`).join(' ')}</nav>`;
 }
 
-// 平台导航总览 /platforms.html
+// 靠谱赚钱总览 /platforms.html
 function buildPlatformsIndex(lang) {
   const prefix = lang === 'en' ? '../' : '';
   const catHtml = platforms.categories.map(c => {
@@ -787,7 +782,7 @@ function buildPlatformsIndex(lang) {
   const main = `<div class="portal-content">
   <div class="page-hero page-hero-sm">
     <div class="page-icon">🧭</div>
-    <h1>${lang === 'en' ? 'Legit Side Hustle Platform Directory' : '正规副业平台导航'}</h1>
+    <h1>${lang === 'en' ? 'Legit Earnings · Side Hustle Platform Directory' : '靠谱赚钱 · 正规副业平台目录'}</h1>
     <p>${lang === 'en' ? 'Each platform is listed with its type, minimum withdrawal, currency, settlement method, pros and real downsides. Most are pocket-money channels — set realistic expectations.' : '每个平台都写清类型、最低提现、结算币种与方式、优点与真实坑点。多数属于零花钱渠道，请建立合理预期。'}</p>
   </div>
   <div class="notice-box notice-warn">
@@ -797,11 +792,11 @@ function buildPlatformsIndex(lang) {
   <div class="nav-cat-grid">${catHtml}</div>
 </div>`;
   const body = portalShell({
-    banner: `🧭 ${lang === 'en' ? 'Platform Directory' : '平台导航'}`, tabs: siteTabs(lang, prefix, 'platforms'), main, lang, prefix
+    banner: `🧭 ${lang === 'en' ? 'Legit Earnings' : '靠谱赚钱'}`, tabs: siteTabs(lang, prefix, 'platforms'), main, lang, prefix
   });
   return layout({
-    lang, title: lang === 'en' ? 'Platform Directory' : '平台导航',
-    description: lang === 'en' ? 'A vetted directory of side hustle platforms with withdrawal thresholds, settlement methods, pros and real downsides.' : '正规副业平台导航：分类整理问卷、接单、内容分成、分销等平台，写清提现门槛与真实坑点。',
+    lang, title: lang === 'en' ? 'Legit Earnings' : '靠谱赚钱',
+    description: lang === 'en' ? 'A vetted directory of side hustle platforms with withdrawal thresholds, settlement methods, pros and real downsides.' : '靠谱赚钱：分类整理问卷、接单、内容分成、分销等正规副业平台，写清提现门槛与真实坑点。',
     keywords: '副业平台,问卷平台,接单平台,平台提现,surveys,affiliate', canonicalHref: '/platforms.html', prefix, body
   });
 }
@@ -926,7 +921,7 @@ function buildBlogColumn(col, lang) {
   <div class="panel" style="margin-top:28px"><h3>${lang === 'en' ? 'Other columns' : '其他专栏'}</h3><div class="column-links">${otherCols}</div></div>
 </div>`;
   const body = portalShell({
-    banner: `${col.icon} ${esc(title)}`, tabs: siteTabs(lang, prefix, 'blog'), main, lang, prefix
+    banner: `${col.icon} ${esc(title)}`, tabs: siteTabs(lang, prefix, 'home'), main, lang, prefix
   });
   return layout({
     lang, title, description: lang === 'en' ? col.descEn : col.desc,
@@ -954,7 +949,7 @@ function buildBlogIndex(lang) {
   <div class="nav-cat-grid">${colHtml}</div>
 </div>`;
   const body = portalShell({
-    banner: `📖 ${lang === 'en' ? 'Blog' : '副业经验博客'}`, tabs: siteTabs(lang, prefix, 'blog'), main, lang, prefix
+    banner: `📖 ${lang === 'en' ? 'Blog' : '副业经验博客'}`, tabs: siteTabs(lang, prefix, 'home'), main, lang, prefix
   });
   return layout({
     lang, title: lang === 'en' ? 'Blog' : '副业经验博客',

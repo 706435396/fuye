@@ -109,7 +109,7 @@
     });
     // 支持通过 URL hash 直达某面板
     const initial = (location.hash || '').replace('#', '');
-    if (initial && ['platforms','blog','submit'].indexOf(initial) > -1) {
+    if (initial && ['platforms','submit'].indexOf(initial) > -1) {
       const target = homeTabs.querySelector('[data-tab="' + initial + '"]');
       if (target) target.click();
     }
