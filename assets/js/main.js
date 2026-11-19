@@ -20,7 +20,7 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    if (btn) btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
   }
   let savedTheme = null;
   try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
@@ -151,12 +151,16 @@
     });
   }
 
-  function openSearch() {
+  function openSearch(initial) {
     if (!searchOverlay) return;
     searchOverlay.hidden = false;
     document.body.style.overflow = 'hidden';
-    if (searchInput) { searchInput.value = ''; searchInput.focus(); }
-    if (searchResults) searchResults.innerHTML = '';
+    if (searchInput) {
+      searchInput.value = initial || '';
+      searchInput.focus();
+      if (initial) doSearch(initial);
+    }
+    if (searchResults && !initial) searchResults.innerHTML = '';
   }
   function closeSearch() {
     if (!searchOverlay) return;
@@ -164,7 +168,23 @@
     document.body.style.overflow = '';
   }
 
-  if (searchToggle) searchToggle.addEventListener('click', openSearch);
+  if (searchToggle) searchToggle.addEventListener('click', function () { openSearch(); });
+  const portalSearch = document.getElementById('portalSearchBtn');
+  const portalInput = document.getElementById('portalSearchInput');
+  if (portalSearch) portalSearch.addEventListener('click', function () { openSearch(portalInput ? portalInput.value : ''); });
+  if (portalInput) {
+    portalInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); openSearch(portalInput.value); }
+    });
+  }
+  const sideSearchBtn = document.getElementById('sideSearchBtn');
+  const sideSearchInput = document.getElementById('sideSearchInput');
+  if (sideSearchBtn) sideSearchBtn.addEventListener('click', function () { openSearch(sideSearchInput ? sideSearchInput.value : ''); });
+  if (sideSearchInput) {
+    sideSearchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); openSearch(sideSearchInput.value); }
+    });
+  }
   if (searchClose) searchClose.addEventListener('click', closeSearch);
   if (searchOverlay) {
     searchOverlay.addEventListener('click', function (e) { if (e.target === searchOverlay) closeSearch(); });

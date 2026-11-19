@@ -109,6 +109,14 @@ function sortedPosts() {
   return [...posts].sort((a, b) => b.date.localeCompare(a.date));
 }
 
+// 文章封面图（方案C列表缩略图）：取正文首张图，无图则用统一占位图
+const FALLBACK_COVER = 'assets/images/amap-review-example.jpg';
+function coverOf(p) {
+  const blocks = (p.content && p.content.zh) || [];
+  const img = blocks.find(b => b && b.type === 'img' && b.src);
+  return img ? img.src : FALLBACK_COVER;
+}
+
 /* ---------- 内容块渲染 ---------- */
 
 function renderBlocks(blocks, prefix = '') {
@@ -237,8 +245,14 @@ function layout({ lang, title, description, keywords, canonicalHref, prefix, bod
   const pageTitle = title ? `${title} | ${name}` : `${name} - ${tagline}`;
   const canonical = absUrlLang(canonicalHref, lang);
   const altLang = lang === 'zh' ? 'en' : 'zh';
-  const navHtml = site.nav.map(n =>
-    `<a href="${link(n.href, lang, prefix)}" class="nav-link${canonicalHref === n.href ? ' active' : ''}">${lang === 'en' ? n.labelEn : n.label}</a>`
+  // 顶栏彩色导航（方案C）：首页/平台导航/副业博客/最新避雷/投稿
+  const topNav = [
+    { href: '/', zh: '首页', en: 'Home', cls: 'c-blue' },
+    ...site.nav.map(n => ({ href: n.href, zh: n.label, en: n.labelEn,
+      cls: n.href === '/scams.html' ? 'c-red' : n.href === '/platforms.html' ? 'c-green' : n.href === '/blog.html' ? 'c-purple' : 'c-orange' }))
+  ];
+  const navHtml = topNav.map(n =>
+    `<a href="${link(n.href, lang, prefix)}" class="top-link ${n.cls}${canonicalHref === n.href ? ' active' : ''}">${lang === 'en' ? n.en : n.zh}</a>`
   ).join('');
 
   const langSwitchHref = prefix + logicalToDist(canonicalHref, altLang);
@@ -276,17 +290,28 @@ ${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script
 </head>
 <body>
 <a class="skip-link" href="#main">${lang === 'en' ? 'Skip to content' : '跳转到正文'}</a>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <nav class="top-nav" id="mainNav">${navHtml}</nav>
+    <div class="topbar-right">
+      <span class="top-login">${lang === 'en' ? 'Sign in / Register' : '注册 / 登录'}</span>
+      <button class="theme-switch" id="themeToggle" aria-label="${t('darkMode', lang)}" title="${t('darkMode', lang)}"><span class="ts-knob"></span></button>
+    </div>
+  </div>
+</div>
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="${link('/', lang, prefix)}" class="brand">
       <span class="brand-icon">💰</span>
       <span class="brand-name">${esc(name)}</span>
     </a>
-    <nav class="main-nav" id="mainNav">${navHtml}</nav>
+    <div class="header-search">
+      <input type="text" placeholder="${t('searchPh', lang)}" aria-label="${t('search', lang)}" id="portalSearchInput" autocomplete="off">
+      <button id="portalSearchBtn">${t('search', lang)}</button>
+    </div>
     <div class="header-actions">
       ${showSearch !== false ? `<button class="icon-btn" id="searchToggle" aria-label="${t('search', lang)}" title="${t('search', lang)}">🔍</button>` : ''}
       <button class="icon-btn" id="langSwitch" data-href="${langSwitchHref}" aria-label="${t('langSwitch', lang)}" title="${lang === 'en' ? '中文' : 'English'}">${lang === 'en' ? '🇨🇳' : '🇬🇧'}</button>
-      <button class="icon-btn" id="themeToggle" aria-label="${t('darkMode', lang)}" title="${t('darkMode', lang)}">🌙</button>
       <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
     </div>
   </div>
@@ -389,7 +414,89 @@ function buildHome(lang) {
   // 最新文章（补充）
   const latest = sortedPosts().slice(0, 6).map(p => postCard(p, lang, prefix)).join('');
 
+  // ===== 方案C：门户资讯流数据 =====
+  const allSorted = sortedPosts();
+  const catName = slug => { const c = categories.find(x => x.slug === slug); return c ? L(c.name, c.nameEn) : ''; };
+  const fmtShort = d => { const [, m, dd] = d.split('-'); return `${m}-${dd}`; };
+
+  // 紧凑文章列表（缩略图 + 标签 + 标题 + 摘要 + 元信息）
+  const portalRows = allSorted.slice(0, 8).map((p, i) => {
+    const isScam = p.category === 'scam-alerts' || /骗局|避雷|套路|别信/.test(p.title);
+    const badge = i === 0 ? `<span class="pr-tag r">${L('置顶', 'TOP')}</span>`
+      : isScam ? `<span class="pr-tag r" style="background:#111">${L('避雷', 'ALERT')}</span>`
+      : p.featured ? `<span class="pr-tag o">${L('推荐', 'PICKS')}</span>` : '';
+    return `<article class="portal-row">
+      <a href="${link(`/post/${p.slug}.html`, lang, prefix)}" class="pr-thumb"><img loading="lazy" src="${prefix}${coverOf(p)}" alt="${esc(L(p.title, p.titleEn))}"></a>
+      <div class="pr-body">
+        <div class="pr-title">${badge}<h3><a href="${link(`/post/${p.slug}.html`, lang, prefix)}">${esc(L(p.title, p.titleEn))}</a></h3></div>
+        <p class="pr-excerpt">${esc(L(p.excerpt, p.excerptEn))}</p>
+        <div class="pr-meta"><span>👤 ${esc(lang === 'en' ? S.authorEn : S.author)}</span><span class="pr-dot"></span><span>📁 ${esc(catName(p.category))}</span><span class="pr-dot"></span><span>🕒 ${p.date}</span><span class="pr-dot"></span><span>👁 ${p.readTime || 3} ${L('分钟阅读', 'min read')}</span></div>
+      </div>
+    </article>`;
+  }).join('');
+
+  // 最近发表（编号 01-07）
+  const rankNoCls = ['n1','n2','n3','n4','n5','n6','n7'];
+  const recentRows = allSorted.slice(0, 7).map((p, i) =>
+    `<li><span class="rank-no ${rankNoCls[i]}">${String(i + 1).padStart(2, '0')}</span><p><a href="${link(`/post/${p.slug}.html`, lang, prefix)}">${esc(L(p.title, p.titleEn))}</a></p></li>`
+  ).join('');
+
+  // 标签云（从所有文章聚合，取前 16 个）
+  const tagColors = ['a1','a2','a3','a4','a5','a6'];
+  const tagCount = {};
+  allSorted.forEach(p => (lang === 'en' ? (p.tagsEn || p.tags) : p.tags).forEach(tg => { tagCount[tg] = (tagCount[tg] || 0) + 1; }));
+  const tagCloud = Object.keys(tagCount).sort((a, b) => tagCount[b] - tagCount[a]).slice(0, 16).map((tg, i) =>
+    `<a class="${tagColors[i % tagColors.length]}" href="${link('/blog.html', lang, prefix)}">${esc(tg)}</a>`
+  ).join('');
+
+  // 文章归档
+  const archiveMap = {};
+  allSorted.forEach(p => { const ym = p.date.slice(0, 7); archiveMap[ym] = (archiveMap[ym] || 0) + 1; });
+  const archiveRows = Object.keys(archiveMap).sort((a, b) => b.localeCompare(a)).map(ym => {
+    const [y, m] = ym.split('-');
+    return `<a href="${link('/blog.html', lang, prefix)}">${y}年${Number(m)}月 <span>${archiveMap[ym]}</span></a>`;
+  }).join('');
+
+  // Red Tab
+  const portalTabs = [
+    { zh: '最新文章', en: 'Latest', href: '#portal-list', on: true },
+    { zh: '避雷置顶', en: 'Scam alerts', href: link('/scams.html', lang, prefix) },
+    { zh: '平台导航', en: 'Platforms', href: link('/platforms.html', lang, prefix) },
+    { zh: '投稿平台', en: 'Submit', href: link('/submit.html', lang, prefix) }
+  ].map(t => `<a href="${t.href}" class="${t.on ? 'on' : ''}">${L(t.zh, t.en)}</a>`).join('');
+
   const body = `
+<!-- ===== 方案C 门户资讯流 ===== -->
+<section class="portal-banner">
+  <div class="container"><h1>${L('副业掘金', 'Side Hustle Hub')} · <em>${L('每日避雷', 'Daily Scam Alerts')}</em>${L('与项目简报', ' & Project Brief')}</h1></div>
+</section>
+<div class="container">
+  <nav class="portal-tabs">${portalTabs}</nav>
+  <div class="portal-layout">
+    <div class="portal-main" id="portal-list">
+      ${portalRows}
+    </div>
+    <aside class="portal-side">
+      <div class="ps-box">
+        <h4><span class="ps-bar"></span>${L('站内搜索', 'Site search')}</h4>
+        <div class="ps-inner"><div class="ps-search"><span>${esc(lang === 'en' ? S.nameEn : S.name)}</span><input id="sideSearchInput" placeholder="${L('更多项目搜索', 'Search projects')}"><button id="sideSearchBtn">${lang === 'en' ? 'Go' : '搜索'}</button></div></div>
+      </div>
+      <div class="ps-box">
+        <h4><span class="ps-bar" style="background:#e5484d"></span>${L('最近发表', 'Recent posts')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
+        <div class="ps-inner ps-pad-sm"><ul class="ps-rank">${recentRows}</ul></div>
+      </div>
+      <div class="ps-box">
+        <h4><span class="ps-bar" style="background:#1fb474"></span>${L('标签列表', 'Tag cloud')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
+        <div class="ps-inner"><div class="ps-tags">${tagCloud}</div></div>
+      </div>
+      <div class="ps-box">
+        <h4><span class="ps-bar" style="background:#f08c00"></span>${L('文章归档', 'Archives')}<span class="ps-dots"><i></i><i></i><i></i></span></h4>
+        <div class="ps-inner"><div class="ps-arch">${archiveRows}</div></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
 <section class="hero hero-home">
   <div class="container hero-grid">
     <div class="hero-text">
