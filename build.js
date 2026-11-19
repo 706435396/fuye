@@ -420,7 +420,8 @@ function portalBanner(inner) {
 }
 
 // 站点级红Tab（最新文章/平台导航/副业博客/投稿）
-function siteTabs(lang, prefix, current, firstHref) {
+// homePanels=true：生成带 data-tab 的切换按钮，配合首页四面板；否则为普通跳转链接
+function siteTabs(lang, prefix, current, firstHref, homePanels) {
   const L = (zh, en) => lang === 'en' ? en : zh;
   const defs = [
     { key: 'home', zh: '最新文章', en: 'Latest', href: '/' },
@@ -428,9 +429,13 @@ function siteTabs(lang, prefix, current, firstHref) {
     { key: 'blog', zh: '副业博客', en: 'Blog', href: '/blog.html' },
     { key: 'submit', zh: '投稿平台', en: 'Submit', href: '/submit.html' }
   ];
-  return `<nav class="portal-tabs">${defs.map(d =>
-    `<a href="${(d.key === 'home' && firstHref) ? firstHref : link(d.href, lang, prefix)}" class="${d.key === current ? 'on' : ''}">${L(d.zh, d.en)}</a>`
-  ).join('')}</nav>`;
+  return `<nav class="portal-tabs"${homePanels ? ' id="homeTabs"' : ''}>${defs.map(d => {
+    const href = homePanels
+      ? `#panel-${d.key}`
+      : ((d.key === 'home' && firstHref) ? firstHref : link(d.href, lang, prefix));
+    const attr = homePanels ? ` data-tab="${d.key}"` : '';
+    return `<a href="${href}"${attr} class="${d.key === current ? 'on' : ''}">${L(d.zh, d.en)}</a>`;
+  }).join('')}</nav>`;
 }
 
 // 紧凑文章行列表（缩略图 + 标签 + 标题 + 摘要 + 元信息）
@@ -454,6 +459,78 @@ function portalRowsHtml(list, lang, prefix, opts) {
   }).join('');
 }
 
+// 平台导航板块：平台紧凑行（分类色块缩略图 + 类型标签 + 名称 + 优点 + 提现/币种/结算）
+function portalPlatformRows(lang, prefix) {
+  const L = (zh, en) => lang === 'en' ? en : zh;
+  const rows = [];
+  platforms.categories.forEach(c => {
+    c.platforms.forEach(p => {
+      const href = link(`/platform/${c.id}.html`, lang, prefix);
+      rows.push(`<article class="portal-row">
+        <a href="${href}" class="pr-thumb pr-thumb-icon" style="background:linear-gradient(135deg,${c.color},${c.color}aa)">${c.icon}</a>
+        <div class="pr-body">
+          <div class="pr-title"><span class="pr-tag" style="background:${c.color}">${esc(L(p.type, p.typeEn))}</span><h3><a href="${href}">${esc(p.name)}</a></h3></div>
+          <p class="pr-excerpt">${esc(L((p.pros && p.pros[0]) || '', (p.prosEn && p.prosEn[0]) || ''))}</p>
+          <div class="pr-meta"><span>💰 ${esc(L(p.minWithdraw, p.minWithdrawEn))}</span><span class="pr-dot"></span><span>💱 ${esc(L(p.currency, p.currencyEn))}</span><span class="pr-dot"></span><span>🏦 ${esc(L(p.settle, p.settleEn))}</span><span class="pr-dot"></span><span>📁 ${esc(L(c.name, c.nameEn))}</span></div>
+        </div>
+      </article>`);
+    });
+  });
+  return rows.join('');
+}
+
+// 副业博客板块：按专栏分组的紧凑文章行
+function portalBlogRows(lang, prefix) {
+  const L = (zh, en) => lang === 'en' ? en : zh;
+  let html = '';
+  blogColumns.columns.forEach(col => {
+    const colPosts = col.slugs.map(sl => posts.find(p => p.slug === sl)).filter(Boolean).slice(0, 3);
+    if (!colPosts.length) return;
+    const href = link(`/column/${col.id}.html`, lang, prefix);
+    html += `<div class="portal-group-title"><span class="pgt-icon">${col.icon}</span><a href="${href}">${esc(L(col.name, col.nameEn))}</a><a class="pgt-more" href="${href}">${L('更多', 'More')} →</a></div>`;
+    html += portalRowsHtml(colPosts, lang, prefix);
+  });
+  return html;
+}
+
+// 投稿平台板块：投稿引导 + 步骤紧凑行
+function portalSubmitRows(lang, prefix) {
+  const L = (zh, en) => lang === 'en' ? en : zh;
+  const mail = S.email;
+  const href = link('/submit.html', lang, prefix);
+  const steps = lang === 'en'
+    ? [
+        ['Find a platform', 'Send us the platform name, URL and how it works.'],
+        ['Fill in the details', 'Include type, minimum withdrawal, currency, settlement and honest downsides.'],
+        ['Manual review', 'We verify every submission before publishing — no paid placements.'],
+        ['Live on site', 'Approved platforms appear in the directory with full details.']
+      ]
+    : [
+        ['发现平台', '把平台名称、网址和玩法发给我们。'],
+        ['填写信息', '写清类型、最低提现、币种、结算方式与真实坑点。'],
+        ['人工核实', '每份投稿我们都会核实，不接受付费上架。'],
+        ['上架展示', '通过审核的平台会收录进导航，附上完整信息。']
+      ];
+  const rows = steps.map((s, i) => `<article class="portal-row portal-row-step">
+      <div class="pr-step-no">${i + 1}</div>
+      <div class="pr-body">
+        <div class="pr-title"><h3>${esc(s[0])}</h3></div>
+        <p class="pr-excerpt">${esc(s[1])}</p>
+      </div>
+    </article>`).join('');
+  return `<div class="portal-submit-hero">
+      <div class="psh-icon">📝</div>
+      <div class="psh-text">
+        <h2>${L('发现靠谱平台？投稿给我们', 'Found a legit platform? Submit it')}</h2>
+        <p>${L('我们人工核实每一份提交，只上架能查证的平台。', 'We manually verify every submission and only publish what we can confirm.')}</p>
+      </div>
+      <a href="${href}" class="btn btn-primary">${L('投稿平台', 'Submit a platform')} →</a>
+    </div>
+    <div class="portal-group-title">${L('投稿流程', 'How it works')}</div>
+    ${rows}
+    <div class="portal-submit-mail">${L('邮箱', 'Email')}: <a href="mailto:${esc(mail)}">${esc(mail)}</a></div>`;
+}
+
 // 门户框架：横幅 + 红Tab + 两栏（左侧内容 + 右侧栏）
 function portalShell({ banner, tabs, main, lang, prefix, mainClass, mainId }) {
   const cls = `portal-main${mainClass ? ' ' + mainClass : ''}`;
@@ -475,12 +552,27 @@ function buildHome(lang) {
   const prefix = lang === 'en' ? '../' : '';
   const L = (zh, en) => lang === 'en' ? en : zh;
 
-  // 紧凑文章列表（缩略图 + 标签 + 标题 + 摘要 + 元信息），取前 12 篇
-  const portalRows = portalRowsHtml(sortedPosts().slice(0, 12), lang, prefix, { firstTop: true });
-  const tabs = siteTabs(lang, prefix, 'home', '#portal-list');
+  // 四个切换面板（与"最新文章"同款紧凑列表风格）
+  const panels = `
+  <div class="portal-panel is-active" data-panel="home">
+    ${portalRowsHtml(sortedPosts().slice(0, 12), lang, prefix, { firstTop: true })}
+    <div class="panel-more"><a href="${link('/all.html', lang, prefix)}">${L('查看全部文章', 'View all articles')} →</a></div>
+  </div>
+  <div class="portal-panel" data-panel="platforms" hidden>
+    ${portalPlatformRows(lang, prefix)}
+    <div class="panel-more"><a href="${link('/platforms.html', lang, prefix)}">${L('进入平台导航', 'Open platform directory')} →</a></div>
+  </div>
+  <div class="portal-panel" data-panel="blog" hidden>
+    ${portalBlogRows(lang, prefix)}
+    <div class="panel-more"><a href="${link('/blog.html', lang, prefix)}">${L('进入副业博客', 'Open blog')} →</a></div>
+  </div>
+  <div class="portal-panel" data-panel="submit" hidden>
+    ${portalSubmitRows(lang, prefix)}
+  </div>`;
+  const tabs = siteTabs(lang, prefix, 'home', null, true);
   const banner = `${L('副业掘金', 'Side Hustle Hub')} · <em>${L('每日项目', 'Daily')}</em>${L('资讯简报', ' Project Brief')}`;
 
-  const body = portalShell({ banner, tabs, main: portalRows, lang, prefix, mainId: 'portal-list' });
+  const body = portalShell({ banner, tabs, main: panels, lang, prefix, mainClass: 'portal-main-panels' });
 
   // 页脚法务入口由 layout 统一处理
   const jsonLd = {

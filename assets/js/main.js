@@ -89,6 +89,32 @@
     setTimeout(function () { el.textContent = old; }, 1500);
   }
 
+  /* ---------- 首页四Tab面板切换 ---------- */
+  const homeTabs = document.getElementById('homeTabs');
+  if (homeTabs) {
+    const tabLinks = homeTabs.querySelectorAll('[data-tab]');
+    const panels = document.querySelectorAll('.portal-panel');
+    tabLinks.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        const key = a.getAttribute('data-tab');
+        tabLinks.forEach(function (x) { x.classList.toggle('on', x === a); });
+        panels.forEach(function (p) {
+          const active = p.getAttribute('data-panel') === key;
+          p.classList.toggle('is-active', active);
+          p.hidden = !active;
+        });
+        try { if (history.replaceState) history.replaceState(null, '', '#' + key); } catch (e) {}
+      });
+    });
+    // 支持通过 URL hash 直达某面板
+    const initial = (location.hash || '').replace('#', '');
+    if (initial && ['platforms','blog','submit'].indexOf(initial) > -1) {
+      const target = homeTabs.querySelector('[data-tab="' + initial + '"]');
+      if (target) target.click();
+    }
+  }
+
   /* ---------- 文章筛选（全部文章页）---------- */
   const allGrid = document.getElementById('allPostsGrid');
   const filterBtns = document.querySelectorAll('.filter-btn');

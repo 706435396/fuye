@@ -753,3 +753,79 @@ html[data-theme="dark"] .header-search button { background: #4b5568; }
 .portal-content .filter-bar { margin: 16px 0; }
 .portal-content .static-page { max-width: none; }
 .portal-content .not-found { text-align: center; padding: 40px 10px; }
+
+/* ============================================================
+   首页四Tab切换面板（最新文章/平台导航/副业博客/投稿平台）
+   ============================================================ */
+.portal-main-panels { padding: 4px 0; }
+.portal-panel { padding: 0; }
+.portal-panel[hidden] { display: none; }
+.portal-panel .portal-row:first-child { border-top: none; }
+
+/* 面板底部"进入XX"更多链接 */
+.panel-more { padding: 16px; text-align: center; border-top: 1px solid var(--border); }
+.panel-more a { display: inline-block; font-size: .86rem; font-weight: 600; color: var(--primary); padding: 8px 20px; border: 1px solid var(--primary); border-radius: 6px; }
+.panel-more a:hover { background: var(--primary); color: #fff; }
+
+/* 平台分类色块缩略图 */
+.pr-thumb-icon { display: flex; align-items: center; justify-content: center; font-size: 2.6rem; text-decoration: none; }
+.pr-thumb-icon:hover { filter: brightness(1.08); }
+
+/* 专栏分组标题 */
+.portal-group-title { display: flex; align-items: center; gap: 8px; padding: 11px 16px; background: var(--bg-soft); border-bottom: 1px solid var(--border); font-weight: 700; font-size: .92rem; }
+.portal-group-title:not(:first-child) { border-top: 1px solid var(--border); }
+.portal-group-title .pgt-icon { font-size: 1.15rem; }
+.portal-group-title .pgt-more { margin-left: auto; font-size: .78rem; font-weight: 500; color: var(--primary); }
+
+/* 投稿步骤行 */
+.portal-row-step { gap: 14px; align-items: center; }
+.pr-step-no { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; font-weight: 800; font-size: .95rem; display: flex; align-items: center; justify-content: center; }
+
+/* 投稿引导头 */
+.portal-submit-hero { display: flex; align-items: center; gap: 14px; padding: 20px 18px; background: linear-gradient(120deg,#eef2ff,#fdf2f8); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+html[data-theme="dark"] .portal-submit-hero { background: linear-gradient(120deg,#1e2233,#2a1f33); }
+.portal-submit-hero .psh-icon { font-size: 2.4rem; }
+.portal-submit-hero .psh-text { flex: 1; min-width: 180px; }
+.portal-submit-hero .psh-text h2 { font-size: 1.1rem; margin: 0 0 5px; }
+.portal-submit-hero .psh-text p { font-size: .82rem; color: var(--text-3); margin: 0; }
+.portal-submit-hero .btn { white-space: nowrap; }
+.portal-submit-mail { padding: 14px 18px; font-size: .82rem; color: var(--text-3); }
+.portal-submit-mail a { color: var(--primary); }
+
+/* ============================================================
+   首页四Tab切换面板（最新文章/平台导航/副业博客/投稿平台）
+   ============================================================ */
+.portal-main-panels { padding: 4px 0; }
+.portal-panel { padding: 0; }
+.portal-panel[hidden] { display: none; }
+.portal-panel .portal-row:first-child { border-top: none; }
+
+/* 面板底部"进入XX"更多链接 */
+.panel-more { padding: 16px; text-align: center; border-top: 1px solid var(--border); }
+.panel-more a { display: inline-block; font-size: .86rem; font-weight: 600; color: var(--primary); padding: 8px 20px; border: 1px solid var(--primary); border-radius: 6px; }
+.panel-more a:hover { background: var(--primary); color: #fff; }
+
+/* 平台分类色块缩略图 */
+.pr-thumb-icon { display: flex; align-items: center; justify-content: center; font-size: 2.6rem; text-decoration: none; }
+.pr-thumb-icon:hover { filter: brightness(1.08); }
+
+/* 专栏分组标题 */
+.portal-group-title { display: flex; align-items: center; gap: 8px; padding: 11px 16px; background: var(--bg-soft); border-bottom: 1px solid var(--border); font-weight: 700; font-size: .92rem; }
+.portal-group-title:not(:first-child) { border-top: 1px solid var(--border); }
+.portal-group-title .pgt-icon { font-size: 1.15rem; }
+.portal-group-title .pgt-more { margin-left: auto; font-size: .78rem; font-weight: 500; color: var(--primary); }
+
+/* 投稿步骤行 */
+.portal-row-step { gap: 14px; align-items: center; }
+.pr-step-no { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff; font-weight: 800; font-size: .95rem; display: flex; align-items: center; justify-content: center; }
+
+/* 投稿引导头 */
+.portal-submit-hero { display: flex; align-items: center; gap: 14px; padding: 20px 18px; background: linear-gradient(120deg,#eef2ff,#fdf2f8); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+html[data-theme="dark"] .portal-submit-hero { background: linear-gradient(120deg,#1e2233,#2a1f33); }
+.portal-submit-hero .psh-icon { font-size: 2.4rem; }
+.portal-submit-hero .psh-text { flex: 1; min-width: 180px; }
+.portal-submit-hero .psh-text h2 { font-size: 1.1rem; margin: 0 0 5px; }
+.portal-submit-hero .psh-text p { font-size: .82rem; color: var(--text-3); margin: 0; }
+.portal-submit-hero .btn { white-space: nowrap; }
+.portal-submit-mail { padding: 14px 18px; font-size: .82rem; color: var(--text-3); }
+.portal-submit-mail a { color: var(--primary); }
